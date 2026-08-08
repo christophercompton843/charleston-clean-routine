@@ -1,2 +1,18 @@
-# charleston-clean-routine
-Premium residential cleaning service website for Charleston Clean Routine, including online booking, Stripe payments, and BookingKoala integration.
+# Charleston Clean Routine
+
+Production website for Charleston Clean Routine, a Charleston-area home and vacation-rental cleaning company.
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Production build
+
+```bash
+npm run build
+```
+
+The site is configured for Git-based deployment on Netlify. Customer cleaning plans are captured through Netlify Forms, while live residential pricing and scheduling continue through BookingKoala.
