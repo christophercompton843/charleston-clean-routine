@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Charleston Clean Routine favicon</title>
+  <desc id="desc">A white C and check mark on a deep coastal green tile.</desc>
+  <rect width="64" height="64" rx="14" fill="#123C3A"/>
+  <path d="M43 18C39 14 34 12 29 12C18 12 11 20 11 32C11 44 19 52 30 52C36 52 41 50 45 46" fill="none" stroke="#F7F4EE" stroke-width="8" stroke-linecap="round"/>
+  <path d="M24 33L31 40L49 21" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
