@@ -10,9 +10,12 @@
     "build": "next build",
     "start": "next start",
     "test": "npm run build",
-    "lint": "eslint . --ignore-pattern .next"
+    "lint": "eslint . --ignore-pattern .next",
+    "translate-sample": "node scripts/translate-sample.mjs"
   },
   "dependencies": {
+    "@vitalets/google-translate-api": "^9.2.1",
+    "google-translate-api": "^2.3.0",
     "next": "16.2.6",
     "react": "19.2.6",
     "react-dom": "19.2.6"
