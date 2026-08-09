@@ -411,7 +411,7 @@ export default function Home() {
         <div className="footer-links">
           <div><span>Services</span><a href={bookingUrl} target="_blank" rel="noreferrer">Home cleaning ↗</a><a href={rentalQuoteUrl}>Rental turnovers</a><a href="#signature-finish">Signature finish</a><a href="#pricing-tool">Build my clean</a></div>
           <div><span>Company</span><a href="#our-story">Our philosophy</a><a href="#helpful">Helpful info</a><a href="#answers">FAQs</a></div>
-          <div><span>Connect</span><a href="mailto:hello@charlestoncleanroutine.com">Email us</a><a href="tel:+18436081082">843-608-1082</a><a href="https://charlestoncleanroutine.bookingkoala.com/hiring/form/6a74db6ef15695b50e4232f1?embed=true" target="_blank" rel="noreferrer">Become a provider ↗</a></div>
+          <div><span>Connect</span><a href="mailto:hello@charlestoncleanroutine.com">Email us</a><a href="tel:+18436081082">843-608-1082</a><a href="https://www.facebook.com/charlestoncleanroutine" target="_blank" rel="noreferrer">Facebook ↗</a><a href="https://www.instagram.com/charlestoncleanroutine/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://share.google/QpgZjxvPi0l4iAF3M" target="_blank" rel="noreferrer">Google Business Profile ↗</a><a href="https://charlestoncleanroutine.bookingkoala.com/hiring/form/6a74db6ef15695b50e4232f1?embed=true" target="_blank" rel="noreferrer">Become a provider ↗</a></div>
         </div>
         <div className="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/cancellation-policy">Cancellation</a><a href="/service-policy">Service policy</a></div>
         <div className="footer-bottom"><span>© 2026 Charleston Clean Routine</span><span>Charleston, South Carolina · 843</span></div>
