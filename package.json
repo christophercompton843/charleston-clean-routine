@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "test": "npm run build",
-    "lint": "eslint . --ignore-pattern .next"
+    "lint": "eslint . --ignore-pattern .next",
+    "translate-sample": "node scripts/translate-sample.mjs"
   },
   "dependencies": {
     "@vitalets/google-translate-api": "^9.2.1",
