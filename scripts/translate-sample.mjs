@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const translate = require('@vitalets/google-translate-api');
+const { translate } = require('@vitalets/google-translate-api');
 
 (async () => {
   try {
