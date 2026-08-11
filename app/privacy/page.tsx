@@ -52,7 +52,7 @@ export default function PrivacyPage() {
       </section>
       <section>
         <h2>Contact us</h2>
-        <p>Email <a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a> or submit an <a href="/contact">online inquiry</a> with a privacy request or question.</p>
+        <p>Call our 24-hour automated support at <a href="tel:+18436338648">(843) 633-8648</a>, email <a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a>, or submit an <a href="/contact">online inquiry</a> with a privacy request or question.</p>
       </section>
     </PolicyShell>
   );
