@@ -859,6 +859,23 @@ img { display: block; max-width: 100%; }
 .rhythm-grid .featured p { color: #c6d8d4; }
 .rhythm-grid i { position: absolute; right: 22px; top: 22px; padding: 7px 9px; border-radius: 999px; background: rgba(140,194,184,.16); color: var(--sea-bright); font-size: 8px; font-style: normal; font-weight: 730; text-transform: uppercase; letter-spacing: .08em; }
 
+.routine-value-section {
+  padding: 104px max(28px, calc((100vw - 1320px) / 2));
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(52px, 8vw, 120px);
+  align-items: start;
+  background: var(--harbor-black);
+  color: white;
+}
+.routine-value-heading h2 { margin: 24px 0 0; color: white; font-size: clamp(43px, 4.8vw, 69px); font-weight: 590; line-height: 1; letter-spacing: -.06em; }
+.routine-value-copy { padding-top: 7px; }
+.routine-value-copy > p { max-width: 720px; margin: 0 0 21px; color: #c5d7d3; font-size: 15px; line-height: 1.78; }
+.routine-value-copy > p strong { color: white; font-size: 1.14em; font-weight: 700; }
+.routine-value-close { margin: 34px 0 24px; padding: 21px 0; display: flex; flex-wrap: wrap; gap: 10px 28px; border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
+.routine-value-close span { color: var(--sea-bright); font-size: 10px; font-weight: 760; letter-spacing: .07em; text-transform: uppercase; }
+.routine-value-copy small { display: block; max-width: 680px; color: #90aaa4; font-size: 8px; line-height: 1.65; }
+
 .recurring-offer-section {
   padding: 92px max(28px, calc((100vw - 1320px) / 2));
   display: grid;
@@ -1266,6 +1283,7 @@ footer { padding: 72px max(28px, calc((100vw - 1320px) / 2)) 32px; background: v
   .local-rhythm p:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
   .local-rhythm p:nth-child(4) { border-top: 1px solid var(--line); }
   .acquisition-loop { grid-template-columns: 1fr; }
+  .routine-value-section { grid-template-columns: 1fr; }
   .recurring-offer-section { grid-template-columns: auto 1fr; }
   .recurring-offer-action { grid-column: 1 / -1; flex-direction: row; align-items: center; }
 }
@@ -1386,6 +1404,10 @@ footer { padding: 72px max(28px, calc((100vw - 1320px) / 2)) 32px; background: v
   .rhythm-grid { grid-template-columns: 1fr; }
   .rhythm-grid article { min-height: 225px; }
   .rhythm-grid h3 { margin-top: 56px; }
+  .routine-value-section { padding: 80px 18px; gap: 38px; }
+  .routine-value-heading h2 { font-size: 44px; }
+  .routine-value-copy > p { font-size: 14px; }
+  .routine-value-close { display: grid; gap: 11px; }
   .recurring-offer-section { padding: 80px 18px; grid-template-columns: 1fr; text-align: center; }
   .recurring-offer-value { width: 160px; height: 160px; margin: 0 auto; }
   .recurring-offer-value strong { font-size: 68px; }
