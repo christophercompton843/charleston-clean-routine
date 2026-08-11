@@ -445,6 +445,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="routine-value-section" aria-labelledby="routine-value-title">
+        <div className="routine-value-heading">
+          <p className="eyebrow eyebrow-light">Professional care, made practical</p>
+          <h2 id="routine-value-title">A professionally cleaned home—<br />made simple.</h2>
+        </div>
+        <div className="routine-value-copy">
+          <p>
+            Start with your first clean from just <strong>$94</strong>. Then, keep your home
+            feeling calm, refreshed, and handled with a recurring Home Clean Routine
+            starting at <strong>$123 per month</strong>.
+          </p>
+          <p>
+            That’s about <strong>$4 a day</strong> for the comfort and peace of mind of a
+            professionally maintained home—while supporting a locally owned Charleston
+            business.
+          </p>
+          <div className="routine-value-close">
+            <span>Simple pricing.</span><span>Dependable care.</span><span>Your home, handled.</span>
+          </div>
+          <small>
+            Starting prices shown. Home size, service needs, condition, and selected
+            add-ons may affect your total. First-clean pricing reflects the $35
+            introductory offer with an eligible recurring plan.
+          </small>
+        </div>
+      </section>
+
       <section className="recurring-offer-section" id="recurring-offer" aria-labelledby="recurring-offer-title">
         <div className="recurring-offer-value"><span>$</span><strong>35</strong><small>OFF</small></div>
         <div className="recurring-offer-copy">
