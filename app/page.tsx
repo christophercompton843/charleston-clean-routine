@@ -14,7 +14,6 @@ export const metadata = {
 const bookingUrl = "#pricing-tool";
 const clientPortalUrl = "/login";
 const rentalQuoteUrl = "#pricing-tool";
-const emailUrl = "mailto:hello@charlestoncleanroutine.com";
 const phoneUrl = "tel:+18436338648";
 
 const steps = [
