@@ -48,7 +48,7 @@ export default function TermsPage() {
       </section>
       <section>
         <h2>Contact</h2>
-        <p>Questions may be sent to <a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a>.</p>
+        <p>Call our 24-hour automated support at <a href="tel:+18436338648">(843) 633-8648</a> or email <a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a>.</p>
       </section>
     </PolicyShell>
   );
