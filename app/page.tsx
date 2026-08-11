@@ -15,6 +15,7 @@ const bookingUrl = "#pricing-tool";
 const clientPortalUrl = "/login";
 const rentalQuoteUrl = "#pricing-tool";
 const emailUrl = "mailto:hello@charlestoncleanroutine.com";
+const phoneUrl = "tel:+18436338648";
 
 const steps = [
   {
@@ -112,7 +113,7 @@ export default function Home() {
             <a href="#answers">FAQs</a>
           </nav>
           <div className="header-actions">
-            <a className="header-contact" href={emailUrl}>Email us</a>
+            <a className="header-contact" href={phoneUrl} aria-label="Call 24-hour automated support at 843-633-8648">(843) 633-8648</a>
             <a className="button button-small" href="#pricing-tool">
               Get my price <span aria-hidden="true">↓</span>
             </a>
@@ -411,7 +412,7 @@ export default function Home() {
             for homes, apartments, condos, townhomes, and vacation rentals
             throughout the Charleston area. Services include recurring cleaning,
             deep cleaning, move-in and move-out cleaning, vacation-rental
-            turnovers, Refresh &amp; Reset visits, and Deposit Ready Detail for move-outs.
+            turnovers, Refresh &amp; Reset visits, and Guest-Ready Turndown service.
             Our approach combines clear expectations, dependable care, and
             meticulous attention to detail. Every full cleaning concludes with
             The Charleston Finish—a final quality check and carefully presented
@@ -541,7 +542,7 @@ export default function Home() {
             <p className="eyebrow">Client tools</p>
             <h2>The practical details,<br />kept in one place.</h2>
           </div>
-          <p>Manage an existing visit, check whether your address is in our Charleston-area coverage, or reach a real person without starting a new booking.</p>
+          <p>Manage an existing visit, check whether your address is in our Charleston-area coverage, or reach our 24-hour automated support without starting a new booking.</p>
         </div>
         <div className="client-tool-grid">
           <a href={clientPortalUrl}>
@@ -556,18 +557,18 @@ export default function Home() {
             <p>Enter a ZIP code before continuing to pricing and availability.</p>
             <strong>Check my ZIP →</strong>
           </a>
-          <a href="/contact">
-            <span>03 · Human help</span>
-            <h3>Contact our Charleston team</h3>
-            <p>Ask about a home, rental turnover, existing booking, partnership, or provider opportunity.</p>
-            <strong>Send a message →</strong>
+          <a href={phoneUrl}>
+            <span>03 · 24-hour support</span>
+            <h3>Call Claire, our virtual receptionist</h3>
+            <p>Get answers, booking help, or leave a message for our Charleston team—24 hours a day.</p>
+            <strong>(843) 633-8648 →</strong>
           </a>
         </div>
         <div className="booking-reassurance" aria-label="Booking reassurance">
           <p><span>Account</span><strong>Manage details online</strong></p>
           <p><span>Pricing</span><strong>Review before confirming</strong></p>
           <p><span>Payment</span><strong>Secure card handling</strong></p>
-          <p><span>Support</span><strong>Human help when needed</strong></p>
+          <p><span>Support</span><strong>Automated help, 24 hours a day</strong></p>
         </div>
       </section>
 
@@ -575,7 +576,7 @@ export default function Home() {
         <div className="faq-heading">
           <p className="eyebrow">Clear answers</p>
           <h2>Before you book.</h2>
-          <p>Need a human? <a href="mailto:hello@charlestoncleanroutine.com">Email our Charleston team.</a></p>
+          <p>Need help? <a href={phoneUrl}>Call (843) 633-8648 for 24-hour automated support.</a></p>
         </div>
         <div className="faq-list">
           <details open><summary>Do you clean apartments and condos?</summary><p>Yes. We clean Charleston-area apartments, condos, townhomes, and houses—from studios to larger full-service residences. Share any front-desk, parking, elevator, or building-access instructions when booking so arrival is smooth.</p></details>
@@ -614,13 +615,13 @@ export default function Home() {
         <div className="footer-links">
           <div><span>Services</span><a href={bookingUrl}>Home cleaning →</a><a href={rentalQuoteUrl}>Rental turnovers</a><a href="#signature-finish">Signature finish</a><a href="#pricing-tool">Start booking</a></div>
           <div><span>Client tools</span><a href={clientPortalUrl}>Account access</a><a href="/service-area">Check service area</a><a href="/contact">Contact our team</a><a href="#answers">FAQs</a></div>
-          <div><span>Connect</span><a href="mailto:hello@charlestoncleanroutine.com">Email us</a><a href="/contact">Online inquiry</a><a href="/contact?topic=provider">Become a provider</a></div>
+          <div><span>Connect</span><a href={phoneUrl}>24-hour support · (843) 633-8648</a><a href="mailto:hello@charlestoncleanroutine.com">Email us</a><a href="/contact">Online inquiry</a><a href="/contact?topic=provider">Become a provider</a></div>
         </div>
         <div className="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/cancellation-policy">Cancellation</a><a href="/service-policy">Service policy</a><a href="/review">Share feedback</a><a href="/login">Account access</a></div>
         <div className="footer-bottom"><span>© 2026 Charleston Clean Routine</span><span>Charleston, South Carolina</span></div>
       </footer>
       <nav className="mobile-action-dock" aria-label="Quick inquiry and booking">
-        <a href="/contact">Online inquiry <span aria-hidden="true">→</span></a>
+        <a href={phoneUrl}>Call 24/7 <span aria-hidden="true">→</span></a>
         <a href="#pricing-tool">Get my price <span aria-hidden="true">→</span></a>
       </nav>
       <Concierge />
