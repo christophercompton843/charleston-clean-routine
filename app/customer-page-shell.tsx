@@ -30,6 +30,7 @@ export default function CustomerPageShell({
       <footer className="policy-footer">
         <span>© 2026 Charleston Clean Routine</span>
         <Link href="/">Home</Link>
+        <a href="tel:+18436338648">24-hour support: (843) 633-8648</a>
         <a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a>
         <Link href="/contact">Online inquiry</Link>
       </footer>
