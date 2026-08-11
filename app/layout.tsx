@@ -29,6 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     logo: "https://charlestoncleanroutine.com/charleston-clean-routine-logo.svg",
     image: "https://charlestoncleanroutine.com/charleston-home-warm.jpg",
     email: "hello@charlestoncleanroutine.com",
+    telephone: "+1-843-633-8648",
     description: "Locally owned Charleston-area residential and vacation-rental cleaning service offering recurring home cleaning, deep cleaning, move-in and move-out cleaning, vacation-rental turnovers, and Refresh & Reset visits.",
     priceRange: "$$",
     areaServed: ["Mount Pleasant, SC", "Daniel Island, SC", "Sullivan's Island, SC", "Isle of Palms, SC", "Charleston, SC", "West Ashley, SC", "James Island, SC", "Folly Beach, SC"].map((name) => ({ "@type": "Place", name })),
