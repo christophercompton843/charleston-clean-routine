@@ -16,7 +16,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://charlestoncleanroutine.com"),
   title: "Charleston Clean Routine | Your Home, Handled",
   description:
-    "Modern cleaning for Charleston-area apartments, condos, houses, townhomes, Airbnbs, and beach rentals.",
+    "Get an instant price, book online, and keep your Charleston-area home on a reliable cleaning routine. $35 off your first clean with recurring service.",
+  other: {
+    "codex-preview": "development",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Charleston Clean Routine | Your Home, Handled",
     description:
-      "Modern cleaning for Charleston-area apartments, condos, houses, Airbnbs, and beach rentals.",
+      "Instant pricing, online booking, vetted providers, quality checks, and recurring scheduling for Charleston-area homes.",
     siteName: "Charleston Clean Routine",
     images: [
       {
@@ -48,10 +51,7 @@ export const metadata: Metadata = {
       "Modern home and vacation-rental cleaning shaped around Charleston life.",
     images: ["/charleston-home-warm.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

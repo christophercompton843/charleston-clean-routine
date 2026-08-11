@@ -43,6 +43,10 @@ export default function TermsPage() {
         <p>We may update website content, service descriptions, pricing structures, or these terms. We do not promise uninterrupted website access. Nothing on the website creates a guarantee beyond the service scope confirmed for a booking.</p>
       </section>
       <section>
+        <h2>Concierge information</h2>
+        <p>The website concierge provides general service guidance and may use automated or AI-generated responses. Its answers do not confirm availability, establish final pricing, modify a booking, create provider employment or contractor status, or replace the written terms connected to a confirmed service. Please use the booking system or contact our team when confirmation is required.</p>
+      </section>
+      <section>
         <h2>Contact</h2>
         <p>Questions may be sent to <a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a>.</p>
       </section>

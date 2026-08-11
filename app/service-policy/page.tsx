@@ -40,8 +40,8 @@ export default function ServicePolicyPage() {
         <p>Every full cleaning concludes with a final quality check and thoughtful room reset. When used, the complimentary peppermint is individually sealed, xylitol-free, and placed on a branded card in the kitchen or entry rather than on bedding. Ingredient information remains on the wrapper. Customers may opt out in advance, and property managers may request neutral or co-branded presentation.</p>
       </section>
       <section>
-        <h2>Refresh &amp; Reset and Guest-Ready Turndown</h2>
-        <p>Refresh &amp; Reset is a focused visit rather than a full cleaning. Guest-Ready Turndown is a presentation add-on and includes only the tasks confirmed for the booking. Linen changes, laundry, restocking, and amenities must be selected or quoted separately when they affect the work.</p>
+        <h2>Refresh &amp; Reset and Deposit Ready Detail</h2>
+        <p>Refresh &amp; Reset is a focused visit rather than a full cleaning. Deposit Ready Detail is available with Move-In/Move-Out Cleaning and adds inside oven and refrigerator cleaning, inside cabinets and drawers, baseboards, extra attention to doors and trim, additional bathroom detailing, and accessible areas commonly reviewed during move-out inspections.</p>
       </section>
       <section>
         <h2>After the visit</h2>

@@ -39,7 +39,7 @@ export default function CancellationPolicyPage() {
       </section>
       <section>
         <h2>How to make a change</h2>
-        <p>Use the change or cancellation options connected to your booking, or contact us promptly at <a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a> or <a href="tel:+18436081082">843-608-1082</a>.</p>
+        <p>Use the change or cancellation options connected to your booking, submit an <a href="/contact">online inquiry</a>, or email us promptly at <a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a>.</p>
       </section>
     </PolicyShell>
   );
