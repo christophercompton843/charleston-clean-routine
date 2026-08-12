@@ -14,6 +14,7 @@ export const metadata = {
 const bookingUrl = "#pricing-tool";
 const clientPortalUrl = "/login";
 const rentalQuoteUrl = "#pricing-tool";
+const providerApplicationUrl = "https://charlestoncleanroutine.bookingkoala.com/hiring/form/6a74db6ef15695b50e4232f1?embed=true";
 const phoneUrl = "tel:+18436338648";
 
 const steps = [
@@ -511,7 +512,7 @@ export default function Home() {
           <p className="eyebrow">Independent provider opportunities</p>
           <h2 id="provider-title">Do excellent work.<br />Keep your independence.</h2>
           <p>Charleston Clean Routine is building a selective network of experienced cleaning professionals who value clear scopes, respectful communication, organized scheduling, and quality work.</p>
-          <a className="button" href="/contact?topic=provider">See provider opportunities →</a>
+          <a className="button" href={providerApplicationUrl}>Apply to join the provider network →</a>
         </div>
         <div className="provider-benefit-grid">
           <article><span>01</span><strong>Clear before arrival</strong><p>Property details, selected scope, timing, and customer notes are organized before the visit.</p></article>
@@ -614,7 +615,7 @@ export default function Home() {
         <div className="footer-links">
           <div><span>Services</span><a href={bookingUrl}>Home cleaning →</a><a href={rentalQuoteUrl}>Rental turnovers</a><a href="#signature-finish">Signature finish</a><a href="#pricing-tool">Start booking</a></div>
           <div><span>Client tools</span><a href={clientPortalUrl}>Account access</a><a href="/service-area">Check service area</a><a href="/contact">Contact our team</a><a href="#answers">FAQs</a></div>
-          <div><span>Connect</span><a href={phoneUrl}>24-hour support · (843) 633-8648</a><a href="mailto:hello@charlestoncleanroutine.com">Email us</a><a href="/contact">Online inquiry</a><a href="/contact?topic=provider">Become a provider</a></div>
+          <div><span>Connect</span><a href={phoneUrl}>24-hour support · (843) 633-8648</a><a href="mailto:hello@charlestoncleanroutine.com">Email us</a><a href="/contact">Online inquiry</a><a href={providerApplicationUrl}>Become a provider</a></div>
         </div>
         <div className="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/cancellation-policy">Cancellation</a><a href="/service-policy">Service policy</a><a href="/review">Share feedback</a><a href="/login">Account access</a></div>
         <div className="footer-bottom"><span>© 2026 Charleston Clean Routine</span><span>Charleston, South Carolina</span></div>
