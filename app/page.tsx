@@ -14,7 +14,7 @@ export const metadata = {
 const bookingUrl = "#pricing-tool";
 const clientPortalUrl = "/login";
 const rentalQuoteUrl = "#pricing-tool";
-const providerApplicationUrl = "https://charlestoncleanroutine.bookingkoala.com/hiring/form/6a74db6ef15695b50e4232f1?embed=true";
+const providerApplicationUrl = "/provider-application";
 const phoneUrl = "tel:+18436338648";
 
 const steps = [
