@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-The site is configured for Git-based deployment on Netlify. Customer cleaning plans are captured through Netlify Forms, while live residential pricing and scheduling continue through BookingKoala.
+The site is configured for Git-based deployment on Netlify. Customer cleaning plans and provider applications are captured through Netlify Forms, while live residential pricing and scheduling continue through TidyWise.
