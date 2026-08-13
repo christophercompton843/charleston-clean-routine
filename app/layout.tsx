@@ -35,5 +35,24 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     areaServed: ["Mount Pleasant, SC", "Daniel Island, SC", "Sullivan's Island, SC", "Isle of Palms, SC", "Charleston, SC", "West Ashley, SC", "James Island, SC", "Folly Beach, SC"].map((name) => ({ "@type": "Place", name })),
     hasOfferCatalog: { "@type": "OfferCatalog", name: "Cleaning services", itemListElement: ["Recurring home cleaning", "Deep cleaning", "Move-in and move-out cleaning", "Vacation-rental turnover cleaning", "Refresh & Reset visits"].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })) },
   };
-  return <html lang="en"><head><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} /></head><body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body></html>;
+
+  return (
+    <html lang="en">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HYGH9DRGX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8HYGH9DRGX');
+            `,
+          }}
+        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+    </html>
+  );
 }
