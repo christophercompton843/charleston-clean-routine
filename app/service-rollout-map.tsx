@@ -103,7 +103,10 @@ export default function ServiceRolloutMap() {
         <div className="rollout-phases">
           {phases.map((phase) => (
             <article key={phase.number} className={`rollout-phase phase-card-${phase.number}`}>
-              <span>Phase {phase.number}</span>
+              <span className="phase-badge" aria-label={`Phase ${phase.number}`}>
+                <small>Phase</small>
+                <strong>{phase.number}</strong>
+              </span>
               <div>
                 <h3>{phase.title}</h3>
                 <strong>{phase.places}</strong>
