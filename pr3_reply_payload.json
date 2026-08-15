@@ -1,0 +1,1 @@
+{"body": "You're right \u2014 the gitlink caused CI failures, so I removed the embedded gitlink and added openapi-generator to .gitignore to avoid CI breakage. If you'd prefer, I can add a proper .gitmodules mapping and reintroduce it as a submodule.", "in_reply_to": 3789032073}
