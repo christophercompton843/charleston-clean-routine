@@ -40,6 +40,7 @@
     "scripts",
     "tests",
     "vite.config.ts",
-    "drizzle.config.ts"
+  "drizzle.config.ts",
+  "openapi-generator"
   ]
 }
