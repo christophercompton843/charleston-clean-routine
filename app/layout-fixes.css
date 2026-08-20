@@ -1,237 +1,69 @@
 /* Targeted layout refinements for service area and complete routine sections. */
 
-/* Homepage hero: use the full-resolution Charleston front-door image directly. */
-.hero-visual {
-  background-color: var(--harbor-black);
-  background-image: url('/frontdoor.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
+/* Global section navigator */
+.site-menu { position: fixed; top: 51px; left: 18px; z-index: 150; }
+.site-menu > summary { width: 46px; height: 46px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid rgba(18,60,58,.13); border-radius: 50%; background: rgba(255,255,255,.94); box-shadow: 0 10px 28px rgba(4,30,29,.12); cursor: pointer; list-style: none; }
+.site-menu > summary::-webkit-details-marker { display: none; }
+.site-menu > summary span { width: 19px; height: 2px; border-radius: 2px; background: var(--harbor); transition: transform .2s ease, opacity .2s ease; }
+.site-menu[open] > summary span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-menu[open] > summary span:nth-child(2) { opacity: 0; }
+.site-menu[open] > summary span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.site-menu nav { position: absolute; top: 56px; left: 0; width: min(360px, calc(100vw - 36px)); max-height: calc(100vh - 125px); overflow-y: auto; padding: 22px; border: 1px solid rgba(18,60,58,.12); border-radius: 22px; background: rgba(255,255,255,.98); box-shadow: 0 28px 70px rgba(4,30,29,.2); }
+.site-menu-heading { padding: 2px 4px 16px; border-bottom: 1px solid var(--line); }
+.site-menu-heading span { display: block; margin-bottom: 5px; color: var(--sea); font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.site-menu-heading strong { color: var(--harbor); font-size: 17px; letter-spacing: -.025em; }
+.site-menu-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; padding-top: 10px; }
+.site-menu-links a { min-height: 39px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid rgba(18,60,58,.08); color: #344846; font-size: 11px; font-weight: 650; line-height: 1.25; }
+.site-menu-links a span { color: var(--sea); opacity: .7; }
+.site-menu-links a:hover, .site-menu-links a:focus-visible { color: var(--harbor); }
 
-.hero-visual > img {
-  opacity: 0;
-}
-
-/* Service rollout cards: keep phase labeling readable and subordinate to the area name. */
-.rollout-phase {
-  grid-template-columns: 82px 1fr;
-  gap: 16px;
-  align-items: start;
-  min-height: 0;
-  padding: 20px 22px;
-}
-
-.rollout-phase > .phase-badge {
-  width: 72px;
-  height: 30px;
-  padding: 0 10px;
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  border-radius: 999px;
-  color: var(--harbor-black);
-  line-height: 1;
-  letter-spacing: 0;
-  text-transform: none;
-  white-space: nowrap;
-}
-
-.rollout-phase > .phase-badge small {
-  display: inline;
-  font-size: 7px;
-  font-weight: 820;
-  letter-spacing: .08em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.rollout-phase > .phase-badge strong {
-  display: inline;
-  color: var(--harbor-black);
-  font-size: 12px;
-  font-weight: 850;
-  line-height: 1;
-}
-
+.hero-visual { background-color: var(--harbor-black); background-image: url('/frontdoor.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.hero-visual > img { opacity: 0; }
+.rollout-phase { grid-template-columns: 82px 1fr; gap: 16px; align-items: start; min-height: 0; padding: 20px 22px; }
+.rollout-phase > .phase-badge { width: 72px; height: 30px; padding: 0 10px; display: inline-flex; flex-direction: row; align-items: center; justify-content: center; gap: 5px; border-radius: 999px; color: var(--harbor-black); line-height: 1; letter-spacing: 0; text-transform: none; white-space: nowrap; }
+.rollout-phase > .phase-badge small { display: inline; font-size: 7px; font-weight: 820; letter-spacing: .08em; line-height: 1; text-transform: uppercase; }
+.rollout-phase > .phase-badge strong { display: inline; color: var(--harbor-black); font-size: 12px; font-weight: 850; line-height: 1; }
 .phase-card-1 > .phase-badge { background: #79b9ad; }
 .phase-card-2 > .phase-badge { background: var(--accent); }
 .phase-card-3 > .phase-badge { background: var(--sand); }
 .phase-card-4 > .phase-badge { background: #8caabb; }
-
-.rollout-phase h3 {
-  margin-top: 0;
-  margin-bottom: 7px;
-  font-size: 18px;
-  line-height: 1.15;
-}
-
-.rollout-phase strong {
-  font-size: 10px;
-  line-height: 1.5;
-}
-
-.rollout-phase p {
-  margin-top: 7px;
-  font-size: 10px;
-  line-height: 1.5;
-}
-
-/* Complete routine: remove the oversized decorative image and convert the steps into compact cards. */
-.process-analogy {
-  display: none;
-}
+.rollout-phase h3 { margin-top: 0; margin-bottom: 7px; font-size: 18px; line-height: 1.15; }
+.rollout-phase strong { font-size: 10px; line-height: 1.5; }
+.rollout-phase p { margin-top: 7px; font-size: 10px; line-height: 1.5; }
+.process-analogy { display: none; }
 
 @media (min-width: 1051px) {
-  .process-section {
-    padding-top: 70px;
-    padding-bottom: 72px;
-  }
-
-  .process-heading {
-    max-width: none;
-    display: grid;
-    grid-template-columns: minmax(330px, .8fr) minmax(420px, 1.2fr);
-    grid-template-areas:
-      "eyebrow copy"
-      "title copy";
-    column-gap: 72px;
-    align-items: end;
-  }
-
-  .process-heading .eyebrow {
-    grid-area: eyebrow;
-    margin-bottom: 10px;
-  }
-
-  .process-heading h2 {
-    grid-area: title;
-    font-size: clamp(42px, 3.7vw, 56px);
-    line-height: .98;
-  }
-
-  .process-heading > p:last-child {
-    grid-area: copy;
-    max-width: 580px;
-    margin: 0 0 3px;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .process-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 32px;
-  }
-
-  .process-grid li,
-  .process-grid li:first-child,
-  .process-grid li:nth-child(4) {
-    min-height: 0;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 42px 1fr;
-    grid-template-areas:
-      "number title"
-      "number body";
-    column-gap: 14px;
-    align-content: start;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 18px;
-    background: rgba(255,255,255,.045);
-  }
-
-  .step-number {
-    grid-area: number;
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
-    box-shadow: none;
-  }
-
-  .step-signal {
-    display: none;
-  }
-
-  .process-grid h3 {
-    grid-area: title;
-    margin: 2px 0 7px;
-    font-size: 22px;
-    line-height: 1;
-  }
-
-  .process-grid p {
-    grid-area: body;
-    max-width: none;
-    margin: 0;
-    font-size: 11px;
-    line-height: 1.55;
-  }
-
-  .process-finish {
-    margin-top: 12px;
-    padding: 16px 18px;
-    border-radius: 16px;
-  }
-
+  .process-section { padding-top: 70px; padding-bottom: 72px; }
+  .process-heading { max-width: none; display: grid; grid-template-columns: minmax(330px, .8fr) minmax(420px, 1.2fr); grid-template-areas: "eyebrow copy" "title copy"; column-gap: 72px; align-items: end; }
+  .process-heading .eyebrow { grid-area: eyebrow; margin-bottom: 10px; }
+  .process-heading h2 { grid-area: title; font-size: clamp(42px, 3.7vw, 56px); line-height: .98; }
+  .process-heading > p:last-child { grid-area: copy; max-width: 580px; margin: 0 0 3px; font-size: 14px; line-height: 1.6; }
+  .process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
+  .process-grid li, .process-grid li:first-child, .process-grid li:nth-child(4) { min-height: 0; padding: 20px; display: grid; grid-template-columns: 42px 1fr; grid-template-areas: "number title" "number body"; column-gap: 14px; align-content: start; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; background: rgba(255,255,255,.045); }
+  .step-number { grid-area: number; width: 36px; height: 36px; font-size: 16px; box-shadow: none; }
+  .step-signal { display: none; }
+  .process-grid h3 { grid-area: title; margin: 2px 0 7px; font-size: 22px; line-height: 1; }
+  .process-grid p { grid-area: body; max-width: none; margin: 0; font-size: 11px; line-height: 1.55; }
+  .process-finish { margin-top: 12px; padding: 16px 18px; border-radius: 16px; }
   .process-finish img { width: 30px; }
   .process-finish .button { min-height: 42px; padding-inline: 17px; }
 }
 
 @media (max-width: 1050px) and (min-width: 701px) {
-  .rollout-phase {
-    grid-template-columns: 78px 1fr;
-  }
-
-  .process-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 34px;
-  }
-
-  .process-grid li,
-  .process-grid li:first-child,
-  .process-grid li:nth-child(3),
-  .process-grid li:nth-child(4) {
-    min-height: 0;
-    padding: 20px;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 18px;
-    background: rgba(255,255,255,.045);
-  }
-
-  .step-signal {
-    height: 24px;
-    margin: 12px 0;
-  }
+  .rollout-phase { grid-template-columns: 78px 1fr; }
+  .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 34px; }
+  .process-grid li, .process-grid li:first-child, .process-grid li:nth-child(3), .process-grid li:nth-child(4) { min-height: 0; padding: 20px; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; background: rgba(255,255,255,.045); }
+  .step-signal { height: 24px; margin: 12px 0; }
 }
 
 @media (max-width: 700px) {
-  .hero-visual {
-    background-size: cover;
-    background-position: 62% center;
-  }
-
-  .rollout-phase {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 18px;
-  }
-
-  .rollout-phase > .phase-badge {
-    width: max-content;
-    min-width: 70px;
-  }
-
-  .process-grid {
-    margin-top: 30px;
-  }
-
-  .process-grid li,
-  .process-grid li:nth-child(3),
-  .process-grid li:nth-child(4) {
-    padding: 20px 0;
-  }
+  .site-menu { top: 47px; left: 12px; }
+  .site-menu > summary { width: 42px; height: 42px; }
+  .site-menu nav { top: 50px; width: min(330px, calc(100vw - 24px)); padding: 18px; }
+  .site-menu-links { grid-template-columns: 1fr; }
+  .hero-visual { background-size: cover; background-position: 62% center; }
+  .rollout-phase { grid-template-columns: 1fr; gap: 12px; padding: 18px; }
+  .rollout-phase > .phase-badge { width: max-content; min-width: 70px; }
+  .process-grid { margin-top: 30px; }
+  .process-grid li, .process-grid li:nth-child(3), .process-grid li:nth-child(4) { padding: 20px 0; }
 }
