@@ -1,5 +1,17 @@
 /* Targeted layout refinements for service area and complete routine sections. */
 
+/* Homepage hero: use the Charleston front-door image supplied for launch. */
+.hero-visual {
+  background-image: url('/charleston-front-door-hero.svg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.hero-visual > img {
+  opacity: 0;
+}
+
 /* Service rollout cards: keep phase labeling readable and subordinate to the area name. */
 .rollout-phase {
   grid-template-columns: 82px 1fr;
