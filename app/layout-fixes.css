@@ -1,11 +1,11 @@
 /* Targeted layout refinements for service area and complete routine sections. */
 
-/* Homepage hero: keep the Charleston front-door image near native resolution so it stays crisp. */
+/* Homepage hero: use the full-resolution Charleston front-door image directly. */
 .hero-visual {
   background-color: var(--harbor-black);
-  background-image: url('/charleston-front-door-hero.svg');
-  background-size: auto 100%;
-  background-position: right center;
+  background-image: url('/frontdoor.png');
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -210,7 +210,7 @@
 
 @media (max-width: 700px) {
   .hero-visual {
-    background-size: auto 100%;
+    background-size: cover;
     background-position: 62% center;
   }
 
