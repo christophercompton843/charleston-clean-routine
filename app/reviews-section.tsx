@@ -8,9 +8,10 @@ export default function ReviewsSection() {
             <h2>New business.<br />Real standards.</h2>
           </div>
           <p>
-            Charleston Clean Routine is newly launched, so we will never fill this space with
-            invented testimonials. Verified customer reviews will be added as our clients complete
-            service and share their experience.
+            ⭐⭐⭐⭐
+            Charleston Clean Routine did a fantastic job making my home shine. 
+            I highly recommend their services and am already looking forward to my next cleaning in two weeks. 
+            Thank you! – B. Kelley
           </p>
         </div>
 
