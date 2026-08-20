@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Netlify Form Definitions</title>
+</head>
+<body>
+  <!-- Static form definition used by Netlify's build-time form detection. -->
+  <form name="customer-review" method="POST" data-netlify="true" netlify-honeypot="website" hidden>
+    <input type="hidden" name="form-name" value="customer-review" />
+    <input type="text" name="displayName" />
+    <input type="email" name="email" />
+    <select name="service">
+      <option>Home cleaning</option>
+      <option>Apartment or condo cleaning</option>
+      <option>Deep cleaning</option>
+      <option>Move-in or move-out</option>
+      <option>Vacation-rental turnover</option>
+      <option>Refresh &amp; Reset</option>
+      <option>Deposit Ready Detail</option>
+    </select>
+    <select name="rating">
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select>
+    <textarea name="text"></textarea>
+    <input type="checkbox" name="displayConsent" value="yes" />
+    <input type="text" name="website" />
+  </form>
+</body>
+</html>
