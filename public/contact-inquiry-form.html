@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Contact Inquiry Form Definition</title></head>
+<body>
+  <!-- Static Netlify form definition for the client-rendered Next.js contact form. -->
+  <form name="contact-inquiry" data-netlify="true" netlify-honeypot="website" hidden>
+    <input type="hidden" name="form-name" value="contact-inquiry" />
+    <input name="firstName" type="text" />
+    <input name="lastName" type="text" />
+    <input name="email" type="email" />
+    <input name="phone" type="tel" />
+    <select name="topic">
+      <option>Residential cleaning</option>
+      <option>Vacation-rental turnover</option>
+      <option>Existing booking</option>
+      <option>Property or business partnership</option>
+      <option>Provider opportunity</option>
+      <option>Something else</option>
+    </select>
+    <textarea name="message"></textarea>
+    <input name="website" type="text" />
+  </form>
+</body>
+</html>
