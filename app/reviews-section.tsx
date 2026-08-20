@@ -71,7 +71,7 @@ export default function ReviewsSection() {
           </div>
         </div>
         <div className="founder-trust-visual">
-          <img src="/ccr-arrival-reset.jpg" alt="A bright Charleston-area home prepared after a professional cleaning reset" />
+          <img src="/Christopher Compton.png" alt="Christopher Compton, founder and owner of Charleston Clean Routine" />
           <div><span>Locally owned</span><strong>Charleston, South Carolina</strong></div>
         </div>
       </section>
@@ -79,34 +79,38 @@ export default function ReviewsSection() {
       <section className="home-proof-gallery" aria-labelledby="home-proof-title">
         <div className="home-proof-heading">
           <div>
-            <p className="eyebrow">Care you can picture</p>
-            <h2 id="home-proof-title">Clean homes.<br />Professional care.</h2>
+            <p className="eyebrow">Care across the Lowcountry</p>
+            <h2 id="home-proof-title">Every kind of Charleston home,<br />ready to enjoy.</h2>
           </div>
           <p>
-            More of the experience we are building: calm rooms, guest-ready spaces, and cleaning
-            professionals completing the details inside the home.
+            From modern condos and renovated downtown homes to coastal vacation properties,
+            the standard is the same: a clean, composed space that feels ready when you walk in.
           </p>
         </div>
         <div className="home-proof-grid">
           <figure className="home-proof-large">
-            <img src="/charleston-home-warm.jpg" alt="A clean and composed Charleston-style living room" />
-            <figcaption><span>Home reset</span><strong>Ready to live in again.</strong></figcaption>
+            <img src="/Freshly Cleaned Charleston Kitchen.png" alt="Freshly cleaned Charleston kitchen" />
+            <figcaption><span>Charleston homes</span><strong>Clean, composed, ready for real life.</strong></figcaption>
+          </figure>
+          <figure>
+            <img src="/Freshly cleaned Charleston bathroom.png" alt="Freshly cleaned Charleston bathroom" />
+            <figcaption><span>Detail work</span><strong>Bathrooms finished with care.</strong></figcaption>
+          </figure>
+          <figure>
+            <img src="/Freshly turned Charleston guest bedroom.png" alt="Freshly turned Charleston guest bedroom" />
+            <figcaption><span>Guest ready</span><strong>Prepared before the next arrival.</strong></figcaption>
+          </figure>
+          <figure className="home-proof-large">
+            <img src="/beach living room.png" alt="Clean Charleston-area beach home living room open to a pool and ocean view" />
+            <figcaption><span>Beach homes</span><strong>Turned, reset, and ready for the coast.</strong></figcaption>
+          </figure>
+          <figure>
+            <img src="/beach kitchen.png" alt="Clean Charleston-area beach home kitchen overlooking a pool and ocean" />
+            <figcaption><span>Vacation rentals</span><strong>A polished reset between stays.</strong></figcaption>
           </figure>
           <figure>
             <img src="/ccr-quality-check.jpg" alt="A cleaning professional completing a quality check inside a home" />
             <figcaption><span>Professional care</span><strong>Details checked before we leave.</strong></figcaption>
-          </figure>
-          <figure>
-            <img src="/ccr-guest-ready.jpg" alt="A clean coastal vacation rental prepared for arriving guests" />
-            <figcaption><span>Guest ready</span><strong>Prepared before the next arrival.</strong></figcaption>
-          </figure>
-          <figure>
-            <img src="/clean-routine-process-relevant.jpg" alt="A cleaning professional working in a bright residential kitchen" />
-            <figcaption><span>In the home</span><strong>Work you can see. Standards you can feel.</strong></figcaption>
-          </figure>
-          <figure>
-            <img src="/ccr-arrival-reset.jpg" alt="A bright home entry and living area after a thoughtful cleaning reset" />
-            <figcaption><span>The result</span><strong>Come home to calm.</strong></figcaption>
           </figure>
         </div>
       </section>
