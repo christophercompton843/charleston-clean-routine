@@ -8,45 +8,18 @@ export const metadata: Metadata = {
 
 export default function ServicePolicyPage() {
   return (
-    <PolicyShell
-      eyebrow="Service Policy"
-      title="A smoother clean begins before the door opens."
-      intro="These practical standards help customers, guests, properties, and cleaning professionals have a clear and safe experience."
-    >
-      <section>
-        <h2>Before the visit</h2>
-        <ul>
-          <li>Provide accurate address, parking, gate, front-desk, elevator, and entry information.</li>
-          <li>Secure pets and tell us about any animal or access consideration.</li>
-          <li>Put away cash, jewelry, medications, firearms, confidential material, and fragile or irreplaceable items.</li>
-          <li>Clear excessive clutter that would prevent access to surfaces or floors.</li>
-          <li>Identify the priority area and disclose unusual buildup, pests, biohazards, construction dust, or unsafe conditions in advance.</li>
-        </ul>
-      </section>
-      <section>
-        <h2>Scope and timing</h2>
-        <p>The confirmed booking controls the rooms, tasks, extras, arrival window, and estimated work time. An arrival window is not a promise that the provider will arrive at its first minute. If the property condition or requested work differs materially, we may propose an adjustment before continuing.</p>
-      </section>
-      <section>
-        <h2>Services requiring advance agreement</h2>
-        <p>Heavy lifting, high or exterior windows, biohazards, active infestations, mold remediation, exterior pressure washing, construction cleanup, and other specialized or unsafe work are not included unless expressly confirmed.</p>
-      </section>
-      <section>
-        <h2>Vacation rentals</h2>
-        <p>Hosts and property managers should provide the departure and arrival window, access method, property checklist, linen process, laundry expectations, owner-closet instructions, restocking list, damage-reporting preference, and an emergency contact. Same-day turnover acceptance depends on property scope and provider availability.</p>
-      </section>
-      <section>
-        <h2>The Charleston Finish</h2>
-        <p>Every full cleaning concludes with a final quality check and thoughtful room reset. When used, the complimentary peppermint is individually sealed, xylitol-free, and placed on a branded card in the kitchen or entry rather than on bedding. Ingredient information remains on the wrapper. Customers may opt out in advance, and property managers may request neutral or co-branded presentation.</p>
-      </section>
-      <section>
-        <h2>Refresh &amp; Reset and Deposit Ready Detail</h2>
-        <p>Refresh &amp; Reset is a focused visit rather than a full cleaning. Deposit Ready Detail is available with Move-In/Move-Out Cleaning and adds inside oven and refrigerator cleaning, inside cabinets and drawers, baseboards, extra attention to doors and trim, additional bathroom detailing, and accessible areas commonly reviewed during move-out inspections.</p>
-      </section>
-      <section>
-        <h2>After the visit</h2>
-        <p>Review the property promptly and report a concern with relevant photos or details. We will review the confirmed scope and, when appropriate, coordinate a corrective visit. Please do not arrange third-party correction before giving us a reasonable opportunity to assess the concern.</p>
-      </section>
+    <PolicyShell eyebrow="Service Policy" title="Clear expectations. Safer service. Better cleaning." intro="These standards define the service we provide, protect our customers and cleaning professionals, and help every visit stay focused on the work that was booked.">
+      <section><h2>Before the visit</h2><ul><li>Provide accurate address, parking, gate, front-desk, elevator, and entry information.</li><li>Secure pets and tell us about any animal or access consideration.</li><li>Put away cash, jewelry, medications, firearms, confidential material, and fragile or irreplaceable items.</li><li>Clear excessive clutter that would prevent safe access to surfaces or floors.</li><li>Disclose unusual buildup, pests, biohazards, construction dust, hazardous materials, or unsafe conditions in advance.</li></ul></section>
+      <section><h2>What your service includes</h2><p>The confirmed booking controls the rooms, tasks, extras, arrival window, and estimated work time. Only tasks specifically listed as included in the selected service or purchased as an add-on are part of the booked scope. Marketing descriptions, photographs, examples, or general references to cleaning do not expand the confirmed service scope.</p><p><a href="/whats-included">See exactly what is included in each cleaning service →</a></p></section>
+      <section><h2>Interior and safely reachable work only</h2><p>Charleston Clean Routine provides interior cleaning services. We do not perform exterior building cleaning, exterior window cleaning, pressure washing, roof or exterior-surface work, or work requiring tall ladders, extension ladders, scaffolding, or other elevated-access equipment. This includes high chandeliers, ceiling fans, fixtures, windows, ledges, or other surfaces that cannot be safely reached with approved standard equipment. If an item cannot be safely reached, it is outside the service scope even when that type of item would otherwise be included.</p></section>
+      <section><h2>Health and safety exclusions</h2><p>We do not perform any task or enter or continue working in a condition that presents, or may reasonably present, a health or safety risk to a cleaning professional. This includes human or animal waste, blood or other bodily fluids, needles or sharps, biohazards, active pest or insect infestations, significant mold or suspected hazardous substances, hazardous chemicals, drug-related materials, unsafe structural conditions, exposed electrical hazards, or dangerous clutter. Pet cages, crates, litter boxes, aquariums, terrariums, animal enclosures, and pet-waste cleanup are not serviced. The absence of a particular hazard from this list does not mean it is permitted.</p></section>
+      <section><h2>Provider right to decline or stop service</h2><p>Cleaning professionals may decline to begin, pause, or stop service when they reasonably believe a situation, property condition, person, animal, task, or requested activity presents a health, safety, security, harassment, property-damage, or other legitimate working-condition concern. Providers are not required to continue working where they reasonably feel unsafe, threatened, harassed, intimidated, or unable to perform the service safely and professionally. This discretion may not be exercised for unlawful discriminatory reasons.</p></section>
+      <section><h2>No caregiving or supervision</h2><p>Cleaning professionals are assigned to clean and must be able to focus on the confirmed work within the scheduled service period. At no time may a child, dependent adult, elderly person requiring care or supervision, or animal be left in the care, custody, or supervision of a Charleston Clean Routine cleaning professional. Providers are not babysitters, caregivers, companions, pet sitters, or responsible supervisors and may not be assigned unrelated personal or household duties while providing cleaning service.</p></section>
+      <section><h2>Changes or additional services after arrival</h2><p>We understand that life happens and additional needs sometimes arise. We will make every reasonable effort to accommodate changes when we can, but same-day additions cannot be guaranteed.</p><p>Cleaning professionals do not quote prices, provide estimates, negotiate charges, collect payment, authorize discounts, or independently approve paid additions or extensions of service. Requests to add a task, room, service, or additional cleaning time after arrival must be made through the Charleston Clean Routine client app, client portal, or by calling us directly. Charleston Clean Routine will review the request, confirm any price adjustment, and determine whether it can be accommodated without compromising safety, service quality, the current appointment, or later client commitments.</p><p>If an additional request cannot be completed during the current visit, we will work with the customer to identify another appropriate solution or schedule it for another time. Tips are welcome when permitted by the platform, but a tip may never be exchanged for work outside the confirmed service scope.</p></section>
+      <section><h2>Vacation rentals</h2><p>Hosts and property managers should provide the departure and arrival window, access method, property checklist, linen process, laundry expectations, owner-closet instructions, restocking list, damage-reporting preference, and an emergency contact. Same-day turnover acceptance depends on property scope and provider availability.</p></section>
+      <section><h2>The Charleston Finish</h2><p>Every full cleaning concludes with a final quality check and thoughtful room reset. When used, the complimentary peppermint is individually sealed, xylitol-free, and placed on a branded card in the kitchen or entry rather than on bedding. Ingredient information remains on the wrapper. Customers may opt out in advance, and property managers may request neutral or co-branded presentation.</p></section>
+      <section><h2>Refresh &amp; Reset and Deposit Ready Detail</h2><p>Refresh &amp; Reset is a focused visit rather than a full cleaning. Deposit Ready Detail is available with Move-In/Move-Out Cleaning and adds inside oven and refrigerator cleaning, inside cabinets and drawers, baseboards, extra attention to doors and trim, additional bathroom detailing, and accessible areas commonly reviewed during move-out inspections.</p></section>
+      <section><h2>After the visit</h2><p>Review the property promptly and report a concern with relevant photos or details. We will review the confirmed scope and, when appropriate, coordinate a corrective visit. Please do not arrange third-party correction before giving us a reasonable opportunity to assess the concern.</p></section>
     </PolicyShell>
   );
 }
