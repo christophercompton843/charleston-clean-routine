@@ -21,11 +21,11 @@ export default function PortfolioPopup() {
   return (
     <div className="portfolio-popover" role="dialog" aria-modal="false" aria-labelledby="portfolio-popover-title">
       <button className="portfolio-close" type="button" onClick={close} aria-label="Close portfolio invitation">×</button>
-      <p className="eyebrow">Multiple properties or client referrals?</p>
-      <h2 id="portfolio-popover-title">Let’s build one simpler plan.</h2>
-      <p>Owners, hosts, realtors, and property managers can request saved property scopes, coordinated communication, and a tailored service routine.</p>
+      <p className="eyebrow">Vacation rentals + property portfolios</p>
+      <h2 id="portfolio-popover-title">One less thing on your list.</h2>
+      <p>Plan recurring turnovers for the season or year, save each property’s preferences, and adjust the routine whenever your needs change. Sophisticated tools. Local people. Personal service.</p>
       <div>
-        <a className="button button-spark" href="/contact?topic=partnership" onClick={close}>Request portfolio care →</a>
+        <a className="button button-spark" href="/contact?topic=partnership" onClick={close}>Build my portfolio plan →</a>
         <button className="portfolio-later" type="button" onClick={close}>Not right now</button>
       </div>
     </div>
