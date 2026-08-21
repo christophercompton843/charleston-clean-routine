@@ -25,7 +25,7 @@ export default function PortfolioPopup() {
       <h2 id="portfolio-popover-title">One less thing on your list.</h2>
       <p>Plan recurring turnovers for the season or year, save each property’s preferences, and adjust the routine whenever your needs change. Sophisticated tools. Local people. Personal service.</p>
       <div>
-        <a className="button button-spark" href="/contact?topic=partnership" onClick={close}>Build my portfolio plan →</a>
+        <a className="button button-spark" href="/portfolio" onClick={close}>Explore portfolio care →</a>
         <button className="portfolio-later" type="button" onClick={close}>Not right now</button>
       </div>
     </div>
