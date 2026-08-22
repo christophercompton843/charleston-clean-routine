@@ -1,3 +1,5 @@
+import BrandIcon from "./brand-icon";
+
 const phases = [
   {
     number: "1",
@@ -49,7 +51,7 @@ export default function ServiceRolloutMap() {
     <section className="rollout-section" id="rollout-map">
       <div className="section-heading split-heading">
         <div>
-          <p className="eyebrow">Planned service rollout</p>
+          <p className="eyebrow icon-eyebrow"><BrandIcon name="service-area" />Planned service rollout</p>
           <h2>Starting east.<br />Growing deliberately.</h2>
         </div>
         <p>
