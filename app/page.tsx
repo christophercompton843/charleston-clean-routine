@@ -351,17 +351,17 @@ export default function Home() {
               <p>Surfaces checked, pillows and towels reset, rooms composed, and the final detail placed.</p>
             </article>
             <article>
-              <span>$99 · Focused visit</span>
+              <span>Custom-reviewed focused visit</span>
               <h3 className="icon-title icon-title-compact"><BrandIcon name="routine-clean" />Refresh &amp; Reset</h3>
               <p>A lighter visit between full cleanings for kitchens, baths, floors, straightening, and bed presentation.</p>
             </article>
             <article>
-              <span>$75 · Focused visit</span>
+              <span>Custom-reviewed focused visit</span>
               <h3 className="icon-title icon-title-compact"><BrandIcon name="guest-ready" />Guest-Ready Turndown</h3>
               <p>A final welcome-ready reset with bed presentation, towel placement, lighting, and a calm first impression.</p>
             </article>
             <article>
-              <span>$75 · Move-in/out add-on</span>
+              <span>$90 · Move-in/out add-on</span>
               <h3 className="icon-title icon-title-compact"><BrandIcon name="move-in-out" />Deposit Ready Detail</h3>
               <p>Inside appliances, cabinets and drawers, baseboards, doors, trim, and inspection-focused detailing for move-outs.</p>
             </article>
@@ -469,12 +469,12 @@ export default function Home() {
         </div>
         <div className="routine-value-copy">
           <p>
-            Start with your first clean from just <strong>$94</strong>. Then, keep your home
-            feeling calm, refreshed, and handled with a recurring Home Clean Routine
-            starting at <strong>$123 per month</strong>.
+            Zone pricing begins at <strong>$185</strong>. In our current Premium launch areas,
+            Home Routine Clean begins at <strong>$225</strong>, or $190 on the first eligible
+            recurring clean after LAUNCH35.
           </p>
           <p>
-            That’s about <strong>$4 a day</strong> for the comfort and peace of mind of a
+            That’s about <strong>$6 a day</strong> at the Value-zone starting price for the comfort and peace of mind of a
             professionally maintained home—while supporting a locally owned Charleston
             business.
           </p>
@@ -598,7 +598,7 @@ export default function Home() {
           <details open><summary>Do you clean apartments and condos?</summary><p>Yes. We clean Charleston-area apartments, condos, townhomes, and houses—from studios to larger full-service residences. Share any front-desk, parking, elevator, or building-access instructions when booking so arrival is smooth.</p></details>
           <details><summary>Do you clean Airbnbs and beach rental homes?</summary><p>Yes. We offer turnover cleaning for Charleston-area Airbnbs, vacation rentals, and beach houses. Each property is quoted around its size, guest window, checklist, and optional linen or restocking needs.</p></details>
           <details><summary>What is The Charleston Finish?</summary><p>It is our included closing ritual for every full cleaning: a final quality check, thoughtful room presentation, and a sealed, xylitol-free branded peppermint placed on a completion card in the kitchen or entry—not on bedding.</p></details>
-          <details><summary>Can I add a focused visit or move-out detail?</summary><p>Yes. Refresh &amp; Reset is a $99 focused visit between full cleanings, and Guest-Ready Turndown is a $75 welcome-ready visit. Deposit Ready Detail is a separate $75 Move-In/Move-Out add-on with inspection-focused work inside appliances, cabinets and drawers, baseboards, doors, and trim.</p></details>
+          <details><summary>Can I add a focused visit or move-out detail?</summary><p>Refresh &amp; Reset and Guest-Ready Turndown are available by scope review while their final operating assumptions are validated. Deposit Ready Detail is a separate $90 Move-In/Move-Out add-on with inspection-focused work inside appliances, cabinets and drawers, baseboards, doors, and trim.</p></details>
           <details><summary>When is my card charged?</summary><p>A temporary authorization may be placed up to 48 hours before service. The final card charge is processed after the cleaning is completed.</p></details>
           <details><summary>How does the $35 recurring-service offer work?</summary><p>New residential customers receive $35 off their initial cleaning when beginning weekly, every-other-week, or every-four-week recurring service. Enter code <strong>LAUNCH35</strong> at checkout. The initial cleaning must total at least $119. The offer is limited to one per household and cannot be combined with another promotion.</p></details>
           <details><summary>Who will clean my home?</summary><p>Every approved provider must demonstrate residential-cleaning experience, complete a background screening, and maintain independently verified liability insurance before accepting assignments.</p></details>
