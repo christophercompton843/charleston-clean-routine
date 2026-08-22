@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import BrandIcon from "./brand-icon";
 
 const BOOKING_URL = "https://www.jointidywise.com/book/charleston-clean-routine-7mjd3";
 
@@ -74,7 +75,7 @@ export default function PricePlanner() {
   return (
     <section className="planner-section simplified-booking" id="pricing-tool">
       <div className="planner-intro">
-        <p className="eyebrow">One simple path to a confirmed clean</p>
+        <p className="eyebrow icon-eyebrow"><BrandIcon name="estimate" />One simple path to a confirmed clean</p>
         <h2>Save your details. See your price. Book your time.</h2>
         <p>
           Ready when you are. Schedule your clean routine and get live pricing at any
@@ -82,14 +83,15 @@ export default function PricePlanner() {
           missed calls, or waiting required.
         </p>
         <ul>
-          <li><span aria-hidden="true">✓</span> No callback required</li>
-          <li><span aria-hidden="true">✓</span> Live pricing and availability next</li>
-          <li><span aria-hidden="true">✓</span> $35 off with code LAUNCH35 when you start recurring service</li>
+          <li><BrandIcon name="client-account" /> No callback required</li>
+          <li><BrandIcon name="book-schedule" /> Live pricing and availability next</li>
+          <li><BrandIcon name="discount" /> $35 off with code LAUNCH35 when you start recurring service</li>
         </ul>
       </div>
 
       <div className="planner-shell booking-start-card">
         <div className="booking-start-heading">
+          <BrandIcon name="estimate" className="booking-heading-icon" />
           <span>Step 1 of 2</span>
           <h3>Where should we send your booking details?</h3>
           <p>Next, choose your cleaning options and see the actual price and available times.</p>
@@ -97,11 +99,11 @@ export default function PricePlanner() {
         <form name="booking-start" data-netlify="true" netlify-honeypot="website" onSubmit={beginBooking}>
           <input type="hidden" name="form-name" value="booking-start" />
           <div className="contact-grid">
-            <label><span>First name</span><input required maxLength={80} autoComplete="given-name" value={values.firstName} onChange={(event) => update("firstName", event.target.value)} /></label>
-            <label><span>Last name</span><input required maxLength={80} autoComplete="family-name" value={values.lastName} onChange={(event) => update("lastName", event.target.value)} /></label>
-            <label><span>Email</span><input required maxLength={180} type="email" autoComplete="email" value={values.email} onChange={(event) => update("email", event.target.value)} /></label>
-            <label><span>Mobile <small>(optional)</small></span><input maxLength={40} type="tel" autoComplete="tel" value={values.phone} onChange={(event) => update("phone", event.target.value)} /></label>
-            <label><span>Service ZIP code</span><input required inputMode="numeric" pattern="[0-9]{5}" maxLength={5} autoComplete="postal-code" value={values.zipcode} onChange={(event) => update("zipcode", event.target.value.replace(/\D/g, ""))} /></label>
+            <label><span className="field-icon-label"><BrandIcon name="client-account" />First name</span><input required maxLength={80} autoComplete="given-name" value={values.firstName} onChange={(event) => update("firstName", event.target.value)} /></label>
+            <label><span className="field-icon-label"><BrandIcon name="client-account" />Last name</span><input required maxLength={80} autoComplete="family-name" value={values.lastName} onChange={(event) => update("lastName", event.target.value)} /></label>
+            <label><span className="field-icon-label"><BrandIcon name="email" />Email</span><input required maxLength={180} type="email" autoComplete="email" value={values.email} onChange={(event) => update("email", event.target.value)} /></label>
+            <label><span className="field-icon-label"><BrandIcon name="text-message" />Mobile <small>(optional)</small></span><input maxLength={40} type="tel" autoComplete="tel" value={values.phone} onChange={(event) => update("phone", event.target.value)} /></label>
+            <label><span className="field-icon-label"><BrandIcon name="service-area" />Service ZIP code</span><input required inputMode="numeric" pattern="[0-9]{5}" maxLength={5} autoComplete="postal-code" value={values.zipcode} onChange={(event) => update("zipcode", event.target.value.replace(/\D/g, ""))} /></label>
           </div>
           <label className="honeypot-field" aria-hidden="true">Website<input tabIndex={-1} autoComplete="off" value={values.website} onChange={(event) => update("website", event.target.value)} /></label>
           <label className="consent-check">

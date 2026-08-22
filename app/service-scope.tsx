@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import BrandIcon, { type BrandIconName } from "./brand-icon";
 
 type RoomKey = "kitchen" | "bathrooms" | "bedrooms" | "living";
 type ServiceKey = "routine" | "deep" | "move";
@@ -37,6 +38,7 @@ const rooms: Record<RoomKey, { title: string; icon: string; routine: string[]; d
 };
 
 const serviceNames: Record<ServiceKey, string> = { routine: "Routine Clean", deep: "Deep Clean", move: "Move-In / Move-Out" };
+const serviceIcons: Record<ServiceKey, BrandIconName> = { routine: "routine-clean", deep: "deep-clean", move: "move-in-out" };
 
 export default function ServiceScope() {
   const [service, setService] = useState<ServiceKey>("routine");
@@ -54,7 +56,7 @@ export default function ServiceScope() {
 
       <div className="scope-service-tabs" role="tablist" aria-label="Cleaning service">
         {(Object.keys(serviceNames) as ServiceKey[]).map((key) => (
-          <button key={key} type="button" className={service === key ? "active" : ""} onClick={() => setService(key)}>{serviceNames[key]}</button>
+          <button key={key} type="button" className={`scope-service-tab ${service === key ? "active" : ""}`} onClick={() => setService(key)}><BrandIcon name={serviceIcons[key]} />{serviceNames[key]}</button>
         ))}
       </div>
 

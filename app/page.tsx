@@ -4,6 +4,7 @@ import ReviewsSection from "./reviews-section";
 import ServiceRolloutMap from "./service-rollout-map";
 import Concierge from "./concierge";
 import PortfolioPopup from "./portfolio-popup";
+import BrandIcon, { type BrandIconName } from "./brand-icon";
 
 export const metadata = {
   title: "Charleston Clean Routine | Your Home, Handled",
@@ -20,31 +21,37 @@ const phoneUrl = "tel:+18436338648";
 const steps = [
   {
     number: "1",
+    icon: "services" as BrandIconName,
     title: "Find",
     body: "See exactly what we clean, where we launch, and what the service includes.",
   },
   {
     number: "2",
+    icon: "pricing" as BrandIconName,
     title: "Price",
     body: "Answer the details that affect the work and see your price online.",
   },
   {
     number: "3",
+    icon: "book-schedule" as BrandIconName,
     title: "Book",
     body: "Choose an available arrival window and confirm without waiting for a callback.",
   },
   {
     number: "4",
+    icon: "routine-clean" as BrandIconName,
     title: "Clean",
     body: "An experienced, screened, independently insured provider completes your routine.",
   },
   {
     number: "5",
+    icon: "secure-verified" as BrandIconName,
     title: "Check",
     body: "Every full clean closes with a final review and The Charleston Finish.",
   },
   {
     number: "6",
+    icon: "recurring-service" as BrandIconName,
     title: "Repeat",
     body: "Recurring visits stay on schedule, with account tools available when plans change.",
   },
@@ -53,16 +60,19 @@ const steps = [
 const principles = [
   {
     label: "Clarity",
+    icon: "pricing" as BrandIconName,
     title: "Know before you book.",
     body: "The service, price, arrival window, and payment process are clear from the start.",
   },
   {
     label: "Restraint",
+    icon: "app" as BrandIconName,
     title: "Only what matters.",
     body: "No quote chasing, unnecessary messages, or complicated account management.",
   },
   {
     label: "Care",
+    icon: "secure-verified" as BrandIconName,
     title: "Local and accountable.",
     body: "Charleston-focused coordination, professional standards, and human support when needed.",
   },
@@ -100,6 +110,7 @@ export default function Home() {
 
       <div className="site-chrome">
         <a className="launch-offer-bar" href="#recurring-offer">
+          <BrandIcon name="discount" className="brand-concept-icon-inline" />
           <strong>Launch offer</strong>
           <span>$35 off your first cleaning when you start a recurring plan.</span>
           <em>Claim offer →</em>
@@ -148,9 +159,9 @@ export default function Home() {
             <i>Offer details →</i>
           </a>
           <div className="hero-proof" aria-label="Service promises">
-            <p><strong>01</strong><span>Instant online<br />pricing</span></p>
-            <p><strong>02</strong><span>Screened, experienced<br />providers</span></p>
-            <p><strong>03</strong><span>Quality check +<br />recurring schedule</span></p>
+            <p><BrandIcon name="estimate" /><span>Instant online<br />pricing</span></p>
+            <p><BrandIcon name="provider-network" /><span>Screened, experienced<br />providers</span></p>
+            <p><BrandIcon name="secure-verified" /><span>Quality check +<br />recurring schedule</span></p>
           </div>
         </div>
 
@@ -170,10 +181,10 @@ export default function Home() {
       </section>
 
       <section className="confidence-strip" aria-label="What customers can expect">
-        <p><span>Price</span><strong>See the cost before you confirm.</strong></p>
-        <p><span>Provider</span><strong>Experience, background, and insurance verified.</strong></p>
-        <p><span>Quality</span><strong>Every full clean ends with The Charleston Finish.</strong></p>
-        <p><span>Routine</span><strong>Future visits stay scheduled and easy to manage.</strong></p>
+        <p><BrandIcon name="pricing" /><span>Price</span><strong>See the cost before you confirm.</strong></p>
+        <p><BrandIcon name="provider-network" /><span>Provider</span><strong>Experience, background, and insurance verified.</strong></p>
+        <p><BrandIcon name="secure-verified" /><span>Quality</span><strong>Every full clean ends with The Charleston Finish.</strong></p>
+        <p><BrandIcon name="recurring-service" /><span>Routine</span><strong>Future visits stay scheduled and easy to manage.</strong></p>
       </section>
 
       <section className="acquisition-loop" aria-labelledby="acquisition-loop-title">
@@ -186,7 +197,7 @@ export default function Home() {
         <ol className="acquisition-loop-steps">
           {steps.map((step) => (
             <li key={step.number}>
-              <span>{step.number.padStart(2, "0")}</span>
+              <BrandIcon name={step.icon} />
               <div><strong>{step.title}</strong><small>{step.body}</small></div>
             </li>
           ))}
@@ -214,10 +225,10 @@ export default function Home() {
           <h2>Simple on the surface.<br />Thoughtful underneath.</h2>
         </div>
         <div className="principle-grid">
-          {principles.map((principle, index) => (
+          {principles.map((principle) => (
             <article key={principle.label}>
               <div className="principle-topline">
-                <span className="principle-number">{index + 1}</span>
+                <BrandIcon name={principle.icon} />
                 <span className="principle-label">{principle.label}</span>
               </div>
               <h3>{principle.title}</h3>
@@ -274,7 +285,7 @@ export default function Home() {
             </div>
             <div className="service-copy">
               <p className="card-kicker">For residents</p>
-              <h3>Home Cleaning</h3>
+              <h3 className="icon-title"><BrandIcon name="routine-clean" />Home Cleaning</h3>
               <p>
                 One-time and recurring service for apartments, condos, houses,
                 and townhomes—with the price shown before you confirm.
@@ -293,7 +304,7 @@ export default function Home() {
             </div>
             <div className="service-copy">
               <p className="card-kicker">For hosts + property managers</p>
-              <h3>Rental Turnovers</h3>
+              <h3 className="icon-title"><BrandIcon name="vacation-rental" />Rental Turnovers</h3>
               <p>
                 Guest-ready cleaning for Airbnbs, vacation homes, and beach
                 rentals, shaped around the property and turnover window.
@@ -336,22 +347,22 @@ export default function Home() {
           <div className="finish-options">
             <article>
               <span>Included</span>
-              <h3>The Charleston Finish</h3>
+              <h3 className="icon-title icon-title-compact"><BrandIcon name="secure-verified" />The Charleston Finish</h3>
               <p>Surfaces checked, pillows and towels reset, rooms composed, and the final detail placed.</p>
             </article>
             <article>
               <span>$99 · Focused visit</span>
-              <h3>Refresh &amp; Reset</h3>
+              <h3 className="icon-title icon-title-compact"><BrandIcon name="routine-clean" />Refresh &amp; Reset</h3>
               <p>A lighter visit between full cleanings for kitchens, baths, floors, straightening, and bed presentation.</p>
             </article>
             <article>
               <span>$75 · Focused visit</span>
-              <h3>Guest-Ready Turndown</h3>
+              <h3 className="icon-title icon-title-compact"><BrandIcon name="guest-ready" />Guest-Ready Turndown</h3>
               <p>A final welcome-ready reset with bed presentation, towel placement, lighting, and a calm first impression.</p>
             </article>
             <article>
               <span>$75 · Move-in/out add-on</span>
-              <h3>Deposit Ready Detail</h3>
+              <h3 className="icon-title icon-title-compact"><BrandIcon name="move-in-out" />Deposit Ready Detail</h3>
               <p>Inside appliances, cabinets and drawers, baseboards, doors, trim, and inspection-focused detailing for move-outs.</p>
             </article>
           </div>
@@ -379,7 +390,7 @@ export default function Home() {
         <ol className="process-grid">
           {steps.map((step) => (
             <li key={step.number}>
-              <span className="step-number" aria-label={`Step ${step.number}`}>{step.number}</span>
+              <span className="step-number" aria-label={`Step ${step.number}`}><BrandIcon name={step.icon} /></span>
               <div className="step-signal"><i /></div>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
@@ -444,10 +455,10 @@ export default function Home() {
           <p>Choose a one-time reset or a recurring cadence that fits the way your household actually lives.</p>
         </div>
         <div className="rhythm-grid">
-          <article className="featured"><span>Most popular</span><h3>Every Other Week</h3><p>A dependable rhythm for kitchens, baths, floors, and dust.</p><i>Recommended</i></article>
-          <article><span>More frequent</span><h3>Weekly</h3><p>For active homes that want less buildup between visits.</p></article>
-          <article><span>Lighter cadence</span><h3>Every 4 Weeks</h3><p>A monthly reset that keeps the essentials from getting away.</p></article>
-          <article><span>As needed</span><h3>One-Time</h3><p>A single reset for a busy stretch, event, or move.</p></article>
+          <article className="featured"><span>Most popular</span><BrandIcon name="recurring-service" /><h3>Every Other Week</h3><p>A dependable rhythm for kitchens, baths, floors, and dust.</p><i>Recommended</i></article>
+          <article><span>More frequent</span><BrandIcon name="recurring-service" /><h3>Weekly</h3><p>For active homes that want less buildup between visits.</p></article>
+          <article><span>Lighter cadence</span><BrandIcon name="book-schedule" /><h3>Every 4 Weeks</h3><p>A monthly reset that keeps the essentials from getting away.</p></article>
+          <article><span>As needed</span><BrandIcon name="routine-clean" /><h3>One-Time</h3><p>A single reset for a busy stretch, event, or move.</p></article>
         </div>
       </section>
 
@@ -479,7 +490,7 @@ export default function Home() {
       </section>
 
       <section className="recurring-offer-section" id="recurring-offer" aria-labelledby="recurring-offer-title">
-        <div className="recurring-offer-value"><span>$</span><strong>35</strong><small>OFF</small></div>
+        <div className="recurring-offer-value"><BrandIcon name="discount" /><span>$</span><strong>35</strong><small>OFF</small></div>
         <div className="recurring-offer-copy">
           <p className="eyebrow">Recurring-service launch offer</p>
           <h2 id="recurring-offer-title">Start your routine.<br />Save on the first clean.</h2>
