@@ -62,6 +62,17 @@ button.addon-card { cursor:pointer; }
 .service-card .brand-concept-icon,.tool-card .brand-concept-icon,.login-card .brand-concept-icon { width:54px; height:54px; flex-basis:54px; }
 .planner-intro li .brand-concept-icon { width:36px; height:36px; flex-basis:36px; }
 
+/* Remove legacy prices that are not in the current canonical Platform Pricing catalog. */
+.routine-value-section { display:none; }
+.finish-options article:nth-child(2) > span,
+.finish-options article:nth-child(3) > span { font-size:0; }
+.finish-options article:nth-child(2) > span::after,
+.finish-options article:nth-child(3) > span::after { content:"Personalized pricing"; font-size:10px; }
+.finish-options article:nth-child(4) > span { font-size:0; }
+.finish-options article:nth-child(4) > span::after { content:"$90 · Move-in/out add-on"; font-size:10px; }
+.recurring-offer-action > small { font-size:0; }
+.recurring-offer-action > small::after { content:"Use code LAUNCH35 at checkout. First eligible recurring Routine Clean only; one offer per household."; font-size:10px; }
+
 @media (max-width:850px) {
   .choice-grid { grid-template-columns:1fr; }
   .choice-card { min-height:112px; display:grid; grid-template-columns:62px 1fr; grid-template-rows:auto auto; align-items:center; }
