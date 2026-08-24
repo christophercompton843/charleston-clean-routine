@@ -7,8 +7,7 @@ import {
   LAUNCH_DISCOUNT,
   PLATFORM_PRICING,
   PROPERTY_SIZES,
-  ZONE_OPTIONS,
-  type PricingZone,
+  type Frequency,
   type PropertySize,
   type ResidentialService,
 } from "./pricing-data";
@@ -21,8 +20,7 @@ const serviceOptions: Array<{ name: ResidentialService; label: string; icon: "ro
   { name: "Move-In / Move-Out Clean", label: "Move-In / Move-Out", icon: "move-in-out" },
 ];
 
-const frequencies = ["Single", "Monthly", "Bi-Weekly", "Weekly"] as const;
-type Frequency = (typeof frequencies)[number];
+const frequencies: Frequency[] = ["Single", "Monthly", "Bi-Weekly", "Weekly"];
 type Condition = "Excellent" | "Good" | "Fair" | "Needs Work / Very Dirty";
 
 type AddOns = {
@@ -45,11 +43,17 @@ const emptyAddOns: AddOns = {
   linens: 0,
 };
 
+function formatPrice(value: number) {
+  return value.toLocaleString("en-US", {
+    minimumFractionDigits: Number.isInteger(value) ? 0 : 2,
+    maximumFractionDigits: 2,
+  });
+}
+
 export default function PricePlanner() {
   const [firstName, setFirstName] = useState("");
   const [address, setAddress] = useState("");
   const [zipcode, setZipcode] = useState("");
-  const [zone, setZone] = useState<PricingZone>("Standard");
   const [service, setService] = useState<ResidentialService>("Home Routine Clean");
   const [propertySize, setPropertySize] = useState<PropertySize>(PROPERTY_SIZES[2]);
   const [frequency, setFrequency] = useState<Frequency>("Single");
@@ -62,10 +66,12 @@ export default function PricePlanner() {
   const effectiveService: ResidentialService = condition === "Fair" && service === "Home Routine Clean" ? "Home Deep Clean" : service;
   const requiresReview = condition === "Needs Work / Very Dirty";
 
-  const basePrice = PLATFORM_PRICING[effectiveService][propertySize][zone];
+  const effectiveFrequency: Frequency = effectiveService === "Move-In / Move-Out Clean" ? "Single" : frequency;
+  const availableFrequencies: Frequency[] = effectiveService === "Move-In / Move-Out Clean" ? ["Single"] : frequencies;
+  const basePrice = PLATFORM_PRICING[effectiveService][propertySize][effectiveFrequency] ?? PLATFORM_PRICING[effectiveService][propertySize].Single;
   const addOnTotal = useMemo(() => {
     return (
-      (addOns.depositReady ? ADD_ON_PRICING.depositReady.price : 0) +
+      (effectiveService === "Move-In / Move-Out Clean" && addOns.depositReady ? ADD_ON_PRICING.depositReady.price : 0) +
       (addOns.refrigerator ? ADD_ON_PRICING.refrigerator.price : 0) +
       (addOns.oven ? ADD_ON_PRICING.oven.price : 0) +
       (addOns.baseboards ? ADD_ON_PRICING.baseboards.price : 0) +
@@ -73,9 +79,9 @@ export default function PricePlanner() {
       addOns.laundry * ADD_ON_PRICING.laundry.price +
       addOns.linens * ADD_ON_PRICING.linens.price
     );
-  }, [addOns]);
+  }, [addOns, effectiveService]);
 
-  const recurringEligible = frequency !== "Single" && effectiveService === "Home Routine Clean";
+  const recurringEligible = effectiveFrequency !== "Single" && effectiveService !== "Move-In / Move-Out Clean";
   const displayedPrice = basePrice + addOnTotal;
   const firstVisitPrice = recurringEligible ? Math.max(0, displayedPrice - LAUNCH_DISCOUNT) : displayedPrice;
 
@@ -101,7 +107,7 @@ export default function PricePlanner() {
         <ul>
           <li><BrandIcon name="pricing" /> Prices use the current Charleston Clean Routine pricing schedule</li>
           <li><BrandIcon name="secure-verified" /> Contact information is optional until you want to save or book</li>
-          <li><BrandIcon name="discount" /> LAUNCH35 applies to the first eligible recurring Routine Clean</li>
+          <li><BrandIcon name="discount" /> LAUNCH35 applies to the first eligible recurring Routine or Deep Clean</li>
         </ul>
       </div>
 
@@ -117,14 +123,6 @@ export default function PricePlanner() {
           <div className="estimator-grid two-col">
             <label className="estimator-field"><span>Street address</span><input autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Service address" /></label>
             <label className="estimator-field"><span>ZIP code</span><input inputMode="numeric" maxLength={5} value={zipcode} onChange={(e) => setZipcode(e.target.value.replace(/\D/g, ""))} placeholder="29401" /></label>
-          </div>
-          <div className="choice-grid zone-grid">
-            {ZONE_OPTIONS.map((option) => (
-              <button key={option.zone} type="button" className={`choice-card ${zone === option.zone ? "selected" : ""}`} onClick={() => setZone(option.zone)}>
-                <BrandIcon name="service-area" className="choice-icon" />
-                <strong>{option.title}</strong><small>{option.places}</small>
-              </button>
-            ))}
           </div>
         </div>
 
@@ -145,7 +143,7 @@ export default function PricePlanner() {
           <span className="step-kicker">4 · Home details</span>
           <div className="estimator-grid two-col">
             <label className="estimator-field"><span>Bedrooms & bathrooms</span><select value={propertySize} onChange={(e) => setPropertySize(e.target.value as PropertySize)}>{PROPERTY_SIZES.map((size) => <option key={size}>{size}</option>)}</select></label>
-            <label className="estimator-field"><span>Frequency</span><select value={frequency} onChange={(e) => setFrequency(e.target.value as Frequency)}>{frequencies.map((item) => <option key={item}>{item}</option>)}</select></label>
+            <label className="estimator-field"><span>Frequency</span><select value={effectiveFrequency} onChange={(e) => setFrequency(e.target.value as Frequency)}>{availableFrequencies.map((item) => <option key={item}>{item}</option>)}</select></label>
           </div>
           <div className="condition-row">
             {(["Excellent", "Good", "Fair", "Needs Work / Very Dirty"] as Condition[]).map((item) => (
@@ -160,20 +158,20 @@ export default function PricePlanner() {
           <span className="step-kicker">5 · Optional add-ons</span>
           <div className="addon-grid">
             {([
-              ["depositReady", "Deposit Ready Detail", 90, "add-ons"],
-              ["refrigerator", "Inside refrigerator", 50, "kitchen"],
-              ["oven", "Inside oven", 50, "kitchen"],
-              ["baseboards", "Baseboards", 65, "deep-clean"],
-            ] as const).map(([key, label, price, icon]) => (
+              ["depositReady", ADD_ON_PRICING.depositReady.label, ADD_ON_PRICING.depositReady.price, "add-ons"],
+              ["refrigerator", ADD_ON_PRICING.refrigerator.label, ADD_ON_PRICING.refrigerator.price, "kitchen"],
+              ["oven", ADD_ON_PRICING.oven.label, ADD_ON_PRICING.oven.price, "kitchen"],
+              ["baseboards", ADD_ON_PRICING.baseboards.label, ADD_ON_PRICING.baseboards.price, "deep-clean"],
+            ] as const).map(([key, label, price, icon]) => key === "depositReady" && effectiveService !== "Move-In / Move-Out Clean" ? null : (
               <button key={key} type="button" className={`addon-card ${addOns[key] ? "selected" : ""}`} onClick={() => setAddOns((current) => ({ ...current, [key]: !current[key] }))}>
                 <img src={`/icons/${icon}.png`} alt="" />
                 <span><strong>{label}</strong><small>+${price}</small></span>
               </button>
             ))}
             {([
-              ["windows", "Interior windows", 20, "window-cleaning"],
-              ["laundry", "Wash & fold", 50, "laundry"],
-              ["linens", "Change linens", 25, "bedroom"],
+              ["windows", ADD_ON_PRICING.windows.label, ADD_ON_PRICING.windows.price, "window-cleaning"],
+              ["laundry", ADD_ON_PRICING.laundry.label, ADD_ON_PRICING.laundry.price, "laundry"],
+              ["linens", ADD_ON_PRICING.linens.label, ADD_ON_PRICING.linens.price, "bedroom"],
             ] as const).map(([key, label, price, icon]) => (
               <div className="addon-card quantity-card" key={key}>
                 <img src={`/icons/${icon}.png`} alt="" />
@@ -192,9 +190,9 @@ export default function PricePlanner() {
           <div className="estimate-result" aria-live="polite">
             <BrandIcon name="estimate" className="result-icon" />
             <span>Estimated service price</span>
-            <strong>${displayedPrice}</strong>
-            {recurringEligible && <p><b>First eligible recurring visit with LAUNCH35: ${firstVisitPrice}</b><br />Regular recurring visit price: ${displayedPrice}</p>}
-            <p className="estimate-disclaimer">Estimate is based on the property, condition, service, zone and add-ons you selected. Final price assumes those details are accurate. Material differences in property condition, size or requested scope may require an adjustment before work begins.</p>
+            <strong>${formatPrice(displayedPrice)}</strong>
+            {recurringEligible && <p><b>First eligible recurring visit with LAUNCH35: ${formatPrice(firstVisitPrice)}</b><br />Regular recurring visit price: ${formatPrice(displayedPrice)}</p>}
+            <p className="estimate-disclaimer">Estimate is based on the property, condition, service, frequency and add-ons you selected. Final price assumes those details are accurate. Material differences in property condition, size or requested scope may require an adjustment before work begins.</p>
             <div className="save-estimate">
               <h4>Want to keep this estimate?</h4>
               <p>Add contact information only if you want to carry your details into booking.</p>

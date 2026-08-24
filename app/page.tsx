@@ -469,14 +469,12 @@ export default function Home() {
         </div>
         <div className="routine-value-copy">
           <p>
-            Start with your first clean from just <strong>$94</strong>. Then, keep your home
-            feeling calm, refreshed, and handled with a recurring Home Clean Routine
-            starting at <strong>$123 per month</strong>.
+            Start an eligible recurring Home Routine Clean with a first visit from <strong>$115</strong>.
+            Regular recurring Routine Clean visits begin at <strong>$150 per visit</strong>.
           </p>
           <p>
-            That’s about <strong>$4 a day</strong> for the comfort and peace of mind of a
-            professionally maintained home—while supporting a locally owned Charleston
-            business.
+            See the exact visit price before booking, with the approved recurring cadence
+            already reflected—while supporting a locally owned Charleston business.
           </p>
           <div className="routine-value-close">
             <span>Simple pricing.</span><span>Dependable care.</span><span>Your home, handled.</span>
@@ -499,7 +497,7 @@ export default function Home() {
         </div>
         <div className="recurring-offer-action">
           <a className="button button-spark" href={bookingUrl}>Choose my recurring plan →</a>
-          <small>Enter code <strong>LAUNCH35</strong> at checkout. Valid on an initial recurring-plan cleaning of $119 or more. Cannot be combined with another promotion.</small>
+          <small>Enter code <strong>LAUNCH35</strong> at checkout. Valid on an initial eligible recurring Home Routine or Home Deep cleaning. Cannot be combined with another promotion.</small>
         </div>
       </section>
 
@@ -600,7 +598,7 @@ export default function Home() {
           <details><summary>What is The Charleston Finish?</summary><p>It is our included closing ritual for every full cleaning: a final quality check, thoughtful room presentation, and a sealed, xylitol-free branded peppermint placed on a completion card in the kitchen or entry—not on bedding.</p></details>
           <details><summary>Can I add a focused visit or move-out detail?</summary><p>Yes. Refresh &amp; Reset is a $99 focused visit between full cleanings, and Guest-Ready Turndown is a $75 welcome-ready visit. Deposit Ready Detail is a separate $75 Move-In/Move-Out add-on with inspection-focused work inside appliances, cabinets and drawers, baseboards, doors, and trim.</p></details>
           <details><summary>When is my card charged?</summary><p>A temporary authorization may be placed up to 48 hours before service. The final card charge is processed after the cleaning is completed.</p></details>
-          <details><summary>How does the $35 recurring-service offer work?</summary><p>New residential customers receive $35 off their initial cleaning when beginning weekly, every-other-week, or every-four-week recurring service. Enter code <strong>LAUNCH35</strong> at checkout. The initial cleaning must total at least $119. The offer is limited to one per household and cannot be combined with another promotion.</p></details>
+          <details><summary>How does the $35 recurring-service offer work?</summary><p>New residential customers receive $35 off their initial cleaning when beginning weekly, every-other-week, or every-four-week recurring service. Enter code <strong>LAUNCH35</strong> at checkout. The offer is limited to one per household and cannot be combined with another promotion.</p></details>
           <details><summary>Who will clean my home?</summary><p>Every approved provider must demonstrate residential-cleaning experience, complete a background screening, and maintain independently verified liability insurance before accepting assignments.</p></details>
           <details><summary>Can I reschedule or cancel online?</summary><p>Yes. Changes made more than 24 hours before the appointment are free. A $35 rescheduling fee or the applicable late-cancellation fee may apply inside the 24-hour window.</p></details>
           <details><summary>What areas do you serve?</summary><p>We serve Charleston and nearby communities based on provider coverage. Enter your service address when booking, or contact us to confirm coverage for a vacation-rental property.</p></details>
