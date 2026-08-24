@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import CustomerPageShell from "../../customer-page-shell";
 
@@ -19,7 +20,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const schema = { "@context": "https://schema.org", "@type": "Service", name: service.title, description: service.description, provider: { "@id": "https://charlestoncleanroutine.com/#business" }, areaServed: { "@type": "City", name: "Charleston", containedInPlace: { "@type": "State", name: "South Carolina" } }, url: `https://charlestoncleanroutine.com/services/${slug}` };
   return <CustomerPageShell eyebrow={service.eyebrow} title={service.title} intro={service.intro}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-    <section className="contact-aside"><p className="eyebrow">Your home, handled.</p><h2>{service.heading}</h2><p>{service.copy}</p><a className="button button-small" href="/#pricing-tool">Get my live price →</a></section>
-    <aside className="service-area-aside"><p className="eyebrow">Local coverage</p><h2>Charleston-area service.</h2><p>Launching first in Mount Pleasant, Daniel Island, Sullivan&apos;s Island, and Isle of Palms, with planned expansion across the Charleston area.</p><a href="/service-area">Check service at my address →</a></aside>
+    <section className="contact-aside"><p className="eyebrow">Your home, handled.</p><h2>{service.heading}</h2><p>{service.copy}</p><Link className="button button-small" href="/#pricing-tool">Get my live price →</Link></section>
+    <aside className="service-area-aside"><p className="eyebrow">Local coverage</p><h2>Charleston-area service.</h2><p>Launching first in Mount Pleasant, Daniel Island, Sullivan&apos;s Island, and Isle of Palms, with planned expansion across the Charleston area.</p><Link href="/service-area">Check service at my address →</Link></aside>
   </CustomerPageShell>;
 }

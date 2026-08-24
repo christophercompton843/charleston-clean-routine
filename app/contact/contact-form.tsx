@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 
 const topics = [
   "Residential cleaning",
@@ -14,21 +14,19 @@ const topics = [
 export default function ContactForm() {
   const [state, setState] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [error, setError] = useState("");
-  const [topic, setTopic] = useState("");
-
-  useEffect(() => {
+  const [topic, setTopic] = useState(() => {
+    if (typeof window === "undefined") return "";
     const requested = new URLSearchParams(window.location.search).get("topic");
-    if (requested === "provider") setTopic("Provider opportunity");
-    if (requested === "partnership") setTopic("Property or business partnership");
-  }, []);
+    if (requested === "provider") return "Provider opportunity";
+    if (requested === "partnership") return "Property or business partnership";
+    return "";
+  });
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setState("sending");
     setError("");
     const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
-
     try {
       const formData = new FormData(form);
       formData.set("form-name", "contact-inquiry");

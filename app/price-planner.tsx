@@ -60,8 +60,6 @@ export default function PricePlanner() {
   const [condition, setCondition] = useState<Condition>("Good");
   const [addOns, setAddOns] = useState<AddOns>(emptyAddOns);
   const [showEstimate, setShowEstimate] = useState(false);
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
 
   const effectiveService: ResidentialService = condition === "Fair" && service === "Home Routine Clean" ? "Home Deep Clean" : service;
   const requiresReview = condition === "Needs Work / Very Dirty";
@@ -69,6 +67,7 @@ export default function PricePlanner() {
   const effectiveFrequency: Frequency = effectiveService === "Move-In / Move-Out Clean" ? "Single" : frequency;
   const availableFrequencies: Frequency[] = effectiveService === "Move-In / Move-Out Clean" ? ["Single"] : frequencies;
   const basePrice = PLATFORM_PRICING[effectiveService][propertySize][effectiveFrequency] ?? PLATFORM_PRICING[effectiveService][propertySize].Single;
+  if (basePrice == null) throw new Error(`No published price for ${effectiveService}, ${propertySize}, ${effectiveFrequency}.`);
   const addOnTotal = useMemo(() => {
     return (
       (effectiveService === "Move-In / Move-Out Clean" && addOns.depositReady ? ADD_ON_PRICING.depositReady.price : 0) +
@@ -84,15 +83,6 @@ export default function PricePlanner() {
   const recurringEligible = effectiveFrequency !== "Single" && effectiveService !== "Move-In / Move-Out Clean";
   const displayedPrice = basePrice + addOnTotal;
   const firstVisitPrice = recurringEligible ? Math.max(0, displayedPrice - LAUNCH_DISCOUNT) : displayedPrice;
-
-  const bookingLink = useMemo(() => {
-    const url = new URL(BOOKING_URL);
-    if (firstName) url.searchParams.set("f_name", firstName.trim());
-    if (email) url.searchParams.set("email", email.trim().toLowerCase());
-    if (phone) url.searchParams.set("phone", phone.replace(/\D/g, ""));
-    if (zipcode) url.searchParams.set("zipcode", zipcode);
-    return url.toString();
-  }, [email, firstName, phone, zipcode]);
 
   function increment(key: "windows" | "laundry" | "linens", delta: number) {
     setAddOns((current) => ({ ...current, [key]: Math.max(0, current[key] + delta) }));
@@ -194,14 +184,10 @@ export default function PricePlanner() {
             {recurringEligible && <p><b>First eligible recurring visit with LAUNCH35: ${formatPrice(firstVisitPrice)}</b><br />Regular recurring visit price: ${formatPrice(displayedPrice)}</p>}
             <p className="estimate-disclaimer">Estimate is based on the property, condition, service, frequency and add-ons you selected. Final price assumes those details are accurate. Material differences in property condition, size or requested scope may require an adjustment before work begins.</p>
             <div className="save-estimate">
-              <h4>Want to keep this estimate?</h4>
-              <p>Add contact information only if you want to carry your details into booking.</p>
-              <div className="estimator-grid two-col">
-                <label className="estimator-field"><span>Email</span><input type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} /></label>
-                <label className="estimator-field"><span>Mobile</span><input type="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} /></label>
-              </div>
-              <a className="button" href={bookingLink}>Book this service →</a>
-              <p className="booking-availability-note">If the booking calendar shows no available time, contact us rather than starting over. Your estimate remains visible on this page.</p>
+              <h4>Ready to choose live availability?</h4>
+              <p>Continue to the secure booking page to select your service, arrival time, and enter the contact details needed for the appointment.</p>
+              <a className="button" href={BOOKING_URL}>Continue to live booking →</a>
+              <p className="booking-availability-note">The booking page confirms the live service price and availability. If no suitable time appears, contact us rather than starting over; your estimate remains visible here.</p>
             </div>
           </div>
         )}

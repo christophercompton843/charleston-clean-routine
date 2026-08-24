@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ServiceScope from "../service-scope";
 
 export const metadata: Metadata = {
@@ -10,8 +11,8 @@ export default function WhatsIncludedPage() {
   return (
     <main className="scope-page">
       <header className="scope-page-header">
-        <a href="/" aria-label="Charleston Clean Routine home"><img src="/charleston-clean-routine-logo.svg" alt="Charleston Clean Routine" /></a>
-        <nav aria-label="Service scope navigation"><a href="/">Home</a><a href="/#pricing-tool">Get my price</a><a href="/service-policy">Service Policy</a></nav>
+        <Link href="/" aria-label="Charleston Clean Routine home"><img src="/charleston-clean-routine-logo.svg" alt="Charleston Clean Routine" /></Link>
+        <nav aria-label="Service scope navigation"><Link href="/">Home</Link><Link href="/#pricing-tool">Get my price</Link><Link href="/service-policy">Service Policy</Link></nav>
       </header>
       <ServiceScope />
     </main>
