@@ -1,6 +1,8 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+
+const providerApplicationUrl = "https://form.jotform.com/262283439241053";
 
 const topics = [
   "Residential cleaning",
@@ -17,10 +19,22 @@ export default function ContactForm() {
   const [topic, setTopic] = useState(() => {
     if (typeof window === "undefined") return "";
     const requested = new URLSearchParams(window.location.search).get("topic");
-    if (requested === "provider") return "Provider opportunity";
     if (requested === "partnership") return "Property or business partnership";
     return "";
   });
+
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("topic");
+    if (requested === "provider") window.location.replace(providerApplicationUrl);
+  }, []);
+
+  function changeTopic(value: string) {
+    if (value === "Provider opportunity") {
+      window.location.assign(providerApplicationUrl);
+      return;
+    }
+    setTopic(value);
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -64,7 +78,7 @@ export default function ContactForm() {
         <label><span>Last name</span><input name="lastName" autoComplete="family-name" required maxLength={80} /></label>
         <label><span>Email</span><input name="email" type="email" autoComplete="email" required maxLength={180} /></label>
         <label><span>Mobile <small>(optional)</small></span><input name="phone" type="tel" autoComplete="tel" maxLength={40} /></label>
-        <label className="contact-form-wide"><span>What can we help with?</span><select name="topic" required value={topic} onChange={(event) => setTopic(event.target.value)}><option value="" disabled>Choose one</option>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>
+        <label className="contact-form-wide"><span>What can we help with?</span><select name="topic" required value={topic} onChange={(event) => changeTopic(event.target.value)}><option value="" disabled>Choose one</option>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>
         <label className="contact-form-wide"><span>Message</span><textarea name="message" rows={6} minLength={10} maxLength={1500} required placeholder="Tell us what would help us respond clearly." /></label>
       </div>
       <label className="honeypot-field" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
