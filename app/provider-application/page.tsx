@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Provider Access | Charleston Clean Routine",
-  description: "Access the Charleston Clean Routine provider portal.",
+  title: "Provider Application | Charleston Clean Routine",
+  description: "Apply to join the Charleston Clean Routine provider network.",
 };
 
-const providerPortalUrl = "https://charlestoncleanroutine.com/login";
+const providerApplicationUrl = "https://form.jotform.com/262283439241053";
 
 export default function ProviderApplicationPage() {
-  redirect(providerPortalUrl);
+  redirect(providerApplicationUrl);
 }
