@@ -122,6 +122,17 @@ export default function PricePlanner() {
             <label className="estimator-field"><span>Bedrooms & bathrooms</span><select value={propertySize} onChange={(e) => setPropertySize(e.target.value as PropertySize)}>{PROPERTY_SIZES.map((size) => <option key={size}>{size}</option>)}</select></label>
             <label className="estimator-field"><span>Frequency</span><select value={effectiveFrequency} onChange={(e) => setFrequency(e.target.value as Frequency)}>{availableFrequencies.map((item) => <option key={item}>{item}</option>)}</select></label>
           </div>
+          {effectiveFrequency !== "Single" && effectiveService === "Home Routine Clean" && (
+            <div className="founding-routine-note estimator-founding-note">
+              <span>Founding Routine</span>
+              <p>
+                Recurring routines established during the founding enrollment period
+                receive access to a premium recurring-service benefit. A limited number
+                will also receive the Charleston Finish scent experience with every
+                recurring visit for the life of that routine.
+              </p>
+            </div>
+          )}
           <div className="condition-row">
             {(["Excellent", "Good", "Fair", "Needs Work / Very Dirty"] as Condition[]).map((item) => (
               <button key={item} type="button" className={`condition-button ${condition === item ? "selected" : ""}`} onClick={() => setCondition(item)}>{item}</button>
