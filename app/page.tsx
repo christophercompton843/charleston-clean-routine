@@ -126,9 +126,11 @@ export default function Home() {
                 <span>Founding Routine</span>
                 <p>
                   Recurring routines established during the founding enrollment period
-                  receive access to a premium recurring-service benefit. A limited number
-                  of qualifying routines will also receive the Charleston Finish scent
-                  experience with every recurring visit for the life of that routine.
+                  receive access to a premium recurring-service benefit. A very limited
+                  number of qualifying routines will also receive the Charleston Finish
+                  Scent Experience with every recurring visit for the life of that routine.
+                  If that introductory experience is no longer available, it can still be
+                  added at any time as a paid enhancement for one visit or for every recurring visit.
                 </p>
               </div>
               <div className="hero-actions">
