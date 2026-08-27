@@ -56,7 +56,6 @@ export const ADD_ON_PRICING = {
   linens: { label: "Change linens — additional bed", price: 20, unit: "per additional bed" },
 } as const;
 
-export const LAUNCH_DISCOUNT = 35;
 
 export const PROPERTY_SIZES = Object.keys(PLATFORM_PRICING["Home Routine Clean"]) as PropertySize[];
 
