@@ -29,12 +29,13 @@ function BrandLogo({ footer = false, reversed = false }: { footer?: boolean; rev
 }
 
 const processSteps = [
-  ["1", "Choose", "Select the service that fits your home, rental, Airbnb, or portfolio."],
-  ["2", "Understand", "See exactly what is included, what can be added, and what each service level means."],
-  ["3", "Price", "Residential customers see an instant price online. Portfolio clients build a clear property plan."],
-  ["4", "Book", "Choose an available time and confirm without waiting for a callback."],
-  ["5", "We handle it", "Your provider follows the confirmed checklist and property instructions."],
-  ["6", "Know it’s done", "Completion is documented. If something needs attention, we tell you. If it doesn’t, we don’t create noise."],
+  ["1", "Your Choice", "Begin with the kind of property care you need: Home, Vacation Rental, Airbnb, or Portfolio Care."],
+  ["2", "The Details", "Explore the rooms, scope, and specific work behind the service before you commit."],
+  ["3", "Service Levels", "Compare the levels of care and understand what changes from one to the next."],
+  ["4", "The Options", "Add only the enhancements, frequency, and property-specific details that matter to you."],
+  ["5", "Our Promise", "Know the standard behind the service: thoughtful communication, defined expectations, and accountable completion."],
+  ["6", "Build Your Routine", "Configure the service, see the applicable price, choose your timing, and book."],
+  ["7", "What to Expect", "See what happens before, during, and after the visit so there is no uncertainty once you book."],
 ];
 
 export default function Home() {
@@ -46,10 +47,10 @@ export default function Home() {
         <header className="site-header">
           <BrandLogo />
           <nav aria-label="Primary navigation">
-            <a href="#home-cleaning">Home</a>
-            <a href="#vacation-rental-cleaning">Vacation Rental</a>
-            <a href="#airbnb-care">Airbnb</a>
-            <a href="#portfolio-partners">Portfolio Care</a>
+            <a href="#your-choice">Your Choice</a>
+            <a href="#whats-included">The Details</a>
+            <a href="#our-story">Our Promise</a>
+            <a href="#how-it-works">What to Expect</a>
           </nav>
           <div className="header-actions">
             <a className="header-contact" href={phoneUrl} aria-label="Call Charleston Clean Routine at 843-633-8648">
@@ -62,21 +63,21 @@ export default function Home() {
 
       <section className="hero" id="main-content">
         <div className="hero-copy">
-          <p className="eyebrow eyebrow-light"><span /> Home + property care · Charleston</p>
+          <p className="eyebrow eyebrow-light"><span /> The Charleston Standard of Care</p>
           <h1>Your home,<br /><span>handled.</span></h1>
           <p className="hero-lede">
-            Clear service. Immediate residential pricing. Thoughtful communication.
-            Meticulous standards. Everything you need to understand, price, and book
-            your cleaning—without waiting for someone to call you back.
+            Thoughtful home and property care designed for people who want to know
+            exactly what they are choosing, what it includes, what happens next,
+            and how the standard is carried through to completion.
           </p>
           <div className="hero-actions">
-            <a className="button button-spark" href="#pricing-tool">Get My Instant Price</a>
-            <a className="button button-ghost" href="#services">Explore Services</a>
+            <a className="button button-spark" href="#pricing-tool">Build Your Routine</a>
+            <a className="button button-ghost" href="#your-choice">Your Choice</a>
           </div>
-          <div className="hero-proof" aria-label="What customers can expect">
-            <p><span>Clear</span><strong>Know what you’re booking.</strong></p>
-            <p><span>Immediate</span><strong>See residential pricing now.</strong></p>
-            <p><span>Verified</span><strong>Know what was completed.</strong></p>
+          <div className="hero-proof" aria-label="Charleston Clean Routine experience">
+            <p><span>01</span><strong>See the standard.</strong></p>
+            <p><span>02</span><strong>Build what fits.</strong></p>
+            <p><span>03</span><strong>Know what follows.</strong></p>
           </div>
         </div>
 
@@ -90,16 +91,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="promise-bar" aria-label="Charleston Clean Routine approach">
-        <span className="promise-intro">Designed around what you need</span>
-        <div><p>Understand.</p><i /><p>Price.</p><i /><p>Book.</p><i /><p>Done.</p></div>
-      </section>
+      <nav className="journey-bar" aria-label="Your Charleston Clean Routine journey">
+        <a href="#your-choice"><span>01</span>Your Choice</a>
+        <a href="#whats-included"><span>02</span>The Details</a>
+        <a href="#whats-included"><span>03</span>Service Levels</a>
+        <a href="#pricing-tool"><span>04</span>The Options</a>
+        <a href="#our-story"><span>05</span>Our Promise</a>
+        <a href="#pricing-tool"><span>06</span>Build Your Routine</a>
+        <a href="#how-it-works"><span>07</span>What to Expect</a>
+      </nav>
 
-      <section className="services-section" id="services" aria-labelledby="services-title">
+      <section className="services-section" id="your-choice" aria-labelledby="services-title">
         <div className="section-heading split-heading">
           <div>
-            <p className="eyebrow">Choose what we’re caring for</p>
-            <h2 id="services-title">Four needs.<br />One clear standard.</h2>
+            <p className="eyebrow">Your Choice</p>
+            <h2 id="services-title">Start with what<br />you need handled.</h2>
           </div>
           <p>
             Start with the property in front of you. Each service area explains
