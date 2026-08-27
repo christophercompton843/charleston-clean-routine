@@ -17,6 +17,10 @@
   <g
      transform="matrix(1.7,0,0,1.7,80,70)"
      id="g8">
+    <g opacity="0.18" transform="translate(3 3)">
+      <path d="M 145,48 C 133,36 116,29 96,29 57,29 29,57 29,97 c 0,40 28,68 68,68 22,0 40,-8 53,-23" fill="none" stroke="#2F6F68" stroke-width="24" stroke-linecap="round" />
+      <path d="m 78,102 20,20 56,-57" fill="none" stroke="#8CC2B8" stroke-width="17" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
     <path
        d="M 145,48 C 133,36 116,29 96,29 57,29 29,57 29,97 c 0,40 28,68 68,68 22,0 40,-8 53,-23"
        fill="none"
