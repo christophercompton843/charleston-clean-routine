@@ -174,11 +174,13 @@ export default function Home() {
               <span>Airbnb</span>
             </div>
             <div className="service-copy">
-              <p className="card-kicker">For hosts managing guest stays between check-in and checkout</p>
+              <p className="card-kicker">For hosts who want ongoing property care already in place</p>
               <h3>Airbnb Care</h3>
               <p>
-                Turnover-focused cleaning and guest readiness between stays, with linen setup,
-                restocking, property notes, issue reporting, and deeper resets available when needed.
+                Set Airbnb Care as a recurring service so your property has an established cleaning
+                routine in place. Adjust the frequency through the client portal as rental activity
+                changes throughout the year—more often during high-demand periods, less often when
+                bookings slow—while keeping the same care structure ready when you need it.
               </p>
               <div className="service-tags"><span>Turnover</span><span>Bed Setup</span><span>Restocking</span><span>Reporting</span></div>
               <div className="hero-actions">
