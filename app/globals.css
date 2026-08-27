@@ -1863,3 +1863,78 @@ footer { padding: 72px max(28px, calc((100vw - 1320px) / 2)) 32px; background: v
 .scent-experience-option small {
   color: rgba(18, 60, 58, .62);
 }
+
+
+/* Premium customer journey rail: editorial navigation, not a checkout progress bar. */
+.journey-bar {
+  min-height: 118px;
+  padding: 0 max(28px, calc((100vw - 1320px) / 2));
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,.96);
+}
+.journey-bar a {
+  position: relative;
+  min-height: 118px;
+  padding: 24px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+  border-left: 1px solid var(--line);
+  color: var(--harbor);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -.015em;
+  transition: background .22s var(--ease), color .22s ease, transform .22s var(--ease);
+}
+.journey-bar a:last-child { border-right: 1px solid var(--line); }
+.journey-bar a span {
+  color: var(--accent-ink);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.journey-bar a::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--sand), transparent);
+  opacity: .55;
+}
+.journey-bar a:hover,
+.journey-bar a:focus-visible {
+  background: var(--porcelain);
+  color: var(--harbor-deep);
+  transform: translateY(-2px);
+}
+@media (max-width: 1050px) {
+  .journey-bar {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .journey-bar a {
+    min-height: 96px;
+    border-bottom: 1px solid var(--line);
+  }
+}
+@media (max-width: 700px) {
+  .journey-bar {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-inline: 18px;
+    scrollbar-width: none;
+  }
+  .journey-bar::-webkit-scrollbar { display: none; }
+  .journey-bar a {
+    min-width: 162px;
+    min-height: 92px;
+    scroll-snap-align: start;
+    border-bottom: 0;
+  }
+}
