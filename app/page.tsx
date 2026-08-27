@@ -122,6 +122,15 @@ export default function Home() {
                 Keep it one-time or make it recurring, then add only the details your home needs.
               </p>
               <div className="service-tags"><span>Routine</span><span>Deep</span><span>Move-In / Out</span><span>Recurring</span></div>
+              <div className="founding-routine-note">
+                <span>Founding Routine</span>
+                <p>
+                  Recurring routines established during the founding enrollment period
+                  receive access to a premium recurring-service benefit. A limited number
+                  of qualifying routines will also receive the Charleston Finish scent
+                  experience with every recurring visit for the life of that routine.
+                </p>
+              </div>
               <div className="hero-actions">
                 <a className="button button-small" href="#whats-included">See What’s Included</a>
                 <a className="button button-small" href="#pricing-tool">Get My Instant Price</a>
