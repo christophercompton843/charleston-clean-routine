@@ -1,6 +1,5 @@
 import PricePlanner from "./price-planner";
 import ReviewsSection from "./reviews-section";
-import ServiceRolloutMap from "./service-rollout-map";
 import ServiceScope from "./service-scope";
 import Concierge from "./concierge";
 
@@ -194,17 +193,6 @@ export default function Home() {
 
       <ServiceScope />
 
-      <section className="principles-section" aria-labelledby="pricing-intro-title">
-        <div className="section-heading compact-heading">
-          <p className="eyebrow">Know what you need?</p>
-          <h2 id="pricing-intro-title">Get the answer now.</h2>
-          <p>
-            Your time should not be the price of getting a quote. Answer the details
-            that affect the work and see your residential cleaning price immediately.
-          </p>
-        </div>
-      </section>
-
       <PricePlanner />
 
       <section className="partner-section" id="portfolio-partners" aria-labelledby="partner-title">
@@ -277,7 +265,6 @@ export default function Home() {
         </ol>
       </section>
 
-      <ServiceRolloutMap />
 
       <ReviewsSection />
 
