@@ -25,7 +25,8 @@ export default function ServiceAreaPage() {
         <p className="eyebrow">Communities we review</p>
         <h2>Built around Charleston life.</h2>
         <div className="community-list">{communities.map((community) => <span key={community}>{community}</span>)}</div>
-        <p>Being listed here does not guarantee a particular date or arrival window. Kiawah, Seabrook, and other beach-island or gated properties may require additional access or timing confirmation, but are part of the Charleston-area coverage we review.</p>
+        <p>Our cleaning professionals are located throughout the Charleston and Lowcountry area. During our initial launch phase, some locations require a quick availability review so we can confirm the right provider for your property and schedule.</p>
+        <p><strong>If there’s demand, we build the coverage.</strong> Once we know a location needs recurring service, we can recruit and onboard a qualified provider specifically for that area so the service can be supported consistently going forward.</p>
       </aside>
     </CustomerPageShell>
   );
