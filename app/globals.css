@@ -1802,3 +1802,32 @@ footer { padding: 72px max(28px, calc((100vw - 1320px) / 2)) 32px; background: v
     flex-basis: 54px;
   }
 }
+
+
+/* Founding Routine: premium recurring benefit, intentionally not styled like a promotion. */
+.founding-routine-note {
+  margin: 20px 0 4px;
+  padding: 18px 20px;
+  border: 1px solid rgba(215, 195, 165, .7);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(247, 244, 238, .96), rgba(255, 255, 255, .9));
+  box-shadow: 0 12px 30px rgba(18, 60, 58, .06);
+}
+.founding-routine-note > span {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #123c3a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.founding-routine-note p {
+  margin: 0;
+  color: rgba(18, 60, 58, .86);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.estimator-founding-note {
+  margin-top: 16px;
+}
