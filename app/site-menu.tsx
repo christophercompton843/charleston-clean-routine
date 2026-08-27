@@ -1,20 +1,15 @@
 const menuItems = [
-  ["Booking", "/#pricing-tool"],
-  ["Services", "/#services"],
-  ["Providers", "/#providers"],
-  ["Reviews", "/#reviews"],
   ["Home Cleaning", "/#home-cleaning"],
-  ["Vacation Rental Cleaning", "/#vacation-rental-cleaning"],
-  ["Our Signature Service Ritual", "/#signature-finish"],
-  ["Service Areas", "/#rollout-map"],
-  ["Our Philosophy", "/#our-story"],
-  ["Recurring Service Launch Offer", "/#recurring-offer"],
-  ["Portfolio Plans", "/#portfolio-partners"],
-  ["Join the Provider Network", "/#providers"],
-  ["A Note from the Owner", "/#founder-trust-title"],
+  ["Vacation Rental Care", "/#vacation-rental-cleaning"],
+  ["Airbnb Care", "/#airbnb-care"],
+  ["Portfolio Care", "/#portfolio-partners"],
+  ["What’s Included", "/#whats-included"],
+  ["Get My Instant Price", "/#pricing-tool"],
+  ["How It Works", "/#how-it-works"],
+  ["Service Area", "/#rollout-map"],
   ["Client Tools", "/#client-tools"],
   ["FAQ", "/#answers"],
-  ["Contact Us", "/contact"],
+  ["Contact", "/contact"],
 ];
 
 export default function SiteMenu() {
