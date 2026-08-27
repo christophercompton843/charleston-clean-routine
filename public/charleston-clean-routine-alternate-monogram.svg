@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Charleston Clean Routine alternate monogram</title>
+  <desc id="desc">An enlarged white C and check mark on a deep coastal green rounded tile, adapted directly from the Charleston Clean Routine favicon.</desc>
+  <rect width="512" height="512" rx="112" fill="#123C3A"/>
+  <path d="M344 144C312 112 272 96 232 96C144 96 88 160 88 256C88 352 152 416 240 416C288 416 328 400 360 368" fill="none" stroke="#F7F4EE" stroke-width="64" stroke-linecap="round"/>
+  <path d="M192 264L248 320L392 168" fill="none" stroke="#FFFFFF" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
