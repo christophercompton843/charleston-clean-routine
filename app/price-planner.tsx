@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import BrandIcon from "./brand-icon";
 import {
   ADD_ON_PRICING,
-  LAUNCH_DISCOUNT,
   PLATFORM_PRICING,
   PROPERTY_SIZES,
   type Frequency,
@@ -51,8 +50,6 @@ function formatPrice(value: number) {
 }
 
 export default function PricePlanner() {
-  const [firstName, setFirstName] = useState("");
-  const [address, setAddress] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [service, setService] = useState<ResidentialService>("Home Routine Clean");
   const [propertySize, setPropertySize] = useState<PropertySize>(PROPERTY_SIZES[2]);
@@ -80,9 +77,7 @@ export default function PricePlanner() {
     );
   }, [addOns, effectiveService]);
 
-  const recurringEligible = effectiveFrequency !== "Single" && effectiveService !== "Move-In / Move-Out Clean";
   const displayedPrice = basePrice + addOnTotal;
-  const firstVisitPrice = recurringEligible ? Math.max(0, displayedPrice - LAUNCH_DISCOUNT) : displayedPrice;
 
   function increment(key: "windows" | "laundry" | "linens", delta: number) {
     setAddOns((current) => ({ ...current, [key]: Math.max(0, current[key] + delta) }));
@@ -93,31 +88,23 @@ export default function PricePlanner() {
       <div className="planner-intro">
         <p className="eyebrow icon-eyebrow"><BrandIcon name="estimate" />Instant residential pricing</p>
         <h2>Your home. Your price.</h2>
-        <p>Build an estimated price here before giving us your email or phone number. Vacation rentals and multi-property portfolios receive a personalized quote instead.</p>
+        <p>See your residential cleaning price before entering contact information. Vacation rentals and multi-property portfolios use a property-specific pricing path.</p>
         <ul>
           <li><BrandIcon name="pricing" /> Prices use the current Charleston Clean Routine pricing schedule</li>
-          <li><BrandIcon name="secure-verified" /> Contact information is optional until you want to save or book</li>
-          <li><BrandIcon name="discount" /> LAUNCH35 applies to the first eligible recurring Routine or Deep Clean</li>
+          <li><BrandIcon name="secure-verified" /> No contact information required to see your price</li>
         </ul>
       </div>
 
       <div className="planner-shell estimator-card">
         <div className="estimator-step">
-          <span className="step-kicker">1 · Start with your name</span>
-          <h3>{firstName ? `Thanks, ${firstName}. Let’s price your home.` : "What should we call you?"}</h3>
-          <label className="estimator-field"><span>First name</span><input autoComplete="given-name" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="First name" /></label>
-        </div>
-
-        <div className="estimator-step">
-          <span className="step-kicker">2 · Property</span>
-          <div className="estimator-grid two-col">
-            <label className="estimator-field"><span>Street address</span><input autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Service address" /></label>
+          <span className="step-kicker">1 · Property</span>
+          <div className="estimator-grid">
             <label className="estimator-field"><span>ZIP code</span><input inputMode="numeric" maxLength={5} value={zipcode} onChange={(e) => setZipcode(e.target.value.replace(/\D/g, ""))} placeholder="29401" /></label>
           </div>
         </div>
 
         <div className="estimator-step">
-          <span className="step-kicker">3 · Service</span>
+          <span className="step-kicker">2 · Service</span>
           <div className="choice-grid service-choice-grid">
             {serviceOptions.map((option) => (
               <button key={option.name} type="button" className={`choice-card ${service === option.name ? "selected" : ""}`} onClick={() => setService(option.name)}>
@@ -126,11 +113,11 @@ export default function PricePlanner() {
               </button>
             ))}
           </div>
-          <a className="rental-quote-link" href="/portfolio">Vacation rental or multiple properties? Request a personalized property quote →</a>
+          <a className="rental-quote-link" href="/portfolio">Vacation rental, Airbnb, or multiple properties? Use the property-care pricing path →</a>
         </div>
 
         <div className="estimator-step">
-          <span className="step-kicker">4 · Home details</span>
+          <span className="step-kicker">3 · Home details</span>
           <div className="estimator-grid two-col">
             <label className="estimator-field"><span>Bedrooms & bathrooms</span><select value={propertySize} onChange={(e) => setPropertySize(e.target.value as PropertySize)}>{PROPERTY_SIZES.map((size) => <option key={size}>{size}</option>)}</select></label>
             <label className="estimator-field"><span>Frequency</span><select value={effectiveFrequency} onChange={(e) => setFrequency(e.target.value as Frequency)}>{availableFrequencies.map((item) => <option key={item}>{item}</option>)}</select></label>
@@ -172,22 +159,21 @@ export default function PricePlanner() {
           </div>
         </div>
 
-        <button className="button estimate-button" type="button" onClick={() => setShowEstimate(true)} disabled={!firstName.trim() || requiresReview}>See my estimated price</button>
+        <button className="button estimate-button" type="button" onClick={() => setShowEstimate(true)} disabled={requiresReview}>Get My Instant Price</button>
 
         {requiresReview && <a className="button secondary-button" href="/contact">Request a custom scope review</a>}
 
         {showEstimate && !requiresReview && (
           <div className="estimate-result" aria-live="polite">
             <BrandIcon name="estimate" className="result-icon" />
-            <span>Estimated service price</span>
+            <span>Your service price</span>
             <strong>${formatPrice(displayedPrice)}</strong>
-            {recurringEligible && <p><b>First eligible recurring visit with LAUNCH35: ${formatPrice(firstVisitPrice)}</b><br />Regular recurring visit price: ${formatPrice(displayedPrice)}</p>}
             <p className="estimate-disclaimer">Estimate is based on the property, condition, service, frequency and add-ons you selected. Final price assumes those details are accurate. Material differences in property condition, size or requested scope may require an adjustment before work begins.</p>
             <div className="save-estimate">
-              <h4>Ready to choose live availability?</h4>
-              <p>Continue to the secure booking page to select your service, arrival time, and enter the contact details needed for the appointment.</p>
-              <a className="button" href={BOOKING_URL}>Continue to live booking →</a>
-              <p className="booking-availability-note">The booking page confirms the live service price and availability. If no suitable time appears, contact us rather than starting over; your estimate remains visible here.</p>
+              <h4>Ready to book?</h4>
+              <p>Choose an available time and enter only the details needed to confirm your appointment.</p>
+              <a className="button" href={BOOKING_URL}>Book This Cleaning →</a>
+              <p className="booking-availability-note">The booking page confirms live availability and the service details before you finalize.</p>
             </div>
           </div>
         )}
