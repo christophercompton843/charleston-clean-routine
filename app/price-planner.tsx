@@ -127,8 +127,8 @@ export default function PricePlanner() {
               <span>Founding Routine</span>
               <p>
                 Recurring routines established during the founding enrollment period
-                receive access to a premium recurring-service benefit. A limited number
-                will also receive the Charleston Finish scent experience with every
+                receive access to a premium recurring-service benefit. A very limited
+                number will also receive the Charleston Finish Scent Experience with every
                 recurring visit for the life of that routine.
               </p>
             </div>
@@ -144,6 +144,16 @@ export default function PricePlanner() {
 
         <div className="estimator-step">
           <span className="step-kicker">5 · Optional add-ons</span>
+          <div className="scent-experience-option">
+            <span>The Charleston Finish</span>
+            <strong>Scent Experience</strong>
+            <p>
+              An immersive finishing touch available with any cleaning. Add it for a
+              single visit or keep it with every recurring visit. Existing clients can
+              turn it on whenever they want through the client portal.
+            </p>
+            <small>Optional paid enhancement · pricing shown when selected in the portal</small>
+          </div>
           <div className="addon-grid">
             {([
               ["depositReady", ADD_ON_PRICING.depositReady.label, ADD_ON_PRICING.depositReady.price, "add-ons"],
