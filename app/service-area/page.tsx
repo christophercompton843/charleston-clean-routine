@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 const communities = [
   "Charleston Peninsula", "West Ashley", "James Island", "North Charleston",
-  "Mount Pleasant", "Daniel Island", "Johns Island", "Folly Beach",
-  "Isle of Palms", "Sullivan’s Island",
+  "Mount Pleasant", "Daniel Island", "Johns Island", "Kiawah Island",
+  "Seabrook Island", "Folly Beach", "Isle of Palms", "Sullivan’s Island",
 ];
 
 export default function ServiceAreaPage() {
@@ -25,7 +25,7 @@ export default function ServiceAreaPage() {
         <p className="eyebrow">Communities we review</p>
         <h2>Built around Charleston life.</h2>
         <div className="community-list">{communities.map((community) => <span key={community}>{community}</span>)}</div>
-        <p>Being listed here does not guarantee a particular date or arrival window. Beach-island, gated, high-rise, and same-day turnover properties may require additional access or timing confirmation.</p>
+        <p>Being listed here does not guarantee a particular date or arrival window. Kiawah, Seabrook, and other beach-island or gated properties may require additional access or timing confirmation, but are part of the Charleston-area coverage we review.</p>
       </aside>
     </CustomerPageShell>
   );
