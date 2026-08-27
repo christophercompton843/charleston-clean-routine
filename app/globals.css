@@ -1831,3 +1831,35 @@ footer { padding: 72px max(28px, calc((100vw - 1320px) / 2)) 32px; background: v
 .estimator-founding-note {
   margin-top: 16px;
 }
+
+
+.scent-experience-option {
+  margin-bottom: 18px;
+  padding: 22px;
+  border: 1px solid rgba(18, 60, 58, .14);
+  border-radius: 20px;
+  background: rgba(247, 244, 238, .72);
+}
+.scent-experience-option > span {
+  display: block;
+  margin-bottom: 4px;
+  color: #2f6f68;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.scent-experience-option strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #123c3a;
+  font-size: 20px;
+}
+.scent-experience-option p {
+  margin: 0 0 8px;
+  color: rgba(18, 60, 58, .86);
+  line-height: 1.6;
+}
+.scent-experience-option small {
+  color: rgba(18, 60, 58, .62);
+}
