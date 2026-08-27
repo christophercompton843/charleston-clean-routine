@@ -121,11 +121,12 @@ export default function Home() {
               <span>Home</span>
             </div>
             <div className="service-copy">
-              <p className="card-kicker">For primary homes, second homes + apartments</p>
+              <p className="card-kicker">For the place you call home</p>
               <h3>Home Cleaning</h3>
               <p>
-                Choose <strong>Routine, Deep, or Move-In / Move-Out</strong> cleaning.
-                Keep it one-time or make it recurring, then add only the details your home needs.
+                For privately owned homes, apartments, condominiums, townhomes, second homes,
+                and other residential spaces. Choose <strong>Routine, Deep, or Move-In / Move-Out</strong>
+                cleaning, then keep it one-time or make it recurring and add only what your space needs.
               </p>
               <div className="service-tags"><span>Routine</span><span>Deep</span><span>Move-In / Out</span><span>Recurring</span></div>
               <div className="founding-routine-note">
@@ -152,11 +153,12 @@ export default function Home() {
               <span>Vacation Rental</span>
             </div>
             <div className="service-copy">
-              <p className="card-kicker">For vacation homes + managed rentals</p>
+              <p className="card-kicker">For vacation homes + managed short-term rentals</p>
               <h3>Vacation Rental Care</h3>
               <p>
-                Guest turnover, periodic deep cleaning, arrival preparation, and
-                property-specific details organized around the way your rental actually operates.
+                Coordinated care for vacation properties that need to be ready for owners or guests,
+                including turnover cleaning, periodic deep cleaning, arrival preparation, and
+                property-specific instructions.
               </p>
               <div className="service-tags"><span>Turnover</span><span>Deep Reset</span><span>Arrival Prep</span><span>Add-Ons</span></div>
               <div className="hero-actions">
@@ -172,11 +174,11 @@ export default function Home() {
               <span>Airbnb</span>
             </div>
             <div className="service-copy">
-              <p className="card-kicker">For hosts who need the next stay ready</p>
+              <p className="card-kicker">For hosts managing guest stays between check-in and checkout</p>
               <h3>Airbnb Care</h3>
               <p>
-                Cleaning and guest-readiness between checkout and check-in, with
-                linen setup, restocking, property notes, and deeper resets available when needed.
+                Turnover-focused cleaning and guest readiness between stays, with linen setup,
+                restocking, property notes, issue reporting, and deeper resets available when needed.
               </p>
               <div className="service-tags"><span>Turnover</span><span>Bed Setup</span><span>Restocking</span><span>Reporting</span></div>
               <div className="hero-actions">
@@ -192,11 +194,12 @@ export default function Home() {
               <span>Portfolio</span>
             </div>
             <div className="service-copy">
-              <p className="card-kicker">For owners, managers + multi-property operators</p>
+              <p className="card-kicker">For owners, property managers + multi-property operators</p>
               <h3>Portfolio Care</h3>
               <p>
-                Give each property its own service standard while managing the portfolio
-                through one organized relationship, one communication structure, and one clear proposal.
+                For clients coordinating cleaning across multiple properties, units, or residences.
+                We organize the portfolio under one management structure while preserving the unique
+                service level, schedule, access instructions, and specifications of each individual property.
               </p>
               <div className="service-tags"><span>Property Plans</span><span>Central Scheduling</span><span>Quality Oversight</span><span>Scalable</span></div>
               <div className="hero-actions">
