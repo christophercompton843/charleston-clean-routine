@@ -1,3 +1,5 @@
+import "./brand-film.css";
+
 export default function BrandFilm() {
   return (
     <section className="brand-film-section" aria-labelledby="brand-film-title">
