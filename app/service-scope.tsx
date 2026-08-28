@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import BrandIcon, { type BrandIconName } from "./brand-icon";
+import "./visual-interactions.css";
 
 type RoomKey = "kitchen" | "bathrooms" | "bedrooms" | "living";
 type ServiceKey = "routine" | "deep" | "move";
@@ -44,6 +45,13 @@ const rooms: Record<RoomKey, { title: string; subtitle: string; icon: string; ro
 const serviceNames: Record<ServiceKey, string> = { routine: "Routine", deep: "Deep", move: "Move-In / Move-Out" };
 const serviceIcons: Record<ServiceKey, BrandIconName> = { routine: "routine-clean", deep: "deep-clean", move: "move-in-out" };
 
+const hotspots: Record<RoomKey, { x: string; y: string }> = {
+  bedrooms: { x: "28%", y: "32%" },
+  living: { x: "51%", y: "37%" },
+  kitchen: { x: "46%", y: "62%" },
+  bathrooms: { x: "75%", y: "58%" },
+};
+
 export default function ServiceScope() {
   const [service, setService] = useState<ServiceKey>("routine");
   const [room, setRoom] = useState<RoomKey>("kitchen");
@@ -55,21 +63,14 @@ export default function ServiceScope() {
       <div className="scope-heading">
         <p className="eyebrow">The Details</p>
         <h2 id="scope-title">See exactly what happens in every room.</h2>
-        <p>Select a service level and a room. The scope changes with your selection so you can see what is included before you book—without assumptions, fine print, or guesswork.</p>
+        <p>Select a service level and then select a room directly on the home. The scope changes with your selection so you can understand what is included before you book.</p>
       </div>
 
       <div className="scope-explorer-controls" aria-label="Choose a service level">
         <span>Service Levels</span>
         <div className="scope-service-tabs" role="tablist" aria-label="Cleaning service level">
           {(Object.keys(serviceNames) as ServiceKey[]).map((key) => (
-            <button
-              key={key}
-              type="button"
-              role="tab"
-              aria-selected={service === key}
-              className={`scope-service-tab ${service === key ? "active" : ""}`}
-              onClick={() => setService(key)}
-            >
+            <button key={key} type="button" role="tab" aria-selected={service === key} className={`scope-service-tab ${service === key ? "active" : ""}`} onClick={() => setService(key)}>
               <BrandIcon name={serviceIcons[key]} />
               <span>{serviceNames[key]}</span>
             </button>
@@ -77,39 +78,31 @@ export default function ServiceScope() {
         </div>
       </div>
 
-      <div className="scope-explorer-shell">
-        <div className="scope-floorplan" aria-label="Select a room to view its cleaning scope">
-          <div className="scope-floorplan-label">
-            <span>Interactive home</span>
-            <strong>Select a room</strong>
-          </div>
-
-          {(Object.keys(rooms) as RoomKey[]).map((key) => (
+      <div className="scope-explorer-shell detailed-floorplan-shell">
+        <div className="detailed-floorplan" aria-label="Interactive furnished home floor plan. Select a room to view its cleaning scope.">
+          <div className="floorplan-instruction"><span>Interactive home</span><strong>Select a room</strong></div>
+          <img src="/ccr-interactive-floorplan.png" alt="Detailed furnished residential floor plan with bedrooms, bathrooms, living area, kitchen, laundry and outdoor space" />
+          {(Object.keys(hotspots) as RoomKey[]).map((key) => (
             <button
               key={key}
               type="button"
-              className={`scope-room-marker scope-room-${key} ${room === key ? "active" : ""}`}
+              className={`floorplan-hotspot ${room === key ? "active" : ""}`}
+              style={{ left: hotspots[key].x, top: hotspots[key].y }}
               aria-pressed={room === key}
+              aria-label={`View ${rooms[key].title} scope`}
               onClick={() => setRoom(key)}
             >
-              <img src={rooms[key].icon} alt="" aria-hidden="true" />
-              <span>{rooms[key].title}</span>
-              <small>{rooms[key].subtitle}</small>
+              <span className="hotspot-dot" />
+              <span className="hotspot-label">{rooms[key].title}</span>
             </button>
           ))}
-
-          <div className="scope-floorplan-hall" aria-hidden="true" />
-          <div className="scope-floorplan-entry" aria-hidden="true">ENTRY</div>
+          <div className="floorplan-status"><span>Selected</span><strong>{selected.title}</strong><small>{serviceNames[service]} service</small></div>
         </div>
 
         <div className="scope-detail" aria-live="polite">
           <div className="scope-detail-title">
             <img src={selected.icon} alt="" />
-            <div>
-              <span>{serviceNames[service]} · {selected.title}</span>
-              <h3>{selected.title}</h3>
-              <p>{selected.subtitle}</p>
-            </div>
+            <div><span>{serviceNames[service]} · {selected.title}</span><h3>{selected.title}</h3><p>{selected.subtitle}</p></div>
           </div>
 
           {service === "routine" ? (
@@ -119,16 +112,8 @@ export default function ServiceScope() {
           )}
 
           <div className="scope-columns">
-            <div>
-              <span className="scope-list-label">{service === "routine" ? "Included" : "Routine foundation"}</span>
-              <ul>{selected.routine.map((item) => <li key={item}><span>✓</span>{item}</li>)}</ul>
-            </div>
-            {extras.length > 0 && (
-              <div className="scope-extra">
-                <span className="scope-list-label">{service === "deep" ? "Deep additions" : "Transition additions"}</span>
-                <ul>{extras.map((item) => <li key={item}><span>+</span>{item}</li>)}</ul>
-              </div>
-            )}
+            <div><span className="scope-list-label">{service === "routine" ? "Included" : "Routine foundation"}</span><ul>{selected.routine.map((item) => <li key={item}><span>✓</span>{item}</li>)}</ul></div>
+            {extras.length > 0 && <div className="scope-extra"><span className="scope-list-label">{service === "deep" ? "Deep additions" : "Transition additions"}</span><ul>{extras.map((item) => <li key={item}><span>+</span>{item}</li>)}</ul></div>}
           </div>
 
           {service === "move" && <p className="scope-note">Move-In / Move-Out is designed for substantially empty properties. Inside refrigerators, ovens, cabinets, and drawers are included only when the applicable add-on or Deposit Ready Detail is confirmed.</p>}
@@ -136,10 +121,7 @@ export default function ServiceScope() {
       </div>
 
       <div className="scope-clarity-note">
-        <div>
-          <span>Why we show this</span>
-          <strong>Clear expectations protect the experience.</strong>
-        </div>
+        <div><span>Why we show this</span><strong>Clear expectations protect the experience.</strong></div>
         <p>Different services include different levels of detail. Showing the room-by-room scope before booking helps prevent assumptions and makes it easier to choose the service that actually fits your home.</p>
         <a href="/service-policy">Complete service boundaries →</a>
       </div>
