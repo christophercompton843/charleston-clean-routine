@@ -22,7 +22,6 @@ export default function BrandFilm() {
           <video
             src="/ccr-life-gets-busy.mp4"
             controls
-            muted
             playsInline
             preload="metadata"
             aria-label="Charleston Clean Routine professionals providing home cleaning service"
