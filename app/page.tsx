@@ -2,6 +2,7 @@ import PricePlanner from "./price-planner";
 import ReviewsSection from "./reviews-section";
 import ServiceScope from "./service-scope";
 import Concierge from "./concierge";
+import BrandFilm from "./brand-film";
 
 export const metadata = {
   title: "Charleston Clean Routine | Your Home, Handled",
@@ -100,6 +101,8 @@ export default function Home() {
         <a href="#pricing-tool"><span>06</span>Build Your Routine</a>
         <a href="#how-it-works"><span>07</span>What to Expect</a>
       </nav>
+
+      <BrandFilm />
 
       <section className="services-section" id="your-choice" aria-labelledby="services-title">
         <div className="section-heading split-heading">
@@ -286,7 +289,6 @@ export default function Home() {
           ))}
         </ol>
       </section>
-
 
       <ReviewsSection />
 
