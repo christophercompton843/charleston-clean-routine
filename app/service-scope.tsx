@@ -6,9 +6,10 @@ import BrandIcon, { type BrandIconName } from "./brand-icon";
 type RoomKey = "kitchen" | "bathrooms" | "bedrooms" | "living";
 type ServiceKey = "routine" | "deep" | "move";
 
-const rooms: Record<RoomKey, { title: string; icon: string; routine: string[]; deep: string[]; move: string[] }> = {
+const rooms: Record<RoomKey, { title: string; subtitle: string; icon: string; routine: string[]; deep: string[]; move: string[] }> = {
   kitchen: {
     title: "Kitchen",
+    subtitle: "Surfaces, fixtures, appliances + floors",
     icon: "/icons/kitchen.png",
     routine: ["Countertops and backsplash wiped", "Sink and faucet cleaned", "Appliance exteriors wiped", "Microwave interior and exterior cleaned", "Cabinet fronts spot-cleaned", "Accessible surfaces dusted and wiped", "Floor vacuumed and mopped", "Trash emptied and liner replaced when available"],
     deep: ["Cabinet fronts fully wiped", "Baseboards detailed", "Doors, frames, and switch plates detailed", "Additional attention to buildup on accessible surfaces and fixtures"],
@@ -16,6 +17,7 @@ const rooms: Record<RoomKey, { title: string; icon: string; routine: string[]; d
   },
   bathrooms: {
     title: "Bathrooms",
+    subtitle: "Sanitation, fixtures, mirrors + floors",
     icon: "/icons/bathroom.png",
     routine: ["Toilet cleaned and sanitized", "Tub and/or shower cleaned", "Sink, faucet, and vanity cleaned", "Mirrors cleaned", "Accessible fixtures and surfaces dusted and wiped", "Floor vacuumed and mopped", "Trash emptied and liner replaced when available"],
     deep: ["Baseboards detailed", "Doors, frames, and switch plates detailed", "Additional attention to soap residue and buildup", "Accessible bathroom fixtures and surfaces detailed"],
@@ -23,6 +25,7 @@ const rooms: Record<RoomKey, { title: string; icon: string; routine: string[]; d
   },
   bedrooms: {
     title: "Bedrooms",
+    subtitle: "Surfaces, presentation + floors",
     icon: "/icons/bedroom.png",
     routine: ["Accessible surfaces dusted", "Furniture exteriors dusted", "Mirrors cleaned", "Bed neatly made when linens are already on the bed", "Floor vacuumed and/or mopped", "Trash emptied and liner replaced when available", "Light general straightening"],
     deep: ["Baseboards detailed", "Doors, frames, and switch plates detailed", "Additional attention to accessible ledges, edges, and buildup"],
@@ -30,6 +33,7 @@ const rooms: Record<RoomKey, { title: string; icon: string; routine: string[]; d
   },
   living: {
     title: "Living Areas",
+    subtitle: "Furniture, décor, surfaces + floors",
     icon: "/icons/services.png",
     routine: ["Accessible surfaces and furniture exteriors dusted", "Tables and reachable décor dusted", "Mirrors cleaned", "Floor vacuumed and/or mopped", "Trash emptied and liner replaced when available", "Light general straightening"],
     deep: ["Baseboards detailed", "Doors, frames, and switch plates detailed", "Additional attention to accessible ledges, edges, and buildup"],
@@ -37,7 +41,7 @@ const rooms: Record<RoomKey, { title: string; icon: string; routine: string[]; d
   },
 };
 
-const serviceNames: Record<ServiceKey, string> = { routine: "Routine Clean", deep: "Deep Clean", move: "Move-In / Move-Out" };
+const serviceNames: Record<ServiceKey, string> = { routine: "Routine", deep: "Deep", move: "Move-In / Move-Out" };
 const serviceIcons: Record<ServiceKey, BrandIconName> = { routine: "routine-clean", deep: "deep-clean", move: "move-in-out" };
 
 export default function ServiceScope() {
@@ -47,48 +51,97 @@ export default function ServiceScope() {
   const extras = service === "routine" ? [] : selected[service];
 
   return (
-    <section className="scope-section" id="whats-included" aria-labelledby="scope-title">
+    <section className="scope-section scope-explorer" id="whats-included" aria-labelledby="scope-title">
       <div className="scope-heading">
-        <p className="eyebrow">Exactly what your cleaning includes</p>
-        <h2 id="scope-title">Clear scope. No guessing.</h2>
-        <p>Choose a service, then a room. The checklist below is the service standard we use for customers and cleaning professionals.</p>
+        <p className="eyebrow">The Details</p>
+        <h2 id="scope-title">See exactly what happens in every room.</h2>
+        <p>Select a service level and a room. The scope changes with your selection so you can see what is included before you book—without assumptions, fine print, or guesswork.</p>
       </div>
 
-      <div className="scope-service-tabs" role="tablist" aria-label="Cleaning service">
-        {(Object.keys(serviceNames) as ServiceKey[]).map((key) => (
-          <button key={key} type="button" className={`scope-service-tab ${service === key ? "active" : ""}`} onClick={() => setService(key)}><BrandIcon name={serviceIcons[key]} />{serviceNames[key]}</button>
-        ))}
-      </div>
-
-      <div className="scope-room-tabs" aria-label="Choose a room">
-        {(Object.keys(rooms) as RoomKey[]).map((key) => (
-          <button key={key} type="button" className={room === key ? "active" : ""} onClick={() => setRoom(key)}>
-            <img src={rooms[key].icon} alt="" aria-hidden="true" /><span>{rooms[key].title}</span>
-          </button>
-        ))}
-      </div>
-
-      <div className="scope-detail">
-        <div className="scope-detail-title"><img src={selected.icon} alt="" /><div><span>{serviceNames[service]}</span><h3>{selected.title}</h3></div></div>
-        {service !== "routine" && <p className="scope-plus"><strong>Everything in Routine Clean, plus:</strong></p>}
-        <div className="scope-columns">
-          <ul>{selected.routine.map((item) => <li key={item}><span>✓</span>{item}</li>)}</ul>
-          {extras.length > 0 && <ul className="scope-extra">{extras.map((item) => <li key={item}><span>+</span>{item}</li>)}</ul>}
+      <div className="scope-explorer-controls" aria-label="Choose a service level">
+        <span>Service Levels</span>
+        <div className="scope-service-tabs" role="tablist" aria-label="Cleaning service level">
+          {(Object.keys(serviceNames) as ServiceKey[]).map((key) => (
+            <button
+              key={key}
+              type="button"
+              role="tab"
+              aria-selected={service === key}
+              className={`scope-service-tab ${service === key ? "active" : ""}`}
+              onClick={() => setService(key)}
+            >
+              <BrandIcon name={serviceIcons[key]} />
+              <span>{serviceNames[key]}</span>
+            </button>
+          ))}
         </div>
-        {service === "move" && <p className="scope-note">Move-In / Move-Out Cleaning is designed for substantially empty properties. Inside refrigerators, ovens, cabinets, and drawers are included only when the applicable add-on or Deposit Ready Detail is confirmed.</p>}
       </div>
 
-      <aside className="scope-boundaries">
-        <div><strong>Service boundaries</strong><p>Only tasks listed for your confirmed service or purchased as an add-on are included. Marketing photographs and general descriptions do not expand the booked scope.</p></div>
-        <div><strong>Interior + safely reachable only</strong><p>We do not perform exterior building cleaning or work requiring tall ladders, extension ladders, scaffolding, or unsafe elevated access.</p></div>
-        <div><strong>Health + provider safety</strong><p>We do not clean pet cages or animal waste, biohazards, bodily fluids, active infestations, hazardous materials, or conditions that present a reasonable health, safety, security, or property-damage concern.</p></div>
-        <div><strong>Cleaning professionals are dedicated to cleaning</strong><p>Children, dependent adults, elderly persons requiring care, and animals may not be left in a provider’s care or supervision. Providers may decline, pause, or stop service for legitimate safety, security, harassment, or working-condition concerns.</p></div>
-      </aside>
+      <div className="scope-explorer-shell">
+        <div className="scope-floorplan" aria-label="Select a room to view its cleaning scope">
+          <div className="scope-floorplan-label">
+            <span>Interactive home</span>
+            <strong>Select a room</strong>
+          </div>
 
-      <div className="scope-change-policy">
-        <h3>Need to add something after we arrive?</h3>
-        <p>Life happens, and we will make every reasonable effort to accommodate additional needs. Cleaning professionals do not quote prices, provide estimates, negotiate charges, collect payment, or independently authorize added work. Request changes through the client app, client portal, or by calling Charleston Clean Routine. We will confirm any price adjustment and whether the request can be accommodated. Same-day additions cannot be guaranteed.</p>
-        <a href="/service-policy">Read the complete Service Policy →</a>
+          {(Object.keys(rooms) as RoomKey[]).map((key) => (
+            <button
+              key={key}
+              type="button"
+              className={`scope-room-marker scope-room-${key} ${room === key ? "active" : ""}`}
+              aria-pressed={room === key}
+              onClick={() => setRoom(key)}
+            >
+              <img src={rooms[key].icon} alt="" aria-hidden="true" />
+              <span>{rooms[key].title}</span>
+              <small>{rooms[key].subtitle}</small>
+            </button>
+          ))}
+
+          <div className="scope-floorplan-hall" aria-hidden="true" />
+          <div className="scope-floorplan-entry" aria-hidden="true">ENTRY</div>
+        </div>
+
+        <div className="scope-detail" aria-live="polite">
+          <div className="scope-detail-title">
+            <img src={selected.icon} alt="" />
+            <div>
+              <span>{serviceNames[service]} · {selected.title}</span>
+              <h3>{selected.title}</h3>
+              <p>{selected.subtitle}</p>
+            </div>
+          </div>
+
+          {service === "routine" ? (
+            <p className="scope-level-explainer"><strong>Routine maintains an established clean.</strong> These are the tasks included in this room with a Routine service.</p>
+          ) : (
+            <p className="scope-level-explainer"><strong>{service === "deep" ? "Deep includes everything in Routine, plus:" : "Move-In / Move-Out includes the Routine foundation, adapted for an empty-home transition, plus:"}</strong></p>
+          )}
+
+          <div className="scope-columns">
+            <div>
+              <span className="scope-list-label">{service === "routine" ? "Included" : "Routine foundation"}</span>
+              <ul>{selected.routine.map((item) => <li key={item}><span>✓</span>{item}</li>)}</ul>
+            </div>
+            {extras.length > 0 && (
+              <div className="scope-extra">
+                <span className="scope-list-label">{service === "deep" ? "Deep additions" : "Transition additions"}</span>
+                <ul>{extras.map((item) => <li key={item}><span>+</span>{item}</li>)}</ul>
+              </div>
+            )}
+          </div>
+
+          {service === "move" && <p className="scope-note">Move-In / Move-Out is designed for substantially empty properties. Inside refrigerators, ovens, cabinets, and drawers are included only when the applicable add-on or Deposit Ready Detail is confirmed.</p>}
+        </div>
+      </div>
+
+      <div className="scope-clarity-note">
+        <div>
+          <span>Why we show this</span>
+          <strong>Clear expectations protect the experience.</strong>
+        </div>
+        <p>Different services include different levels of detail. Showing the room-by-room scope before booking helps prevent assumptions and makes it easier to choose the service that actually fits your home.</p>
+        <a href="/service-policy">Complete service boundaries →</a>
       </div>
     </section>
   );
