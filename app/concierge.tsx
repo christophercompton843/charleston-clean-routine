@@ -4,11 +4,11 @@ import { FormEvent, useState } from "react";
 
 type Message = { role: "user" | "assistant"; content: string };
 
-const quickPrompts = ["What services do you offer?", "How does LAUNCH35 work?", "Do you serve my area?", "I manage multiple properties", "I’m interested in becoming a provider"];
+const quickPrompts = ["What services do you offer?", "Do you serve my area?", "I manage multiple properties", "How do I contact you?", "I’m interested in becoming a provider"];
 
 export default function Concierge() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([{ role: "assistant", content: "Hello. I’m the Charleston Clean Routine concierge. I can explain services, pricing, service areas, bookings, account access, and provider opportunities." }]);
+  const [messages, setMessages] = useState<Message[]>([{ role: "assistant", content: "Hello. I’m the Charleston Clean Routine concierge. I can explain services, pricing, service areas, bookings, account access, contact options, and provider opportunities." }]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
 
