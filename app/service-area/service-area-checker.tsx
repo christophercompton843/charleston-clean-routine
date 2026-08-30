@@ -29,8 +29,22 @@ export default function ServiceAreaChecker() {
         <label htmlFor="service-zip">Service ZIP code</label>
         <div><input id="service-zip" name="zipcode" inputMode="numeric" autoComplete="postal-code" maxLength={5} pattern="[0-9]{5}" onInput={() => setResult(null)} placeholder="29401" required /><button className="button" type="submit">Check ZIP</button></div>
       </form>
-      {result === "standard" && <div className="zip-result available" role="status"><BrandIcon name="secure-verified" /><strong>This ZIP is in our standard Charleston-area review zone.</strong><p>Continue to the cleaning planner. Your exact address, requested service, and provider availability are confirmed before the appointment.</p><Link className="button" href="/#pricing-tool">Build my clean →</Link></div>}
-      {result === "review" && <div className="zip-result review" role="status"><BrandIcon name="waitlist-coming-soon" /><strong>This ZIP needs a quick coverage review.</strong><p>We may still be able to help, especially with a recurring home or vacation-rental property. Send the address and service details to our Charleston team before booking.</p><Link className="button" href={`/contact?zip=${checkedZip}`}>Request coverage review →</Link></div>}
+      {result === "standard" && (
+        <div className="zip-result available" role="status">
+          <BrandIcon name="secure-verified" />
+          <strong>Yes. This ZIP is within our current Charleston service area.</strong>
+          <p>Build your service and see your residential price now. Your exact address and live provider availability are confirmed when you choose the appointment.</p>
+          <Link className="button" href="/#pricing-tool">Build my routine →</Link>
+        </div>
+      )}
+      {result === "review" && (
+        <div className="zip-result review" role="status">
+          <BrandIcon name="waitlist-coming-soon" />
+          <strong>This ZIP needs a quick coverage check—but that is not a no.</strong>
+          <p>Send us the address and service you need. We will check current coverage and, when appropriate, identify the next workable option rather than leaving you with a dead end.</p>
+          <Link className="button" href={`/contact?zip=${checkedZip}`}>Check my address →</Link>
+        </div>
+      )}
     </div>
   );
 }
