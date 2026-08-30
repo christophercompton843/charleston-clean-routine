@@ -18,10 +18,10 @@ export default function ContactPage() {
         <p className="eyebrow">Charleston team</p>
         <h2>A clear path to the right answer.</h2>
         <p>Choose the closest topic and include the property ZIP code, timing, or booking details that matter. Please do not send card numbers, passwords, access codes, or other sensitive information.</p>
-        <div><span>24-hour automated support</span><a href="tel:+18436338648">(843) 633-8648</a></div>
-        <div><span>Email</span><a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a></div>
         <div><span>Online inquiry</span><strong>Send the form for a written response</strong></div>
         <div><span>AI concierge</span><strong>Available from the chat button on every page</strong></div>
+        <div><span>Existing clients</span><a href="/login">Open the Client Portal</a></div>
+        <div><span>Email</span><a href="mailto:hello@charlestoncleanroutine.com">hello@charlestoncleanroutine.com</a></div>
       </aside>
       <ContactForm />
     </CustomerPageShell>
