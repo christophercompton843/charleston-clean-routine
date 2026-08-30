@@ -1,5 +1,5 @@
-.hero-visual{background:#123c3a url("/%20%20%20%20ccr-tradd-street-hero.png") 58% 52%/cover no-repeat!important;}
-.hero-visual>img{visibility:visible!important;opacity:0!important;}
+.hero-visual{background:#123c3a!important;}
+.hero-visual>img{visibility:visible!important;opacity:1!important;object-position:58% 52%!important;}
 .service-copy>.hero-actions{margin-top:auto;padding-top:35px;}
 .detailed-floorplan-shell{align-items:stretch;}
 .detailed-floorplan{position:relative;overflow:hidden;min-height:680px;border:1px solid var(--line);border-radius:30px;background:#f7f4ee;box-shadow:var(--shadow-lg);display:flex;align-items:center;justify-content:center;padding:64px 24px 30px;}
@@ -30,20 +30,19 @@
 .principles-section{position:relative;overflow:hidden;isolation:isolate;}
 .principles-section::before{content:"";position:absolute;top:0;right:0;width:min(46vw,680px);height:100%;z-index:-2;background:url("/ccr-our-promise.jpg") center/cover no-repeat;opacity:.18;filter:saturate(.72);}
 .principles-section::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--cloud) 0%,var(--cloud) 58%,rgba(244,247,245,.9) 76%,rgba(244,247,245,.78) 100%);}
-.principle-grid article:nth-child(2) h3{font-size:0;}
-.principle-grid article:nth-child(2) h3::after{content:"We do what we promise.";font-size:24px;line-height:1.1;}
 
 .process-section{position:relative;overflow:hidden;isolation:isolate;}
 .process-section::before{content:"";position:absolute;inset:0;z-index:-2;background:url("/ccr-what-to-expect.jpg") center 44%/cover no-repeat;opacity:.15;filter:saturate(.7);}
 .process-section::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,30,29,.97),rgba(4,30,29,.94));}
 
-.client-tool-grid>a:first-child{position:relative;overflow:hidden;isolation:isolate;min-height:330px;padding-top:168px;}
+.client-tool-grid>a:first-child{position:relative;overflow:hidden;isolation:isolate;min-height:360px;padding-top:168px;}
 .client-tool-grid>a:first-child::before{content:"";position:absolute;top:0;left:0;right:0;height:150px;z-index:-1;background:url("/ccr-client-portal-visual.jpg") center/cover no-repeat;border-bottom:1px solid var(--line);}
 .client-tool-grid>a:first-child::after{content:"";position:absolute;top:104px;left:0;right:0;height:46px;z-index:-1;background:linear-gradient(180deg,transparent,#fff);}
+.client-tool-grid>a:first-child small{display:block;margin:14px 0;color:var(--muted);font-size:11px;line-height:1.55;}
 
 .final-cta{position:relative;overflow:hidden;isolation:isolate;}
 .final-cta::before{content:"";position:absolute;inset:0;z-index:-2;background:url("/ccr-quality-check.jpg") center/cover no-repeat;opacity:.17;filter:saturate(.74);}
 .final-cta::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(4,30,29,.97),rgba(4,30,29,.9));}
 
 @media(max-width:1000px){.detailed-floorplan{min-height:600px;}.principles-section::before{width:64vw;opacity:.12;}}
-@media(max-width:700px){.detailed-floorplan{min-height:440px;padding:58px 8px 24px;border-radius:22px}.floorplan-instruction{top:14px;left:14px}.hotspot-label{display:none}.hotspot-dot{width:15px;height:15px;border-width:4px}.floorplan-status{right:12px;bottom:12px;min-width:138px;padding:10px 12px}.hero-visual{background-position:64% center!important;}.service-copy>.hero-actions{padding-top:28px}.principles-section::before{width:100%;opacity:.09}.client-tool-grid>a:first-child{min-height:300px;padding-top:155px}.client-tool-grid>a:first-child::before{height:138px}}
+@media(max-width:700px){.detailed-floorplan{min-height:440px;padding:58px 8px 24px;border-radius:22px}.floorplan-instruction{top:14px;left:14px}.hotspot-label{display:none}.hotspot-dot{width:15px;height:15px;border-width:4px}.floorplan-status{right:12px;bottom:12px;min-width:138px;padding:10px 12px}.hero-visual>img{object-position:64% center!important}.service-copy>.hero-actions{padding-top:28px}.principles-section::before{width:100%;opacity:.09}.client-tool-grid>a:first-child{min-height:330px;padding-top:155px}.client-tool-grid>a:first-child::before{height:138px}}
