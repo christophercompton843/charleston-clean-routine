@@ -54,9 +54,6 @@ export default function Home() {
             <a href="#how-it-works">What to Expect</a>
           </nav>
           <div className="header-actions">
-            <a className="header-contact" href={phoneUrl} aria-label="Call Charleston Clean Routine at 843-633-8648">
-              (843) 633-8648
-            </a>
             <a className="button button-small" href="#pricing-tool">Get My Instant Price</a>
           </div>
         </header>
@@ -320,11 +317,11 @@ export default function Home() {
             <p>Confirm whether your Charleston-area address is currently covered.</p>
             <strong>Check My Address →</strong>
           </a>
-          <a href={phoneUrl}>
-            <span>Support</span>
-            <h3>Call Charleston Clean Routine</h3>
-            <p>Get an answer, booking help, or leave a message when something actually needs attention.</p>
-            <strong>(843) 633-8648 →</strong>
+          <a href="/contact">
+            <span>Need help?</span>
+            <h3>Get Help Online</h3>
+            <p>Send the question or service issue that the site or Client Portal did not resolve. We will route it to the right next step.</p>
+            <strong>Contact Support →</strong>
           </a>
         </div>
       </section>
@@ -417,7 +414,7 @@ export default function Home() {
       </footer>
 
       <nav className="mobile-action-dock" aria-label="Quick actions">
-        <a href={phoneUrl}>Call <span aria-hidden="true">→</span></a>
+        <a href="/services">Explore Services <span aria-hidden="true">→</span></a>
         <a href="#pricing-tool">Get My Instant Price <span aria-hidden="true">→</span></a>
       </nav>
       <Concierge />
