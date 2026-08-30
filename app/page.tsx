@@ -166,7 +166,7 @@ export default function Home() {
               <div className="service-tags"><span>Turnover</span><span>Deep Reset</span><span>Arrival Prep</span><span>Add-Ons</span></div>
               <div className="hero-actions">
                 <a className="button button-small" href="/services">Explore Rental Care</a>
-                <a className="button button-small" href="#pricing-tool">Price My Rental</a>
+                <a className="button button-small" href="/portfolio">Build My Rental Plan</a>
               </div>
             </div>
           </article>
@@ -188,7 +188,7 @@ export default function Home() {
               <div className="service-tags"><span>Turnover</span><span>Bed Setup</span><span>Restocking</span><span>Reporting</span></div>
               <div className="hero-actions">
                 <a className="button button-small" href="/services">Explore Airbnb Care</a>
-                <a className="button button-small" href="#pricing-tool">Price My Airbnb</a>
+                <a className="button button-small" href="/portfolio">Build My Airbnb Plan</a>
               </div>
             </div>
           </article>
@@ -374,7 +374,7 @@ export default function Home() {
         <p>See what you’re booking, know what it costs, choose your time, and get it handled.</p>
         <div>
           <a className="button button-light" href="#pricing-tool">Get My Instant Price</a>
-          <a className="button button-ghost" href="#services">Explore Services</a>
+          <a className="button button-ghost" href="/services">Explore Services</a>
         </div>
       </section>
 
