@@ -4,6 +4,7 @@ import "./globals.css";
 import "./layout-fixes.css";
 import "./pricing-tool.css";
 import SiteMenu from "./site-menu";
+import LaunchNotice from "./launch-notice";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -11,7 +12,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL("https://charlestoncleanroutine.com"),
   title: "Charleston Clean Routine | Your Home, Handled",
-  description: "Get an instant price, book online, and keep your Charleston-area home on a reliable cleaning routine. $35 off your first clean with recurring service.",
+  description: "Get an instant price, book online, and keep your Charleston-area home on a reliable cleaning routine with clear service standards and thoughtfully designed care.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg", apple: "/favicon.svg" },
   alternates: { canonical: "/" },
   openGraph: {
@@ -73,6 +74,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        <LaunchNotice />
         <SiteMenu />
         {children}
       </body>
