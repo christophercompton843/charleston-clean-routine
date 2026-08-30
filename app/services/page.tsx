@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CustomerPageShell from "../customer-page-shell";
+import "./services.css";
 
 export const metadata: Metadata = {
   title: "Cleaning Services | Charleston Clean Routine",
