@@ -361,6 +361,10 @@ export default function Home() {
             <summary>How will you communicate with me?</summary>
             <p>Useful communication when something matters; discretion when it does not. Confirmations, reminders, completion information, and issues that require attention are communicated clearly without unnecessary messages.</p>
           </details>
+          <details>
+            <summary>Can I call Charleston Clean Routine?</summary>
+            <p>Yes. For pricing, booking, service-area checks, and account management, the website and Client Portal are usually the fastest route. If you specifically need phone support, call <a href={phoneUrl}>(843) 633-8648</a>.</p>
+          </details>
         </div>
       </section>
 
