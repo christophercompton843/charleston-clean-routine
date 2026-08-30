@@ -83,7 +83,7 @@ export default function Home() {
         </div>
 
         <div className="hero-visual" aria-label="A freshly cared-for Charleston home">
-          <img src="/charleston-home-warm.jpg" alt="A composed Charleston living room after professional home care" />
+          <img src="/%20%20%20%20ccr-tradd-street-hero.png" alt="Open front door of a cared-for Charleston home on Tradd Street" />
           <div className="hero-image-caption">
             <span>The Charleston Finish</span>
             <strong>Quietly considered.</strong>
@@ -266,7 +266,7 @@ export default function Home() {
         </div>
         <div className="principle-grid">
           <article><span className="principle-label">Clarity</span><h3>Know before you book.</h3><p>What it is, what it includes, what it costs, and what happens next.</p></article>
-          <article><span className="principle-label">Reliability</span><h3>Do what we said.</h3><p>Defined standards, property instructions, and a process built for consistency.</p></article>
+          <article><span className="principle-label">Reliability</span><h3>We do what we promise.</h3><p>Defined standards, property instructions, and a process built for consistency.</p></article>
           <article><span className="principle-label">Proof</span><h3>No guessing afterward.</h3><p>The work follows a checklist and completion is documented.</p></article>
           <article><span className="principle-label">Discretion</span><h3>Useful communication only.</h3><p>Accountability when something needs attention. Quiet competence when it does not.</p></article>
         </div>
@@ -295,16 +295,23 @@ export default function Home() {
       <section className="client-tools-section" id="client-tools">
         <div className="section-heading split-heading">
           <div>
-            <p className="eyebrow">Already with us?</p>
-            <h2>The things you need,<br />where you expect them.</h2>
+            <p className="eyebrow">Your Client Portal</p>
+            <h2>Your cleaning,<br />in one place.</h2>
           </div>
-          <p>Manage an existing visit, confirm service coverage, or reach support without beginning another sales process.</p>
+          <p>
+            Once you become a Charleston Clean Routine client, your private Client Portal gives you one convenient place
+            to manage the parts of your service that should not require another phone call.
+          </p>
         </div>
         <div className="client-tool-grid">
           <a href={clientPortalUrl}>
             <span>Existing clients</span>
-            <h3>Manage My Booking</h3>
-            <p>View appointment details and use the account tools connected to your service.</p>
+            <h3>Manage Your Routine</h3>
+            <p>
+              Request service, see upcoming appointments, follow requests, review service history,
+              receive important alerts, access your journal, and use the account tools connected to your service.
+            </p>
+            <small>Your portal is created after your first booking. We send your login information once your client account is activated.</small>
             <strong>Open Client Portal →</strong>
           </a>
           <a href="/service-area">
