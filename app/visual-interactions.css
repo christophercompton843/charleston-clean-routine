@@ -30,6 +30,8 @@
 .principles-section{position:relative;overflow:hidden;isolation:isolate;}
 .principles-section::before{content:"";position:absolute;top:0;right:0;width:min(46vw,680px);height:100%;z-index:-2;background:url("/ccr-our-promise.jpg") center/cover no-repeat;opacity:.18;filter:saturate(.72);}
 .principles-section::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--cloud) 0%,var(--cloud) 58%,rgba(244,247,245,.9) 76%,rgba(244,247,245,.78) 100%);}
+.principle-grid article:nth-child(2) h3{font-size:0;}
+.principle-grid article:nth-child(2) h3::after{content:"We do what we promise.";font-size:inherit;}
 
 .process-section{position:relative;overflow:hidden;isolation:isolate;}
 .process-section::before{content:"";position:absolute;inset:0;z-index:-2;background:url("/ccr-what-to-expect.jpg") center 44%/cover no-repeat;opacity:.15;filter:saturate(.7);}
