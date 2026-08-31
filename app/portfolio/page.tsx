@@ -4,16 +4,16 @@ import "./portfolio.css";
 
 export const metadata: Metadata = {
   title: "Vacation Rental Cleaning & Portfolio Care | Charleston Clean Routine",
-  description: "Short-term and vacation-rental turnover cleaning, guest-ready turndown, and flexible multi-property service for Charleston owners, hosts, and property managers.",
+  description: "Vacation-rental and Airbnb turnover cleaning, guest-ready presentation, and coordinated multi-property care for Charleston owners, hosts, and property managers.",
 };
 
 const capabilities = [
   ["Turnover cleaning", "Reliable guest-to-guest cleaning shaped around each property, its checkout window, and its saved requirements."],
-  ["Guest-ready turndown", "Presentation details, welcome-ready resets, and property-specific finishing touches before the next arrival."],
+  ["Guest-ready presentation", "Property resets, presentation details, and property-specific finishing touches before the next arrival."],
   ["Plan ahead", "Schedule recurring services for a season or the year, with property-specific routines established well in advance."],
-  ["Change anytime", "Adjust a property plan as guest patterns, seasons, owner preferences, or operating needs change."],
+  ["Change as needed", "Adjust a property plan as guest patterns, seasons, owner preferences, or operating needs change."],
   ["Property memory", "Keep each property’s scope, presentation details, access notes, amenities, and recurring requests organized."],
-  ["Custom property support", "Ask us to evaluate special additions—from printed guest notes and restocking to amenity sourcing, pickup, and placement."],
+  ["Custom property support", "Ask us to evaluate appropriate additions—from printed guest notes and restocking to amenity sourcing, pickup, and placement."],
 ];
 
 export default function PortfolioPage() {
@@ -28,13 +28,13 @@ export default function PortfolioPage() {
         <div className="portfolio-hero-copy">
           <p className="portfolio-kicker">Short-term + vacation rental property services · Charleston</p>
           <h1>Turnovers handled.<br /><span>Properties ready.</span></h1>
-          <p className="portfolio-lede">Turnover cleaning, guest-ready turndown, recurring property care, and custom support for Charleston vacation rentals—from one property to an entire group of homes.</p>
+          <p className="portfolio-lede">Turnover cleaning, guest-ready presentation, recurring property care, and custom support for Charleston vacation rentals—from one property to an entire group of homes.</p>
           <div className="portfolio-service-chips" aria-label="Vacation rental services">
-            <span>Turnover cleaning</span><span>Guest-ready turndown</span><span>Deep cleaning</span><span>Restocking</span><span>Amenity placement</span><span>Custom requests</span>
+            <span>Turnover cleaning</span><span>Guest-ready presentation</span><span>Deep cleaning</span><span>Restocking</span><span>Amenity placement</span><span>Custom requests</span>
           </div>
           <div className="portfolio-actions">
             <Link href="/contact?topic=partnership" className="portfolio-button">Tell us about my rentals →</Link>
-            <a href="tel:+18436338648" className="portfolio-text-link">Call our Charleston team</a>
+            <Link href="/service-area" className="portfolio-text-link">Check service at my address</Link>
           </div>
         </div>
         <figure className="portfolio-hero-visual">
@@ -86,18 +86,18 @@ export default function PortfolioPage() {
           <h2>Tell us once.<br />We’ll work from there.</h2>
         </div>
         <blockquote>“Add a signature candle to six beach rentals for the next six turnovers.”</blockquote>
-        <p>Call Chris or send the request through the app. We can review sourcing or coordinate client-supplied products, confirm the affected properties and duration, and work to incorporate the change into the service plan. The same approach can apply to printed guest notes, soaps, room sprays, welcome items, restocking preferences, presentation details, and other appropriate property-specific requests.</p>
+        <p>Send the request through your Client Portal or our online contact path. We can review sourcing or coordinate client-supplied products, confirm the affected properties and duration, and work to incorporate the change into the service plan. The same approach can apply to printed guest notes, soaps, room sprays, welcome items, restocking preferences, presentation details, and other appropriate property-specific requests.</p>
       </section>
 
       <section className="portfolio-relationship">
         <div>
-          <p className="portfolio-kicker">A dedicated team, not a corporate call center</p>
-          <h2>We know your name.<br />We learn your properties.</h2>
+          <p className="portfolio-kicker">Technology for the routine. People when context matters.</p>
+          <h2>We learn your properties.<br />You keep control.</h2>
         </div>
         <div className="portfolio-relationship-copy">
-          <p>Whether you, your assistant, or your property manager is the point of contact, we work directly with whoever is on your team. You are not a distant account number routed through a national service center.</p>
-          <p>Use the app and client portal for everyday convenience, 24/7 automated support when you need an immediate answer, and direct local support when a request needs context or judgment.</p>
-          <strong>Sophisticated tools. Local people. Personal service.</strong>
+          <p>Whether you, your assistant, or your property manager is the point of contact, the property plan keeps requirements organized without forcing your team to repeat the same information for every turnover.</p>
+          <p>Use the Client Portal for everyday account and service management, the AI concierge for immediate guidance, and online support when a request needs context, review, or judgment. Phone support remains available when the digital path is not enough.</p>
+          <strong>Sophisticated tools. Local accountability. Personal service.</strong>
         </div>
       </section>
 
