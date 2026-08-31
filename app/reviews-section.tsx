@@ -20,14 +20,18 @@ export default function ReviewsSection() {
         .service-story-heading { display: grid; grid-template-columns: 1fr .75fr; gap: 56px; align-items: end; }
         .service-story-heading h2 { margin: 0; font-size: clamp(42px, 5vw, 68px); line-height: .98; letter-spacing: -.055em; }
         .service-story-heading > p { margin: 0 0 4px; color: #b9cbc7; font-size: 14px; line-height: 1.7; }
-        .service-story-grid { margin-top: 38px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+        .service-story-grid { margin-top: 38px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-items: stretch; }
         .service-story-grid figure { position: relative; height: 330px; margin: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.12); border-radius: 22px; background: #113a38; }
-        .service-story-grid img { width: 100%; height: 100%; object-fit: cover; }
-        .service-story-grid figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,30,29,.9), rgba(4,30,29,.08) 62%, transparent); }
-        .service-story-grid figcaption { position: absolute; z-index: 2; right: 18px; bottom: 18px; left: 18px; }
-        .service-story-grid figcaption span { color: var(--sea-bright); font-size: 8px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-        .service-story-grid figcaption strong { display: block; margin-top: 6px; color: white; font-size: 18px; line-height: 1.15; }
-        .service-story-grid figcaption small { display: block; margin-top: 6px; color: #c6d6d2; font-size: 10px; line-height: 1.5; }
+        .service-story-grid img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .service-story-grid figure:nth-child(1) img { object-position: center 40%; }
+        .service-story-grid figure:nth-child(2) img { object-position: center 48%; }
+        .service-story-grid figure:nth-child(3) img { object-position: center 45%; }
+        .service-story-grid figure:nth-child(4) img { object-position: center 52%; }
+        .service-story-grid figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,30,29,.94) 0%, rgba(4,30,29,.68) 28%, rgba(4,30,29,.08) 66%, transparent 82%); }
+        .service-story-grid figcaption { position: absolute; z-index: 2; right: 18px; bottom: 18px; left: 18px; min-height: 112px; display: flex; flex-direction: column; justify-content: flex-end; }
+        .service-story-grid figcaption span { display: block; min-height: 12px; color: var(--sea-bright); font-size: 8px; line-height: 1.35; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+        .service-story-grid figcaption strong { display: block; min-height: 42px; margin-top: 6px; color: white; font-size: 18px; line-height: 1.15; }
+        .service-story-grid figcaption small { display: block; min-height: 45px; margin-top: 6px; color: #c6d6d2; font-size: 10px; line-height: 1.5; }
         .founder-trust { padding: 72px max(28px, calc((100vw - 1180px) / 2)); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); gap: 52px; align-items: center; background: var(--harbor-black); color: white; border-top: 1px solid rgba(255,255,255,.08); }
         .founder-trust-copy { max-width: 680px; }
         .founder-trust-copy h2 { margin: 0; font-size: clamp(42px, 5vw, 68px); line-height: .98; letter-spacing: -.055em; }
@@ -65,7 +69,9 @@ export default function ReviewsSection() {
           .review-coming-card { align-items: flex-start; flex-direction: column; }
           .founder-trust { padding-block: 64px; }
           .founder-trust-visual { width: 100%; max-width: 330px; }
-          .service-story-grid figure { height: 290px; }
+          .service-story-grid figure { height: 310px; }
+          .service-story-grid figcaption { min-height: 0; }
+          .service-story-grid figcaption strong, .service-story-grid figcaption small { min-height: 0; }
           .home-proof-grid figure, .home-proof-grid figure.home-proof-large { height: 220px; }
         }
       `}</style>
