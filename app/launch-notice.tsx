@@ -36,8 +36,8 @@ export default function LaunchNotice() {
           }
         }
       `}</style>
-      <strong>Charleston Clean Routine is opening for service soon.</strong>
-      <span>Residential pricing is available now, and booking will open shortly.</span>
+      <strong>Charleston Clean Routine opens September 3.</strong>
+      <span>Residential pricing and advance booking are available now.</span>
     </aside>
   );
 }
