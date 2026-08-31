@@ -235,7 +235,7 @@ export default function PricePlanner() {
                 return <button key={item} type="button" className={`frequency-choice ${effectiveFrequency === item ? "selected" : ""}`} onClick={() => setFrequency(item)}><span>{frequencyLabel(item)}</span><strong>${formatPrice((price ?? 0) + addOnTotal)}</strong><small>per visit with selected options</small></button>;
               })}
             </div>
-            {effectiveService === "Home Routine Clean" && effectiveFrequency !== "Single" && <div className="routine-note"><strong>Your recurring routine:</strong> once established, the same service structure is ready for each visit. Any founding-period benefit is shown only when a qualifying offer is active.</div>}
+            {effectiveService === "Home Routine Clean" && effectiveFrequency !== "Single" && <div className="routine-note"><strong>Your recurring routine:</strong> the same selected service structure and frequency provide the baseline for each recurring visit, with changes handled through the service process when needed.</div>}
           </div>
         )}
 
