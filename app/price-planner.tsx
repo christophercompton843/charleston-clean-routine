@@ -25,7 +25,7 @@ const serviceOptions: Array<{
   { name: "Move-In / Move-Out Clean", label: "Move-In / Move-Out", description: "A one-time empty-home reset designed around a transition.", icon: "move-in-out" },
 ];
 
-const frequencies: Frequency[] = ["Single", "Monthly", "Bi-Weekly", "Weekly"];
+const frequencies: Frequency[] = ["Bi-Weekly", "Weekly", "Monthly", "Single"];
 type Condition = "Excellent" | "Good" | "Fair" | "Needs Work / Very Dirty";
 
 type AddOns = {
@@ -69,7 +69,7 @@ export default function PricePlanner() {
   const [zipcode, setZipcode] = useState("");
   const [service, setService] = useState<ResidentialService>("Home Routine Clean");
   const [propertySize, setPropertySize] = useState<PropertySize>(PROPERTY_SIZES[2]);
-  const [frequency, setFrequency] = useState<Frequency>("Single");
+  const [frequency, setFrequency] = useState<Frequency>("Bi-Weekly");
   const [condition, setCondition] = useState<Condition>("Good");
   const [addOns, setAddOns] = useState<AddOns>(emptyAddOns);
 
@@ -194,12 +194,16 @@ export default function PricePlanner() {
             <h3>Choose the level of care.</h3>
             <p>The quality standard does not change. What changes is the amount and type of work included in the visit.</p>
             <div className="service-builder-grid">
-              {serviceOptions.map((option) => (
-                <button key={option.name} type="button" className={`service-choice ${service === option.name ? "selected" : ""}`} onClick={() => setService(option.name)}>
-                  <BrandIcon name={option.icon} />
-                  <strong>{option.label}</strong><small>{option.description}</small>
-                </button>
-              ))}
+              {serviceOptions.map((option) => {
+                const oneTimeOnly = option.name === "Move-In / Move-Out Clean";
+                return (
+                  <button key={option.name} type="button" className={`service-choice ${service === option.name ? "selected" : ""} ${oneTimeOnly ? "one-time-service" : ""}`} onClick={() => setService(option.name)}>
+                    <BrandIcon name={option.icon} />
+                    {oneTimeOnly && <span className="choice-label">One-time service</span>}
+                    <strong>{option.label}</strong><small>{option.description}</small>
+                  </button>
+                );
+              })}
             </div>
             <div className="builder-help"><a href="#whats-included">Want the room-by-room detail first? Open The Details above →</a></div>
           </div>
@@ -228,14 +232,25 @@ export default function PricePlanner() {
           <div className="builder-stage">
             <span className="builder-kicker">06 · Your Routine</span>
             <h3>Choose how often it stays handled.</h3>
-            <p>Recurring prices below come directly from the current published pricing schedule. Move-In / Move-Out service remains one-time only.</p>
+            <p>{effectiveService === "Move-In / Move-Out Clean" ? "Move-In / Move-Out is intentionally a one-time service." : "We start with every two weeks—the most popular maintenance rhythm—while keeping weekly, monthly, and one-time service available when they fit better."}</p>
             <div className="frequency-builder-grid">
               {availableFrequencies.map((item) => {
                 const price = PLATFORM_PRICING[effectiveService][propertySize][item] ?? PLATFORM_PRICING[effectiveService][propertySize].Single;
-                return <button key={item} type="button" className={`frequency-choice ${effectiveFrequency === item ? "selected" : ""}`} onClick={() => setFrequency(item)}><span>{frequencyLabel(item)}</span><strong>${formatPrice((price ?? 0) + addOnTotal)}</strong><small>per visit with selected options</small></button>;
+                const isPopular = item === "Bi-Weekly";
+                const isOneTime = item === "Single";
+                return (
+                  <button key={item} type="button" className={`frequency-choice ${effectiveFrequency === item ? "selected" : ""} ${isPopular ? "popular-frequency" : ""} ${isOneTime ? "one-time-frequency" : ""}`} onClick={() => setFrequency(item)}>
+                    {isPopular && <em>Most Popular</em>}
+                    {isOneTime && <em>One-time option</em>}
+                    <span>{frequencyLabel(item)}</span>
+                    <strong>${formatPrice((price ?? 0) + addOnTotal)}</strong>
+                    <small>per visit with selected options</small>
+                  </button>
+                );
               })}
             </div>
             {effectiveService === "Home Routine Clean" && effectiveFrequency !== "Single" && <div className="routine-note"><strong>Your recurring routine:</strong> the same selected service structure and frequency provide the baseline for each recurring visit, with changes handled through the service process when needed.</div>}
+            {effectiveFrequency === "Single" && effectiveService !== "Move-In / Move-Out Clean" && <div className="routine-note one-time-note"><strong>Choosing one time:</strong> this creates a single visit rather than an ongoing cleaning routine. You can switch back to recurring service at any time before booking.</div>}
           </div>
         )}
 
