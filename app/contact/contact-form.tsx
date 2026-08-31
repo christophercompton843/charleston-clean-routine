@@ -13,19 +13,30 @@ const topics = [
   "Something else",
 ];
 
+function topicFromQuery(value: string | null) {
+  if (value === "partnership" || value === "portfolio") return "Property or business partnership";
+  if (value === "residential") return "Residential cleaning";
+  if (value === "vacation-rental" || value === "airbnb") return "Vacation-rental turnover";
+  if (value === "booking") return "Existing booking";
+  return "";
+}
+
 export default function ContactForm() {
   const [state, setState] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [error, setError] = useState("");
   const [topic, setTopic] = useState(() => {
     if (typeof window === "undefined") return "";
     const requested = new URLSearchParams(window.location.search).get("topic");
-    if (requested === "partnership") return "Property or business partnership";
-    return "";
+    return topicFromQuery(requested);
   });
 
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get("topic");
-    if (requested === "provider") window.location.replace(providerApplicationUrl);
+    if (requested === "provider") {
+      window.location.replace(providerApplicationUrl);
+      return;
+    }
+    setTopic(topicFromQuery(requested));
   }, []);
 
   function changeTopic(value: string) {
