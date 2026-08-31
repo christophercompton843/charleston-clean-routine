@@ -129,17 +129,6 @@ export default function Home() {
                 cleaning, then keep it one-time or make it recurring and add only what your space needs.
               </p>
               <div className="service-tags"><span>Routine</span><span>Deep</span><span>Move-In / Out</span><span>Recurring</span></div>
-              <div className="founding-routine-note">
-                <span>Founding Routine</span>
-                <p>
-                  Recurring routines established during the founding enrollment period
-                  receive access to a premium recurring-service benefit. A very limited
-                  number of qualifying routines will also receive the Charleston Finish
-                  Scent Experience with every recurring visit for the life of that routine.
-                  If that introductory experience is no longer available, it can still be
-                  added at any time as a paid enhancement for one visit or for every recurring visit.
-                </p>
-              </div>
               <div className="hero-actions">
                 <a className="button button-small" href="#whats-included">See What’s Included</a>
                 <a className="button button-small" href="#pricing-tool">Get My Instant Price</a>
@@ -162,7 +151,7 @@ export default function Home() {
               </p>
               <div className="service-tags"><span>Turnover</span><span>Deep Reset</span><span>Arrival Prep</span><span>Add-Ons</span></div>
               <div className="hero-actions">
-                <a className="button button-small" href="/services">Explore Rental Care</a>
+                <a className="button button-small" href="/services/vacation-rental-cleaning-charleston-sc">Explore Rental Care</a>
                 <a className="button button-small" href="/portfolio">Build My Rental Plan</a>
               </div>
             </div>
@@ -178,13 +167,13 @@ export default function Home() {
               <h3>Airbnb Care</h3>
               <p>
                 Set Airbnb Care as a recurring service so your property has an established cleaning
-                routine in place. Adjust the frequency through the client portal as rental activity
-                changes throughout the year—more often during high-demand periods, less often when
-                bookings slow—while keeping the same care structure ready when you need it.
+                routine in place. Adjust the frequency as rental activity changes throughout the year—
+                more often during high-demand periods, less often when bookings slow—while keeping
+                the same care structure ready when you need it.
               </p>
               <div className="service-tags"><span>Turnover</span><span>Bed Setup</span><span>Restocking</span><span>Reporting</span></div>
               <div className="hero-actions">
-                <a className="button button-small" href="/services">Explore Airbnb Care</a>
+                <a className="button button-small" href="/services/airbnb-cleaning-charleston-sc">Explore Airbnb Care</a>
                 <a className="button button-small" href="/portfolio">Build My Airbnb Plan</a>
               </div>
             </div>
@@ -296,19 +285,19 @@ export default function Home() {
             <h2>Your cleaning,<br />in one place.</h2>
           </div>
           <p>
-            Once you become a Charleston Clean Routine client, your private Client Portal gives you one convenient place
-            to manage the parts of your service that should not require another phone call.
+            Once your client account is active, the Client Portal gives you direct access to the
+            appointment and account tools enabled for your Charleston Clean Routine service.
           </p>
         </div>
         <div className="client-tool-grid">
           <a href={clientPortalUrl}>
             <span>Existing clients</span>
-            <h3>Manage Your Routine</h3>
+            <h3>Manage Your Account</h3>
             <p>
-              Request service, see upcoming appointments, follow requests, review service history,
-              receive important alerts, access your journal, and use the account tools connected to your service.
+              Open the secure Client Portal to use the appointment and account-management tools
+              available for your Charleston Clean Routine service.
             </p>
-            <small>Your portal is created after your first booking. We send your login information once your client account is activated.</small>
+            <small>Your portal access is connected to your activated client account.</small>
             <strong>Open Client Portal →</strong>
           </a>
           <a href="/service-area">
@@ -387,10 +376,10 @@ export default function Home() {
         <div className="footer-links">
           <div>
             <span>Services</span>
-            <a href="#home-cleaning">Home Cleaning</a>
-            <a href="#vacation-rental-cleaning">Vacation Rental Care</a>
-            <a href="#airbnb-care">Airbnb Care</a>
-            <a href="#portfolio-partners">Portfolio Care</a>
+            <a href="/services/house-cleaning-charleston-sc">Home Cleaning</a>
+            <a href="/services/vacation-rental-cleaning-charleston-sc">Vacation Rental Care</a>
+            <a href="/services/airbnb-cleaning-charleston-sc">Airbnb Care</a>
+            <a href="/portfolio">Portfolio Care</a>
           </div>
           <div>
             <span>Start</span>
