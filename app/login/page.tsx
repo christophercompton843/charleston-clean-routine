@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const customerLogin = "https://www.jointidywise.com/portal/login";
+const clientPortalGuide = "/client-portal-guide/download";
 const staffLogin = "https://www.jointidywise.com/staff/login";
 const providerApplication = "/provider-application";
 
@@ -24,8 +25,11 @@ export default function LoginPage() {
           <span>Customer</span>
           <h2>Manage my home.</h2>
           <p>Open your private Client Portal to view the appointment and account tools enabled for your Charleston Clean Routine service.</p>
-          <a className="button" href={customerLogin} target="_blank" rel="noreferrer">Client Portal ↗</a>
-          <a className="login-secondary" href="/client-portal-guide">Client Portal quick-start guide →</a>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+            <a className="button" href={customerLogin} target="_blank" rel="noreferrer">Open Client Portal ↗</a>
+            <a className="button button-ghost" href={clientPortalGuide}>Download Client Portal Guide ↓</a>
+          </div>
+          <a className="login-secondary" href="/client-portal-guide">View the online portal guide →</a>
         </article>
 
         <article>
