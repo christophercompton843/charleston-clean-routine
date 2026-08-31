@@ -1,0 +1,10 @@
+.hero-visual {
+  background-image: url("https://raw.githubusercontent.com/christophercompton843/charleston-clean-routine/main/public/%20%20%20%20ccr-tradd-street-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-visual > img {
+  opacity: 0;
+}
