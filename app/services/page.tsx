@@ -5,7 +5,8 @@ import "./services.css";
 
 export const metadata: Metadata = {
   title: "Cleaning Services | Charleston Clean Routine",
-  description: "Explore Charleston Clean Routine home cleaning, deep cleaning, move-in and move-out cleaning, vacation-rental cleaning, Airbnb cleaning, and portfolio care.",
+  description: "Explore Charleston Clean Routine home cleaning, deep cleaning, move-in and move-out cleaning, vacation-rental cleaning, Airbnb cleaning, and portfolio care across the Charleston area.",
+  alternates: { canonical: "/services" },
 };
 
 const serviceCards = [
@@ -58,7 +59,7 @@ export default function ServicesPage() {
     <CustomerPageShell
       eyebrow="Your Choice"
       title="Start with what you need handled."
-      intro="Choose the kind of property care you need, understand the scope, and move directly to the next useful step. Residential pricing is available now; vacation-rental, Airbnb, and portfolio care are built around the specific property requirements."
+      intro="Choose the kind of property care you need, understand the scope, and move directly to the next useful step. Residential pricing and advance booking are available now; vacation-rental, Airbnb, and portfolio care are built around the specific property requirements."
     >
       <section className="service-index-grid" aria-label="Charleston Clean Routine services">
         {serviceCards.map((service) => (
@@ -73,7 +74,7 @@ export default function ServicesPage() {
       <aside className="service-area-aside">
         <p className="eyebrow">Ready to start?</p>
         <h2>Use the path that matches the property.</h2>
-        <p>Residential customers can build an instant estimate now. Vacation-rental, Airbnb, and portfolio clients can begin with a property plan so access, turnover timing, linens, restocking, and property-specific requirements are handled correctly from the start.</p>
+        <p>Residential customers can build an instant estimate and continue to advance booking. Vacation-rental, Airbnb, and portfolio clients can begin with the appropriate property path so access, turnover timing, linens, restocking, and property-specific requirements are handled correctly from the start.</p>
         <div className="hero-actions">
           <Link className="button" href="/#pricing-tool">Build my residential routine →</Link>
           <Link className="button" href="/portfolio">Build my property plan →</Link>
