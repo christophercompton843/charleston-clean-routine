@@ -332,6 +332,13 @@ export default function Home() {
             <p>We ask for your first name and email so the estimate can be saved to your inquiry; a mobile number is optional. You still see the applicable residential price online before booking, and no callback is required just to learn what the selected service costs.</p>
           </details>
           <details>
+            <summary>Why does Charleston Clean Routine cost more than some cleaning services?</summary>
+            <p>We believe better service starts with how the people providing it are treated. Charleston Clean Routine does not depend on artificially low introductory pricing, rushed appointments, or compensation that makes quality harder to sustain.</p>
+            <p>We believe cleaning professionals who feel valued and are paid fairly are better positioned to do careful work, build healthy long-term relationships with clients, and take the time needed to meet the standard rather than feeling pressured to rush through a home.</p>
+            <p>That approach supports stronger professional loyalty, greater consistency from visit to visit, and a more dependable service relationship for everyone involved.</p>
+            <p>For our clients, the result is what matters most: <strong>reliable care, familiar expectations, fewer disruptions, and the peace of mind that comes from knowing your home is being handled properly.</strong></p>
+          </details>
+          <details>
             <summary>Do you clean Airbnbs and vacation rentals?</summary>
             <p>Yes. We provide guest turnover and property-readiness services for Airbnbs, vacation homes, and coastal rentals, with options such as linen setup, restocking coordination, reporting, and deeper resets based on the property plan.</p>
           </details>
