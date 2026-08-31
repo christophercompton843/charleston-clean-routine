@@ -9,13 +9,14 @@ export const metadata: Metadata = {
 };
 
 const portalUrl = "https://www.jointidywise.com/portal/login";
+const pdfUrl = "/client-portal-guide/download";
 
 export default function ClientPortalGuidePage() {
   return (
     <CustomerPageShell
       eyebrow="TidyWise Client Portal"
       title="Your cleaning, managed in one place."
-      intro="A quick-start guide for Charleston Clean Routine homeowners and property managers. The portal is browser-based, so there is nothing to download. Available tools can vary by account and by the features enabled for your service."
+      intro="A quick-start guide for Charleston Clean Routine homeowners and property managers. The portal is browser-based, so there is nothing to install. Available tools can vary by account and by the features enabled for your service."
     >
       <article className="portal-guide">
         <style>{`
@@ -43,13 +44,14 @@ export default function ClientPortalGuidePage() {
           </p>
           <div className="guide-actions">
             <a className="button" href={portalUrl} target="_blank" rel="noreferrer">Open Client Portal ↗</a>
+            <a className="button button-ghost" href={pdfUrl}>Download Client Portal Guide ↓</a>
             <a className="button button-ghost" href="/contact">Get online support</a>
           </div>
         </section>
 
         <section>
           <h2>What you can do</h2>
-          <p>TidyWise publicly supports a client self-service portal. Depending on the tools enabled for your Charleston Clean Routine account, you may be able to:</p>
+          <p>TidyWise supports a client self-service portal. Depending on the tools enabled for your Charleston Clean Routine account, you may be able to:</p>
           <ul>
             <li>View upcoming and past bookings.</li>
             <li>Request new cleaning appointments.</li>
@@ -90,7 +92,8 @@ export default function ClientPortalGuidePage() {
           <h3>Browser issue?</h3>
           <p>Use a current version of Chrome, Safari, Firefox, or Edge. If a page appears stale, refresh it before submitting the same request again.</p>
           <div className="guide-actions">
-            <a className="button" href={portalUrl} target="_blank" rel="noreferrer">Go to Client Portal ↗</a>
+            <a className="button" href={portalUrl} target="_blank" rel="noreferrer">Open Client Portal ↗</a>
+            <a className="button button-ghost" href={pdfUrl}>Download Client Portal Guide ↓</a>
             <a className="button button-ghost" href="/contact">Contact Support</a>
           </div>
         </section>
