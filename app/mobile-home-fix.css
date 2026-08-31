@@ -1,0 +1,133 @@
+/* Mobile homepage correction: make the business immediately understandable and eliminate hero collisions. */
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+    padding: 52px 18px 34px;
+    display: block;
+    background: var(--harbor-black);
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 14px;
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .hero h1 {
+    max-width: 330px;
+    font-size: clamp(48px, 15vw, 62px);
+    line-height: .92;
+  }
+
+  .hero-lede {
+    max-width: 350px;
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .hero-lede::before {
+    content: "Home cleaning · Deep cleaning · Move-in / move-out · Vacation rentals · Airbnb · Portfolio care";
+    display: block;
+    margin-bottom: 14px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 760;
+    line-height: 1.55;
+    letter-spacing: .005em;
+  }
+
+  .hero-actions {
+    margin-top: 26px;
+    gap: 10px;
+  }
+
+  .hero-actions .button {
+    min-height: 52px;
+  }
+
+  .hero-proof {
+    margin-top: 30px;
+    padding-top: 18px;
+    gap: 0;
+  }
+
+  .hero-proof p {
+    min-height: 42px;
+    padding: 10px 0;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .hero-proof strong {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .hero-visual {
+    position: relative;
+    inset: auto;
+    height: 285px;
+    margin: 30px -18px -34px;
+  }
+
+  .hero-visual::after {
+    background: linear-gradient(180deg, rgba(4,30,29,.9) 0%, rgba(4,30,29,.16) 35%, rgba(4,30,29,.72) 100%);
+  }
+
+  .hero-visual > img {
+    object-position: 64% center !important;
+  }
+
+  .hero-image-caption {
+    right: 18px;
+    bottom: 24px;
+    left: 18px;
+    width: auto;
+    text-align: left;
+  }
+
+  .hero-image-caption strong {
+    margin-top: 7px;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .hero-image-caption p {
+    max-width: 315px;
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .journey-bar {
+    display: none;
+  }
+
+  .services-section {
+    padding-top: 72px;
+  }
+
+  .services-section .section-heading h2 {
+    font-size: 42px;
+  }
+
+  .mobile-action-dock {
+    z-index: 140;
+  }
+
+  .concierge {
+    z-index: 145;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero h1 { font-size: 49px; }
+  .hero-lede::before { font-size: 12px; }
+}
