@@ -25,6 +25,7 @@ export default function LoginPage() {
           <h2>Manage my home.</h2>
           <p>Open your private Client Portal to view the appointment and account tools enabled for your Charleston Clean Routine service.</p>
           <a className="button" href={customerLogin} target="_blank" rel="noreferrer">Client Portal ↗</a>
+          <a className="login-secondary" href="/client-portal-guide">Client Portal quick-start guide →</a>
         </article>
 
         <article>
