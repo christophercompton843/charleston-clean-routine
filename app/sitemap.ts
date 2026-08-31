@@ -14,8 +14,6 @@ const pages = [
   { path: "/portfolio", changeFrequency: "monthly" as const, priority: 0.85 },
   { path: "/service-area", changeFrequency: "monthly" as const, priority: 0.75 },
   { path: "/contact", changeFrequency: "yearly" as const, priority: 0.6 },
-  { path: "/login", changeFrequency: "yearly" as const, priority: 0.45 },
-  { path: "/review", changeFrequency: "yearly" as const, priority: 0.4 },
   { path: "/provider-application", changeFrequency: "monthly" as const, priority: 0.35 },
   { path: "/privacy", changeFrequency: "yearly" as const, priority: 0.2 },
   { path: "/terms", changeFrequency: "yearly" as const, priority: 0.2 },
