@@ -35,9 +35,16 @@
 .process-section::before{content:"";position:absolute;inset:0;z-index:-2;background:url("/ccr-what-to-expect.jpg") center 44%/cover no-repeat;opacity:.15;filter:saturate(.7);}
 .process-section::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,30,29,.97),rgba(4,30,29,.94));}
 
-.client-tool-grid>a:first-child{position:relative;overflow:hidden;isolation:isolate;min-height:360px;padding-top:168px;}
-.client-tool-grid>a:first-child::before{content:"";position:absolute;top:0;left:0;right:0;height:150px;z-index:-1;background:url("/ccr-client-portal-visual.jpg") center/cover no-repeat;border-bottom:1px solid var(--line);}
-.client-tool-grid>a:first-child::after{content:"";position:absolute;top:104px;left:0;right:0;height:46px;z-index:-1;background:linear-gradient(180deg,transparent,#fff);}
+/* Client tools share one visual system so the three-card row reads as intentional, not partially illustrated. */
+.client-tool-grid>a{position:relative;overflow:hidden;isolation:isolate;min-height:360px;padding-top:168px;}
+.client-tool-grid>a::before{content:"";position:absolute;top:0;left:0;right:0;height:150px;z-index:-1;background-position:center;background-size:cover;background-repeat:no-repeat;border-bottom:1px solid var(--line);filter:saturate(.78);}
+.client-tool-grid>a::after{content:"";position:absolute;top:104px;left:0;right:0;height:46px;z-index:-1;background:linear-gradient(180deg,transparent,var(--card-fade,#fff));}
+.client-tool-grid>a:nth-child(1){--card-fade:#fff;}
+.client-tool-grid>a:nth-child(1)::before{background-image:url("/ccr-client-portal-visual.jpg");}
+.client-tool-grid>a:nth-child(2){--card-fade:#eef5f2;}
+.client-tool-grid>a:nth-child(2)::before{background-image:url("/ccr-interactive-floorplan.png");background-color:#f7f4ee;background-size:cover;background-position:center 46%;filter:saturate(.65) contrast(.94);}
+.client-tool-grid>a:nth-child(3){--card-fade:#123c3a;}
+.client-tool-grid>a:nth-child(3)::before{background-image:url("/ccr-quality-check.jpg");background-position:center 42%;opacity:.42;filter:saturate(.65);}
 .client-tool-grid>a:first-child small{display:block;margin:14px 0;color:var(--muted);font-size:11px;line-height:1.55;}
 
 .final-cta{position:relative;overflow:hidden;isolation:isolate;}
@@ -45,4 +52,4 @@
 .final-cta::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(4,30,29,.97),rgba(4,30,29,.9));}
 
 @media(max-width:1000px){.detailed-floorplan{min-height:600px;}.principles-section::before{width:64vw;opacity:.12;}}
-@media(max-width:700px){.detailed-floorplan{min-height:440px;padding:58px 8px 24px;border-radius:22px}.floorplan-instruction{top:14px;left:14px}.hotspot-label{display:none}.hotspot-dot{width:15px;height:15px;border-width:4px}.floorplan-status{right:12px;bottom:12px;min-width:138px;padding:10px 12px}.hero-visual>img{object-position:64% center!important}.service-copy>.hero-actions{padding-top:28px}.principles-section::before{width:100%;opacity:.09}.client-tool-grid>a:first-child{min-height:330px;padding-top:155px}.client-tool-grid>a:first-child::before{height:138px}}
+@media(max-width:700px){.detailed-floorplan{min-height:440px;padding:58px 8px 24px;border-radius:22px}.floorplan-instruction{top:14px;left:14px}.hotspot-label{display:none}.hotspot-dot{width:15px;height:15px;border-width:4px}.floorplan-status{right:12px;bottom:12px;min-width:138px;padding:10px 12px}.hero-visual>img{object-position:64% center!important}.service-copy>.hero-actions{padding-top:28px}.principles-section::before{width:100%;opacity:.09}.client-tool-grid>a{min-height:330px;padding-top:155px}.client-tool-grid>a::before{height:138px}.client-tool-grid>a::after{top:96px;height:42px}}
