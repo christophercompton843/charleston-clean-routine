@@ -12,16 +12,16 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL("https://charlestoncleanroutine.com"),
   title: "Charleston Clean Routine | Your Home, Handled",
-  description: "Get an instant price, book online, and keep your Charleston-area home on a reliable cleaning routine with clear service standards and thoughtfully designed care.",
+  description: "Get an instant residential cleaning price and explore thoughtfully designed home, vacation-rental, Airbnb, and portfolio cleaning throughout the Charleston area.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg", apple: "/favicon.svg" },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website", locale: "en_US", title: "Charleston Clean Routine | Your Home, Handled",
-    description: "Instant pricing, online booking, screened providers, quality checks, and recurring scheduling for Charleston-area homes.",
+    description: "Clear residential pricing, defined service standards, screened cleaning professionals, and thoughtfully designed care for Charleston-area homes and short-term rentals.",
     siteName: "Charleston Clean Routine",
-    images: [{ url: "/charleston-home-warm.jpg", width: 1600, height: 1067, alt: "A warm Charleston home after a professional reset" }],
+    images: [{ url: "/charleston-home-warm.jpg", width: 1600, height: 1067, alt: "A warm Charleston home after professional cleaning" }],
   },
-  twitter: { card: "summary_large_image", title: "Charleston Clean Routine | Your Home, Handled", description: "Modern home and vacation-rental cleaning shaped around Charleston life.", images: ["/charleston-home-warm.jpg"] },
+  twitter: { card: "summary_large_image", title: "Charleston Clean Routine | Your Home, Handled", description: "Home, vacation-rental, Airbnb, and portfolio cleaning shaped around Charleston life.", images: ["/charleston-home-warm.jpg"] },
   robots: { index: true, follow: true },
 };
 
@@ -34,10 +34,25 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     image: "https://charlestoncleanroutine.com/charleston-home-warm.jpg",
     email: "hello@charlestoncleanroutine.com",
     telephone: "+1-843-633-8648",
-    description: "Locally owned Charleston-area residential and vacation-rental cleaning service offering recurring home cleaning, deep cleaning, move-in and move-out cleaning, vacation-rental turnovers, and Refresh & Reset visits.",
+    description: "Charleston-area cleaning service offering recurring home cleaning, deep cleaning, move-in and move-out cleaning, vacation-rental and Airbnb turnover care, and coordinated portfolio cleaning.",
     priceRange: "$$",
-    areaServed: ["Mount Pleasant, SC", "Daniel Island, SC", "Sullivan's Island, SC", "Isle of Palms, SC", "Charleston, SC", "West Ashley, SC", "James Island, SC", "Folly Beach, SC"].map((name) => ({ "@type": "Place", name })),
-    hasOfferCatalog: { "@type": "OfferCatalog", name: "Cleaning services", itemListElement: ["Recurring home cleaning", "Deep cleaning", "Move-in and move-out cleaning", "Vacation-rental turnover cleaning", "Refresh & Reset visits"].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })) },
+    areaServed: [
+      "Charleston, SC", "Mount Pleasant, SC", "Daniel Island, SC", "Sullivan's Island, SC", "Isle of Palms, SC",
+      "West Ashley, SC", "James Island, SC", "Folly Beach, SC", "North Charleston, SC", "Hanahan, SC",
+      "Johns Island, SC", "Kiawah Island, SC", "Seabrook Island, SC", "Summerville, SC", "Goose Creek, SC", "Ladson, SC"
+    ].map((name) => ({ "@type": "Place", name })),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Cleaning services",
+      itemListElement: [
+        "Recurring home cleaning",
+        "Deep cleaning",
+        "Move-in and move-out cleaning",
+        "Vacation rental cleaning",
+        "Airbnb turnover cleaning",
+        "Portfolio cleaning services"
+      ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } }))
+    },
   };
 
   return (
