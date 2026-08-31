@@ -99,6 +99,11 @@ export default function PortfolioPage() {
           <p>Whether you, your assistant, or your property manager is the point of contact, the property plan keeps requirements organized without forcing your team to repeat the same information for every turnover.</p>
           <p>Use the Client Portal for the account and appointment tools enabled for your service, the AI concierge for immediate guidance, and online support when a request needs context, review, or judgment. Phone support remains available when the digital path is not enough.</p>
           <strong>Sophisticated tools. Local accountability. Personal service.</strong>
+          <div className="portfolio-actions" style={{ marginTop: "22px" }}>
+            <a className="portfolio-button" href="https://www.jointidywise.com/portal/login" target="_blank" rel="noreferrer">Open Client Portal ↗</a>
+            <a className="portfolio-text-link" href="/portfolio-care-guide/download">Download Portfolio Care Guide ↓</a>
+            <a className="portfolio-text-link" href="/portfolio-care-guide">View online guide →</a>
+          </div>
         </div>
       </section>
 
