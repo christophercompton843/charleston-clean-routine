@@ -22,6 +22,10 @@ export default function ServiceAreaChecker() {
     setResult(standardZips.has(zip) ? "standard" : "review");
   }
 
+  const reviewMessage = checkedZip
+    ? `Please check service coverage for ZIP ${checkedZip}. I would like to know the next workable option for my address.`
+    : "Please check service coverage for my address and let me know the next workable option.";
+
   return (
     <div className="zip-checker">
       <p className="eyebrow icon-eyebrow"><BrandIcon name="service-area" />Check before booking</p>
@@ -34,7 +38,7 @@ export default function ServiceAreaChecker() {
         <div className="zip-result available" role="status">
           <BrandIcon name="secure-verified" />
           <strong>Yes. This ZIP is within our current Charleston service area.</strong>
-          <p>Build your service and see your residential price now. Your exact address and live provider availability are confirmed when you choose the appointment.</p>
+          <p>Build your service and see your residential price now. Your exact address and appointment options are confirmed during booking.</p>
           <Link className="button" href="/#pricing-tool">Build my routine →</Link>
         </div>
       )}
@@ -42,8 +46,8 @@ export default function ServiceAreaChecker() {
         <div className="zip-result review" role="status">
           <BrandIcon name="waitlist-coming-soon" />
           <strong>This ZIP needs a quick coverage check—but that is not a no.</strong>
-          <p>Send us the address and service you need. We will check current coverage and, when appropriate, identify the next workable option rather than leaving you with a dead end.</p>
-          <Link className="button" href={`/contact?zip=${checkedZip}`}>Check my address →</Link>
+          <p>We will carry the ZIP you already entered into the request. Add the street address and service you need, and we will check the next workable option rather than making you start over.</p>
+          <Link className="button" href={`/contact?topic=residential&message=${encodeURIComponent(reviewMessage)}`}>Check my address →</Link>
         </div>
       )}
     </div>
