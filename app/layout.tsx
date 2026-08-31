@@ -4,6 +4,7 @@ import "./globals.css";
 import "./layout-fixes.css";
 import "./pricing-tool.css";
 import "./hero-fix.css";
+import "./mobile-home-fix.css";
 import SiteMenu from "./site-menu";
 import LaunchNotice from "./launch-notice";
 
