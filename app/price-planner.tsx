@@ -36,6 +36,7 @@ type AddOns = {
   windows: number;
   laundry: number;
   linens: number;
+  bathrooms: number;
 };
 
 const emptyAddOns: AddOns = {
@@ -46,6 +47,7 @@ const emptyAddOns: AddOns = {
   windows: 0,
   laundry: 0,
   linens: 0,
+  bathrooms: 0,
 };
 
 const steps = ["Property", "Your Home", "Condition", "Service Level", "The Options", "Your Routine"];
@@ -65,6 +67,9 @@ function frequencyLabel(frequency: Frequency) {
 
 export default function PricePlanner() {
   const [step, setStep] = useState(0);
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [service, setService] = useState<ResidentialService>("Home Routine Clean");
@@ -72,9 +77,13 @@ export default function PricePlanner() {
   const [frequency, setFrequency] = useState<Frequency>("Bi-Weekly");
   const [condition, setCondition] = useState<Condition>("Good");
   const [addOns, setAddOns] = useState<AddOns>(emptyAddOns);
+  const [leadCaptured, setLeadCaptured] = useState(false);
+  const [leadError, setLeadError] = useState("");
 
   const effectiveService: ResidentialService = condition === "Fair" && service === "Home Routine Clean" ? "Home Deep Clean" : service;
-  const requiresReview = condition === "Needs Work / Very Dirty";
+  const requiresConditionReview = condition === "Needs Work / Very Dirty";
+  const requiresBathroomReview = addOns.bathrooms > 0;
+  const requiresReview = requiresConditionReview || requiresBathroomReview;
   const effectiveFrequency: Frequency = effectiveService === "Move-In / Move-Out Clean" ? "Single" : frequency;
   const availableFrequencies: Frequency[] = effectiveService === "Move-In / Move-Out Clean" ? ["Single"] : frequencies;
   const basePrice = PLATFORM_PRICING[effectiveService][propertySize][effectiveFrequency] ?? PLATFORM_PRICING[effectiveService][propertySize].Single;
@@ -102,13 +111,53 @@ export default function PricePlanner() {
     addOns.windows ? `${addOns.windows} interior window${addOns.windows === 1 ? "" : "s"}` : null,
     addOns.laundry ? `${addOns.laundry} laundry load${addOns.laundry === 1 ? "" : "s"}` : null,
     addOns.linens ? `${addOns.linens} additional bed linen change${addOns.linens === 1 ? "" : "s"}` : null,
+    addOns.bathrooms ? `${addOns.bathrooms} additional bathroom${addOns.bathrooms === 1 ? "" : "s"}` : null,
   ].filter(Boolean) as string[];
 
-  function increment(key: "windows" | "laundry" | "linens", delta: number) {
+  function increment(key: "windows" | "laundry" | "linens" | "bathrooms", delta: number) {
     setAddOns((current) => ({ ...current, [key]: Math.max(0, current[key] + delta) }));
   }
 
+  async function captureLead(stage: "pricing-start" | "pricing-complete") {
+    if (!firstName.trim() || !email.trim()) return;
+    try {
+      const data = new URLSearchParams({
+        "form-name": "pricing-lead",
+        firstName: firstName.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        address: address.trim(),
+        zipcode: zipcode.trim(),
+        stage,
+        service: effectiveService,
+        propertySize,
+        condition,
+        frequency: effectiveFrequency,
+        options: selectedOptions.join(", "),
+        displayedPrice: requiresReview ? "Review required" : formatPrice(displayedPrice),
+      });
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data.toString(),
+      });
+      if (!response.ok) throw new Error("Lead capture failed");
+      setLeadCaptured(true);
+      setLeadError("");
+    } catch {
+      setLeadError("Your estimate can continue, but we could not save your details yet.");
+    }
+  }
+
   function next() {
+    if (step === 0) {
+      if (!firstName.trim() || !email.trim()) {
+        setLeadError("Please enter your first name and email so we can save your estimate.");
+        return;
+      }
+      void captureLead("pricing-start");
+    }
+    if (step === 5) void captureLead("pricing-complete");
     setStep((current) => Math.min(steps.length, current + 1));
   }
 
@@ -118,16 +167,32 @@ export default function PricePlanner() {
 
   return (
     <section className="routine-builder" id="pricing-tool">
+      <form name="pricing-lead" data-netlify="true" hidden>
+        <input type="hidden" name="form-name" value="pricing-lead" />
+        <input name="firstName" />
+        <input name="email" />
+        <input name="phone" />
+        <input name="address" />
+        <input name="zipcode" />
+        <input name="stage" />
+        <input name="service" />
+        <input name="propertySize" />
+        <input name="condition" />
+        <input name="frequency" />
+        <input name="options" />
+        <input name="displayedPrice" />
+      </form>
+
       <div className="planner-intro">
         <p className="eyebrow icon-eyebrow"><BrandIcon name="estimate" />Build Your Routine</p>
         <h2>Build it for your home. See your price.</h2>
         <p>
           Configure the property, service level, options, and frequency that actually affect the work.
-          Your residential price stays visible and explainable—without requiring contact information first.
+          We save your estimate as you build it so you do not have to start over if you need help or come back later.
         </p>
         <ul>
           <li><BrandIcon name="pricing" /> Current Charleston Clean Routine residential pricing</li>
-          <li><BrandIcon name="secure-verified" /> No email or phone number required to see your price</li>
+          <li><BrandIcon name="secure-verified" /> Your estimate stays tied to the contact information you provide</li>
         </ul>
       </div>
 
@@ -141,13 +206,20 @@ export default function PricePlanner() {
         {step === 0 && (
           <div className="builder-stage">
             <span className="builder-kicker">01 · Property</span>
-            <h3>Start with the home in front of you.</h3>
-            <p>Your ZIP helps orient the service area. A street address is optional at this stage and is not required to see your residential price.</p>
+            <h3>Start with you and the home.</h3>
+            <p>We ask for just enough information to save the estimate and reconnect it to you if you need help. Your mobile number remains optional.</p>
+            <div className="lead-grid">
+              <label className="builder-field"><span>First name</span><input value={firstName} onChange={(e) => setFirstName(e.target.value)} autoComplete="given-name" required placeholder="First name" /></label>
+              <label className="builder-field"><span>Email</span><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" required placeholder="you@example.com" /></label>
+              <label className="builder-field"><span>Mobile · optional</span><input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} autoComplete="tel" placeholder="(843) 555-0123" /></label>
+            </div>
             <div className="address-grid">
-              <label className="builder-field"><span>Property address · optional</span><input value={address} onChange={(e) => setAddress(e.target.value)} placeholder="123 Tradd Street" /></label>
+              <label className="builder-field"><span>Property address · optional</span><input value={address} onChange={(e) => setAddress(e.target.value)} autoComplete="street-address" placeholder="123 Tradd Street" /></label>
               <label className="builder-field"><span>ZIP code</span><input inputMode="numeric" maxLength={5} value={zipcode} onChange={(e) => setZipcode(e.target.value.replace(/\D/g, ""))} placeholder="29401" /></label>
             </div>
-            <div className="builder-help">No lead form: you can continue and see pricing without giving us your name, email, or phone number.</div>
+            <div className="builder-help">We use these details to save and respond to your pricing inquiry. You will still see the price before booking.</div>
+            {leadError && <div className="builder-warning" role="alert">{leadError}</div>}
+            {leadCaptured && !leadError && <div className="lead-saved" role="status">Estimate details saved.</div>}
           </div>
         )}
 
@@ -184,7 +256,7 @@ export default function PricePlanner() {
               ))}
             </div>
             {condition === "Fair" && service === "Home Routine Clean" && <div className="routine-note"><strong>Why the price changes:</strong> a Fair-condition home selected as Routine is priced as a Deep Clean so the first visit has enough time to establish the maintained baseline.</div>}
-            {requiresReview && <div className="builder-warning">Homes marked Needs Work / Very Dirty require a custom scope review rather than an automated quote. The site will not invent a price for work we have not defined.</div>}
+            {requiresConditionReview && <div className="builder-warning">Homes marked Needs Work / Very Dirty require a custom scope review rather than an automated quote. The site will not invent a price for work we have not defined.</div>}
           </div>
         )}
 
@@ -213,17 +285,21 @@ export default function PricePlanner() {
           <div className="builder-stage">
             <span className="builder-kicker">05 · The Options</span>
             <h3>Add only what your home needs.</h3>
-            <p>Each selection shows its price. Nothing is bundled simply to make the estimate look simpler.</p>
+            <p>Each published option shows its price. If your home has more bathrooms than the closest listed configuration, add them here so the scope is not understated.</p>
             <div className="addon-builder-grid">
               {effectiveService === "Move-In / Move-Out Clean" && <button type="button" className={`addon-choice ${addOns.depositReady ? "selected" : ""}`} onClick={() => setAddOns((c) => ({ ...c, depositReady: !c.depositReady }))}><strong>{ADD_ON_PRICING.depositReady.label}</strong><small>+${ADD_ON_PRICING.depositReady.price}</small></button>}
               <button type="button" className={`addon-choice ${addOns.refrigerator ? "selected" : ""}`} onClick={() => setAddOns((c) => ({ ...c, refrigerator: !c.refrigerator }))}><strong>{ADD_ON_PRICING.refrigerator.label}</strong><small>+${ADD_ON_PRICING.refrigerator.price}</small></button>
               <button type="button" className={`addon-choice ${addOns.oven ? "selected" : ""}`} onClick={() => setAddOns((c) => ({ ...c, oven: !c.oven }))}><strong>{ADD_ON_PRICING.oven.label}</strong><small>+${ADD_ON_PRICING.oven.price}</small></button>
               <button type="button" className={`addon-choice ${addOns.baseboards ? "selected" : ""}`} onClick={() => setAddOns((c) => ({ ...c, baseboards: !c.baseboards }))}><strong>{ADD_ON_PRICING.baseboards.label}</strong><small>+${ADD_ON_PRICING.baseboards.price}</small></button>
-              {(["windows", "laundry", "linens"] as const).map((key) => {
+              {(["bathrooms", "windows", "laundry", "linens"] as const).map((key) => {
+                if (key === "bathrooms") {
+                  return <div className="quantity-addon" key={key}><div><strong>Additional bathrooms</strong><small>Beyond the selected home size · price confirmed before booking</small></div><div className="quantity-control"><button type="button" aria-label="Remove one additional bathroom" onClick={() => increment(key, -1)}>−</button><b>{addOns.bathrooms}</b><button type="button" aria-label="Add one additional bathroom" onClick={() => increment(key, 1)}>+</button></div></div>;
+                }
                 const data = key === "windows" ? ADD_ON_PRICING.windows : key === "laundry" ? ADD_ON_PRICING.laundry : ADD_ON_PRICING.linens;
                 return <div className="quantity-addon" key={key}><div><strong>{data.label}</strong><small>+${data.price} each</small></div><div className="quantity-control"><button type="button" aria-label={`Remove one ${data.label}`} onClick={() => increment(key, -1)}>−</button><b>{addOns[key]}</b><button type="button" aria-label={`Add one ${data.label}`} onClick={() => increment(key, 1)}>+</button></div></div>;
               })}
             </div>
+            {requiresBathroomReview && <div className="routine-note"><strong>Additional bathrooms included in the request:</strong> your base service and published add-ons remain visible, but the bathroom adjustment will be confirmed before booking because there is not yet an approved standalone bathroom add-on price in the pricing catalog.</div>}
             <div className="routine-note"><strong>The Charleston Finish:</strong> the finishing standard is part of the service. Optional scent pricing is not being added here until its final customer-facing price is formally set.</div>
           </div>
         )}
@@ -244,7 +320,7 @@ export default function PricePlanner() {
                     {isOneTime && <em>One-time option</em>}
                     <span>{frequencyLabel(item)}</span>
                     <strong>${formatPrice((price ?? 0) + addOnTotal)}</strong>
-                    <small>per visit with selected options</small>
+                    <small>per visit with published options</small>
                   </button>
                 );
               })}
@@ -260,11 +336,27 @@ export default function PricePlanner() {
             <h3>Here is the routine you built.</h3>
             <p>No mystery total. The summary keeps the property, service, frequency, and selected options together so you can see what the number represents.</p>
             {requiresReview ? (
-              <><div className="builder-warning">This condition requires a custom scope review, so an automated price would be misleading.</div><div className="builder-booking"><a className="button" href="/contact">Request a Custom Scope Review →</a></div></>
+              <>
+                <div className="builder-summary">
+                  <div className="summary-card"><dl>
+                    <div><dt>Name</dt><dd>{firstName}</dd></div>
+                    <div><dt>Property</dt><dd>{address || "Residential property"}{zipcode ? ` · ${zipcode}` : ""}</dd></div>
+                    <div><dt>Home</dt><dd>{propertySize}</dd></div>
+                    <div><dt>Condition</dt><dd>{condition}</dd></div>
+                    <div><dt>Service</dt><dd>{effectiveService.replace("Home ", "")}</dd></div>
+                    <div><dt>Routine</dt><dd>{frequencyLabel(effectiveFrequency)}</dd></div>
+                    <div><dt>Options</dt><dd>{selectedOptions.length ? selectedOptions.join(", ") : "None added"}</dd></div>
+                  </dl></div>
+                  <div className="price-card"><span>Published-price subtotal</span><strong>${formatPrice(displayedPrice)}</strong><small>before any required scope adjustment</small></div>
+                </div>
+                <div className="builder-warning">{requiresConditionReview ? "This condition requires a custom scope review. " : ""}{requiresBathroomReview ? "Additional bathrooms require a confirmed price adjustment. " : ""}We will not invent a final price for work that is not yet in the approved pricing catalog.</div>
+                <div className="builder-booking"><a className="button" href="/contact?topic=residential">Confirm My Scope →</a></div>
+              </>
             ) : (
               <>
                 <div className="builder-summary">
                   <div className="summary-card"><dl>
+                    <div><dt>Name</dt><dd>{firstName}</dd></div>
                     <div><dt>Property</dt><dd>{address || "Residential property"}{zipcode ? ` · ${zipcode}` : ""}</dd></div>
                     <div><dt>Home</dt><dd>{propertySize}</dd></div>
                     <div><dt>Condition</dt><dd>{condition}</dd></div>
