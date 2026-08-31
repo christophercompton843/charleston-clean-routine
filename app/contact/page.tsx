@@ -5,6 +5,7 @@ import ContactForm from "./contact-form";
 export const metadata: Metadata = {
   title: "Contact | Charleston Clean Routine",
   description: "Contact Charleston Clean Routine about residential cleaning, vacation-rental turnovers, an existing booking, or a local partnership.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
