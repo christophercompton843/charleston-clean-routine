@@ -6,11 +6,11 @@ import CustomerPageShell from "../../customer-page-shell";
 const services = {
   "house-cleaning-charleston-sc": {
     title: "House Cleaning Services in Charleston, SC",
-    description: "One-time and recurring house cleaning for Charleston-area homes, apartments, condos, and townhomes, with online pricing and booking.",
+    description: "One-time and recurring house cleaning for Charleston-area homes, apartments, condos, and townhomes, with clear online pricing and advance booking.",
     eyebrow: "Recurring home cleaning",
     intro: "A dependable cleaning routine for kitchens, bathrooms, bedrooms, and living spaces—priced and scheduled online without waiting for a callback.",
     heading: "A cleaner home, kept on a reliable routine.",
-    copy: "Choose weekly, every-other-week, every-four-week, or one-time service. Home size, condition, and selected add-ons determine the final total. Every full cleaning concludes with The Charleston Finish: a final quality check and carefully presented space.",
+    copy: "Choose weekly, biweekly, monthly, or one-time service. Home size, condition, and selected options determine the total. Every full cleaning concludes with The Charleston Finish: a final quality check and carefully presented space.",
     ctaHref: "/#pricing-tool",
     ctaLabel: "Get my live price →",
   },
@@ -26,7 +26,7 @@ const services = {
   },
   "move-in-move-out-cleaning-charleston-sc": {
     title: "Move-In & Move-Out Cleaning in Charleston, SC",
-    description: "Move-in and move-out cleaning for Charleston-area houses, apartments, condos, and townhomes, with online pricing.",
+    description: "Move-in and move-out cleaning for Charleston-area houses, apartments, condos, and townhomes, with clear online pricing.",
     eyebrow: "Move-in + move-out cleaning",
     intro: "A thorough clean for an empty or nearly empty property before a new beginning, final walkthrough, or key handoff.",
     heading: "Make the transition feel finished.",
@@ -36,13 +36,23 @@ const services = {
   },
   "vacation-rental-cleaning-charleston-sc": {
     title: "Vacation Rental Cleaning in Charleston, SC",
-    description: "Vacation-rental turnover cleaning for Charleston, Mount Pleasant, Daniel Island, Sullivan's Island, Isle of Palms, and nearby coastal communities.",
-    eyebrow: "Vacation-rental turnovers",
-    intro: "Reliable turnover cleaning for Airbnb, Vrbo, beach-rental, and professionally managed properties across the Charleston area.",
+    description: "Vacation-rental turnover cleaning and guest-ready property care across Charleston, Mount Pleasant, Isle of Palms, Sullivan's Island, Kiawah, Seabrook, Folly Beach, and nearby communities.",
+    eyebrow: "Vacation-rental cleaning",
+    intro: "Reliable turnover and property-readiness care for vacation homes, beach rentals, professionally managed properties, and seasonal rentals across the Charleston area.",
     heading: "A repeatable standard between every guest.",
     copy: "Vacation-rental care is built around the property, turnover requirements, access, linens, restocking, timing, and any owner- or guest-specific instructions. Same-day turns, island access, laundry, linen changes, and tight arrival windows are confirmed against provider availability before service is finalized.",
     ctaHref: "/portfolio",
     ctaLabel: "Build my property plan →",
+  },
+  "airbnb-cleaning-charleston-sc": {
+    title: "Airbnb Cleaning Services in Charleston, SC",
+    description: "Airbnb and short-term rental turnover cleaning in Charleston with consistent resets, guest-ready presentation, linen coordination, restocking, and property-specific routines.",
+    eyebrow: "Airbnb + short-term rental cleaning",
+    intro: "Stay-focused turnover care designed to move your property cleanly and consistently from one reservation to the next.",
+    heading: "Ready for the next check-in, without reinventing the routine.",
+    copy: "Airbnb Care combines turnover cleaning, careful resetting, guest-ready presentation, and property-specific instructions. Linen setup, restocking, reporting, access details, and special presentation requirements can be organized into the property plan so the routine stays clear across reservations.",
+    ctaHref: "/portfolio",
+    ctaLabel: "Build my Airbnb plan →",
   },
 } as const;
 
@@ -69,7 +79,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     name: service.title,
     description: service.description,
     provider: { "@id": "https://charlestoncleanroutine.com/#business" },
-    areaServed: { "@type": "City", name: "Charleston", containedInPlace: { "@type": "State", name: "South Carolina" } },
+    areaServed: { "@type": "AdministrativeArea", name: "Charleston metropolitan area, South Carolina" },
     url: `https://charlestoncleanroutine.com/services/${slug}`,
   };
 
@@ -85,7 +95,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <aside className="service-area-aside">
         <p className="eyebrow">Local coverage</p>
         <h2>Charleston-area service.</h2>
-        <p>We serve homes and properties across the Charleston and Lowcountry area. Exact service is confirmed by address, requested scope, timing, and provider availability so we can support the assignment consistently rather than overpromise coverage.</p>
+        <p>We serve homes and properties across Charleston and the surrounding Lowcountry. Exact service is confirmed by address, requested scope, timing, and provider availability so we can support the assignment consistently rather than overpromise coverage.</p>
         <Link href="/service-area">Check service at my address →</Link>
       </aside>
     </CustomerPageShell>
