@@ -114,11 +114,31 @@ export default function PricePlanner() {
     addOns.bathrooms ? `${addOns.bathrooms} additional bathroom${addOns.bathrooms === 1 ? "" : "s"}` : null,
   ].filter(Boolean) as string[];
 
+  const estimateSummary = [
+    `I built a residential estimate on the Charleston Clean Routine website.`,
+    `Home: ${propertySize}.`,
+    `Condition: ${condition}.`,
+    `Service: ${effectiveService.replace("Home ", "")}.`,
+    `Routine: ${frequencyLabel(effectiveFrequency)}.`,
+    `Options: ${selectedOptions.length ? selectedOptions.join(", ") : "None added"}.`,
+    `Published subtotal: $${formatPrice(displayedPrice)}${requiresReview ? " before required scope adjustment" : ""}.`,
+    address.trim() ? `Property: ${address.trim()}${zipcode.trim() ? `, ${zipcode.trim()}` : ""}.` : zipcode.trim() ? `ZIP: ${zipcode.trim()}.` : "",
+    `Please use this saved estimate rather than asking me to rebuild the selections.`,
+  ].filter(Boolean).join("\n");
+
+  const reviewUrl = `/contact?${new URLSearchParams({
+    topic: "residential",
+    firstName: firstName.trim(),
+    email: email.trim(),
+    phone: phone.trim(),
+    message: estimateSummary,
+  }).toString()}`;
+
   function increment(key: "windows" | "laundry" | "linens" | "bathrooms", delta: number) {
     setAddOns((current) => ({ ...current, [key]: Math.max(0, current[key] + delta) }));
   }
 
-  async function captureLead(stage: "pricing-start" | "pricing-complete") {
+  async function captureLead(stage: "pricing-start" | "pricing-complete" | "booking-handoff") {
     if (!firstName.trim() || !email.trim()) return;
     try {
       const data = new URLSearchParams({
@@ -350,7 +370,7 @@ export default function PricePlanner() {
                   <div className="price-card"><span>Published-price subtotal</span><strong>${formatPrice(displayedPrice)}</strong><small>before any required scope adjustment</small></div>
                 </div>
                 <div className="builder-warning">{requiresConditionReview ? "This condition requires a custom scope review. " : ""}{requiresBathroomReview ? "Additional bathrooms require a confirmed price adjustment. " : ""}We will not invent a final price for work that is not yet in the approved pricing catalog.</div>
-                <div className="builder-booking"><a className="button" href="/contact?topic=residential">Confirm My Scope →</a></div>
+                <div className="builder-booking"><a className="button" href={reviewUrl} onClick={() => void captureLead("booking-handoff")}>Confirm My Scope →</a><p>Your contact information and estimate selections are carried into the review request.</p></div>
               </>
             ) : (
               <>
@@ -366,7 +386,7 @@ export default function PricePlanner() {
                   </dl></div>
                   <div className="price-card"><span>Your service price</span><strong>${formatPrice(displayedPrice)}</strong><small>{effectiveFrequency === "Single" ? "for this visit" : "per visit"} · based on the selections shown</small></div>
                 </div>
-                <div className="builder-booking"><a className="button button-spark" href={BOOKING_URL}>Book This Routine →</a><p>The booking page confirms live scheduling availability before you finalize.</p></div>
+                <div className="builder-booking"><a className="button button-spark" href={BOOKING_URL} onClick={() => void captureLead("booking-handoff")}>Continue to Scheduling →</a><p>Your completed estimate is saved before you continue. The scheduling page confirms live appointment availability and may ask you to confirm booking details.</p></div>
               </>
             )}
           </div>
