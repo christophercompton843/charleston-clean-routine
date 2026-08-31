@@ -5,6 +5,7 @@ import "./portfolio.css";
 export const metadata: Metadata = {
   title: "Vacation Rental Cleaning & Portfolio Care | Charleston Clean Routine",
   description: "Vacation-rental and Airbnb turnover cleaning, guest-ready presentation, and coordinated multi-property care for Charleston owners, hosts, and property managers.",
+  alternates: { canonical: "/portfolio" },
 };
 
 const capabilities = [
@@ -13,7 +14,7 @@ const capabilities = [
   ["Plan ahead", "Schedule recurring services for a season or the year, with property-specific routines established well in advance."],
   ["Change as needed", "Adjust a property plan as guest patterns, seasons, owner preferences, or operating needs change."],
   ["Property memory", "Keep each property’s scope, presentation details, access notes, amenities, and recurring requests organized."],
-  ["Custom property support", "Ask us to evaluate appropriate additions—from printed guest notes and restocking to amenity sourcing, pickup, and placement."],
+  ["Custom property support", "Ask us to evaluate appropriate additions—from printed guest notes and restocking coordination to amenity sourcing, pickup, and placement."],
 ];
 
 export default function PortfolioPage() {
@@ -30,7 +31,7 @@ export default function PortfolioPage() {
           <h1>Turnovers handled.<br /><span>Properties ready.</span></h1>
           <p className="portfolio-lede">Turnover cleaning, guest-ready presentation, recurring property care, and custom support for Charleston vacation rentals—from one property to an entire group of homes.</p>
           <div className="portfolio-service-chips" aria-label="Vacation rental services">
-            <span>Turnover cleaning</span><span>Guest-ready presentation</span><span>Deep cleaning</span><span>Restocking</span><span>Amenity placement</span><span>Custom requests</span>
+            <span>Turnover cleaning</span><span>Guest-ready presentation</span><span>Deep cleaning</span><span>Restocking coordination</span><span>Amenity placement</span><span>Custom requests</span>
           </div>
           <div className="portfolio-actions">
             <Link href="/contact?topic=partnership" className="portfolio-button">Tell us about my rentals →</Link>
@@ -50,7 +51,7 @@ export default function PortfolioPage() {
         </div>
         <div className="portfolio-definition-copy">
           <p><strong>If you manage more than one property, Portfolio Care is simply our multiple-property service.</strong> Instead of booking and explaining every rental separately, we learn each property once, save its requirements, and coordinate the ongoing cleaning routine with you.</p>
-          <p>Each home can still have its own turnover schedule, cleaning scope, access instructions, linen and restocking needs, guest amenities, and special requests. You get one local relationship for the group.</p>
+          <p>Each home can still have its own turnover schedule, cleaning scope, access instructions, linen needs, restocking preferences, guest amenities, and special requests. You get one local relationship for the group.</p>
           <div className="portfolio-definition-paths"><span><b>1 property</b> Vacation-rental service</span><span><b>Multiple properties</b> Portfolio Care</span></div>
         </div>
       </section>
@@ -96,7 +97,7 @@ export default function PortfolioPage() {
         </div>
         <div className="portfolio-relationship-copy">
           <p>Whether you, your assistant, or your property manager is the point of contact, the property plan keeps requirements organized without forcing your team to repeat the same information for every turnover.</p>
-          <p>Use the Client Portal for everyday account and service management, the AI concierge for immediate guidance, and online support when a request needs context, review, or judgment. Phone support remains available when the digital path is not enough.</p>
+          <p>Use the Client Portal for the account and appointment tools enabled for your service, the AI concierge for immediate guidance, and online support when a request needs context, review, or judgment. Phone support remains available when the digital path is not enough.</p>
           <strong>Sophisticated tools. Local accountability. Personal service.</strong>
         </div>
       </section>
