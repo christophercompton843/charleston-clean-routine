@@ -4,6 +4,8 @@ import CustomerPageShell from "../customer-page-shell";
 export const metadata: Metadata = {
   title: "Account Access | Charleston Clean Routine",
   description: "Secure account access for Charleston Clean Routine customers, providers, and authorized administrators.",
+  alternates: { canonical: "/login" },
+  robots: { index: false, follow: true },
 };
 
 const customerLogin = "https://www.jointidywise.com/portal/login";
