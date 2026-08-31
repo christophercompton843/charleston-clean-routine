@@ -1,13 +1,11 @@
 const menuItems = [
-  ["Your Choice", "/#your-choice"],
+  ["Services", "/services"],
   ["The Details", "/#whats-included"],
-  ["Service Levels", "/#whats-included"],
-  ["The Options", "/#pricing-tool"],
-  ["Our Promise", "/#our-story"],
   ["Build Your Routine", "/#pricing-tool"],
   ["What to Expect", "/#how-it-works"],
   ["Service Area", "/service-area"],
-  ["Client Tools", "/#client-tools"],
+  ["Portfolio Care", "/portfolio"],
+  ["Client Portal", "/login"],
   ["FAQ", "/#answers"],
   ["Contact", "/contact"],
 ];
