@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 const customerLogin = "https://www.jointidywise.com/portal/login";
 const clientPortalGuide = "/client-portal-guide/download";
+const portfolioCareGuide = "/portfolio-care-guide/download";
 const staffLogin = "https://www.jointidywise.com/staff/login";
 const providerApplication = "/provider-application";
 
@@ -30,6 +31,8 @@ export default function LoginPage() {
             <a className="button button-ghost" href={clientPortalGuide}>Download Client Portal Guide ↓</a>
           </div>
           <a className="login-secondary" href="/client-portal-guide">View the online portal guide →</a>
+          <a className="login-secondary" href={portfolioCareGuide}>Portfolio Care client? Download your guide ↓</a>
+          <a className="login-secondary" href="/portfolio-care-guide">View the Portfolio Care online guide →</a>
         </article>
 
         <article>
