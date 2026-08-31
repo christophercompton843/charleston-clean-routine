@@ -5,7 +5,7 @@ import "./services.css";
 
 export const metadata: Metadata = {
   title: "Cleaning Services | Charleston Clean Routine",
-  description: "Explore Charleston Clean Routine home cleaning, deep cleaning, move-in and move-out cleaning, vacation-rental care, Airbnb care, and portfolio service.",
+  description: "Explore Charleston Clean Routine home cleaning, deep cleaning, move-in and move-out cleaning, vacation-rental cleaning, Airbnb cleaning, and portfolio care.",
 };
 
 const serviceCards = [
@@ -31,11 +31,18 @@ const serviceCards = [
     action: "Explore move cleaning →",
   },
   {
-    eyebrow: "Short-term rentals",
-    title: "Vacation Rental + Airbnb Care",
-    copy: "Turnovers, deep resets, arrival preparation, linen and restocking coordination, and property-specific routines for guest-ready homes.",
+    eyebrow: "Vacation properties",
+    title: "Vacation Rental Cleaning",
+    copy: "Turnover cleaning, deep resets, arrival preparation, linen and restocking coordination, and property-specific routines for guest-ready vacation homes.",
     href: "/services/vacation-rental-cleaning-charleston-sc",
-    action: "Explore rental care →",
+    action: "Explore vacation rental care →",
+  },
+  {
+    eyebrow: "Short-term stays",
+    title: "Airbnb Cleaning",
+    copy: "Stay-focused turnover care with consistent cleaning, resetting, guest-ready presentation, and property-specific routines between reservations.",
+    href: "/services/airbnb-cleaning-charleston-sc",
+    action: "Explore Airbnb care →",
   },
   {
     eyebrow: "Multiple properties",
@@ -51,7 +58,7 @@ export default function ServicesPage() {
     <CustomerPageShell
       eyebrow="Your Choice"
       title="Start with what you need handled."
-      intro="Choose the kind of property care you need, understand the scope, and move directly to the next useful step. Residential pricing is available now; vacation-rental and portfolio care are built around the specific property requirements."
+      intro="Choose the kind of property care you need, understand the scope, and move directly to the next useful step. Residential pricing is available now; vacation-rental, Airbnb, and portfolio care are built around the specific property requirements."
     >
       <section className="service-index-grid" aria-label="Charleston Clean Routine services">
         {serviceCards.map((service) => (
@@ -66,7 +73,7 @@ export default function ServicesPage() {
       <aside className="service-area-aside">
         <p className="eyebrow">Ready to start?</p>
         <h2>Use the path that matches the property.</h2>
-        <p>Residential customers can build an instant estimate now. Vacation-rental and portfolio clients can begin with a property plan so access, turnover timing, linens, restocking, and property-specific requirements are handled correctly from the start.</p>
+        <p>Residential customers can build an instant estimate now. Vacation-rental, Airbnb, and portfolio clients can begin with a property plan so access, turnover timing, linens, restocking, and property-specific requirements are handled correctly from the start.</p>
         <div className="hero-actions">
           <Link className="button" href="/#pricing-tool">Build my residential routine →</Link>
           <Link className="button" href="/portfolio">Build my property plan →</Link>
