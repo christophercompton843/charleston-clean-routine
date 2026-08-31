@@ -69,14 +69,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WNLGJFTV');`,
           }}
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HYGH9DRGX"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8SLBBWFTRM"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-8HYGH9DRGX');
+              gtag('config', 'G-8SLBBWFTRM');
             `,
           }}
         />
