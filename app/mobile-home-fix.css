@@ -1,4 +1,25 @@
 /* Mobile homepage correction: make the business immediately understandable and eliminate hero collisions. */
+
+/* Client-tool cards: keep labels, titles, descriptions, and actions on shared baselines. */
+.client-tool-grid > a {
+  display: flex;
+  flex-direction: column;
+}
+.client-tool-grid h3 {
+  margin: 20px 0 15px;
+}
+.client-tool-grid p {
+  min-height: 72px;
+  margin-bottom: 16px;
+}
+.client-tool-grid > a:first-child small {
+  min-height: 34px;
+  margin: 0 0 16px;
+}
+.client-tool-grid strong {
+  margin-top: auto;
+}
+
 @media (max-width: 700px) {
   .hero {
     min-height: auto;
@@ -116,6 +137,11 @@
 
   .services-section .section-heading h2 {
     font-size: 42px;
+  }
+
+  .client-tool-grid p,
+  .client-tool-grid > a:first-child small {
+    min-height: 0;
   }
 
   .mobile-action-dock {
