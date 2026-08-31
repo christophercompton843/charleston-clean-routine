@@ -33,9 +33,9 @@ const processSteps = [
   ["1", "Your Choice", "Begin with the kind of property care you need: Home, Vacation Rental, Airbnb, or Portfolio Care."],
   ["2", "The Details", "Explore the rooms, scope, and specific work behind the service before you commit."],
   ["3", "Service Levels", "Compare the levels of care and understand what changes from one to the next."],
-  ["4", "The Options", "Add only the enhancements, frequency, and property-specific details that matter to you."],
+  ["4", "The Options", "Add only the enhancements and property-specific details that matter to you."],
   ["5", "Our Promise", "Know the standard behind the service: thoughtful communication, defined expectations, and accountable completion."],
-  ["6", "Build Your Routine", "Configure the service, see the applicable price, choose your timing, and book."],
+  ["6", "Build Your Routine", "Save your estimate, configure the service, choose your frequency, see the applicable price, and book."],
   ["7", "What to Expect", "See what happens before, during, and after the visit so there is no uncertainty once you book."],
 ];
 
@@ -54,7 +54,7 @@ export default function Home() {
             <a href="#how-it-works">What to Expect</a>
           </nav>
           <div className="header-actions">
-            <a className="button button-small" href="#pricing-tool">Get My Instant Price</a>
+            <a className="button button-small" href="#pricing-tool">Build My Routine</a>
           </div>
         </header>
       </div>
@@ -69,7 +69,7 @@ export default function Home() {
             and how the standard is carried through to completion.
           </p>
           <div className="hero-actions">
-            <a className="button button-spark" href="#pricing-tool">Build Your Routine</a>
+            <a className="button button-spark" href="#pricing-tool">Build My Routine</a>
             <a className="button button-ghost" href="#your-choice">Your Choice</a>
           </div>
           <div className="hero-proof" aria-label="Charleston Clean Routine experience">
@@ -126,12 +126,13 @@ export default function Home() {
               <p>
                 For privately owned homes, apartments, condominiums, townhomes, second homes,
                 and other residential spaces. Choose <strong>Routine, Deep, or Move-In / Move-Out</strong>
-                cleaning, then keep it one-time or make it recurring and add only what your space needs.
+                cleaning. Routine care starts with a recurring rhythm, with every two weeks highlighted as
+                the most popular choice; weekly, monthly, and one-time options remain available when they fit better.
               </p>
               <div className="service-tags"><span>Routine</span><span>Deep</span><span>Move-In / Out</span><span>Recurring</span></div>
               <div className="hero-actions">
                 <a className="button button-small" href="#whats-included">See What’s Included</a>
-                <a className="button button-small" href="#pricing-tool">Get My Instant Price</a>
+                <a className="button button-small" href="#pricing-tool">Build My Routine</a>
               </div>
             </div>
           </article>
@@ -171,7 +172,7 @@ export default function Home() {
                 more often during high-demand periods, less often when bookings slow—while keeping
                 the same care structure ready when you need it.
               </p>
-              <div className="service-tags"><span>Turnover</span><span>Bed Setup</span><span>Restocking</span><span>Reporting</span></div>
+              <div className="service-tags"><span>Turnover</span><span>Bed Setup</span><span>Restocking Coordination</span><span>Reporting</span></div>
               <div className="hero-actions">
                 <a className="button button-small" href="/services/airbnb-cleaning-charleston-sc">Explore Airbnb Care</a>
                 <a className="button button-small" href="/portfolio">Build My Airbnb Plan</a>
@@ -230,7 +231,7 @@ export default function Home() {
         </div>
         <div className="partner-card">
           <span>What happens next</span>
-          <strong>A clear plan, not a lead form.</strong>
+          <strong>A clear plan, not a generic inquiry.</strong>
           <p>
             Tell us about the properties. We organize the requirements, identify what
             can be standardized and what should remain property-specific, and return
@@ -327,12 +328,12 @@ export default function Home() {
             <p>Use the room-by-room service guide above to compare Routine, Deep, and Move-In / Move-Out cleaning. Your confirmed service scope is the standard your cleaning professional follows.</p>
           </details>
           <details>
-            <summary>Can I see my price before giving you my information?</summary>
-            <p>Yes. Residential pricing is designed to give you an immediate price from the property and service details that actually affect the work. We do not require a callback just to tell you what your cleaning costs.</p>
+            <summary>What information do you need for my instant price?</summary>
+            <p>We ask for your first name and email so the estimate can be saved to your inquiry; a mobile number is optional. You still see the applicable residential price online before booking, and no callback is required just to learn what the selected service costs.</p>
           </details>
           <details>
             <summary>Do you clean Airbnbs and vacation rentals?</summary>
-            <p>Yes. We provide guest turnover and property-readiness services for Airbnbs, vacation homes, and coastal rentals, with optional linen setup, restocking, reporting, and deeper resets.</p>
+            <p>Yes. We provide guest turnover and property-readiness services for Airbnbs, vacation homes, and coastal rentals, with options such as linen setup, restocking coordination, reporting, and deeper resets based on the property plan.</p>
           </details>
           <details>
             <summary>What is Portfolio Care?</summary>
@@ -363,7 +364,7 @@ export default function Home() {
         <h2>Isn’t it about time?</h2>
         <p>See what you’re booking, know what it costs, choose your time, and get it handled.</p>
         <div>
-          <a className="button button-light" href="#pricing-tool">Get My Instant Price</a>
+          <a className="button button-light" href="#pricing-tool">Build My Routine</a>
           <a className="button button-ghost" href="/services">Explore Services</a>
         </div>
       </section>
@@ -384,7 +385,7 @@ export default function Home() {
           <div>
             <span>Start</span>
             <a href="#whats-included">See What’s Included</a>
-            <a href="#pricing-tool">Get My Instant Price</a>
+            <a href="#pricing-tool">Build My Routine</a>
             <a href="/service-area">Check Service Area</a>
             <a href={clientPortalUrl}>Client Portal</a>
           </div>
@@ -408,7 +409,7 @@ export default function Home() {
 
       <nav className="mobile-action-dock" aria-label="Quick actions">
         <a href="/services">Explore Services <span aria-hidden="true">→</span></a>
-        <a href="#pricing-tool">Get My Instant Price <span aria-hidden="true">→</span></a>
+        <a href="#pricing-tool">Build My Routine <span aria-hidden="true">→</span></a>
       </nav>
       <Concierge />
     </main>
