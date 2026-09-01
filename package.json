@@ -7,10 +7,13 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx --yes @opennextjs/cloudflare@1.19.9 build",
+    "next-build": "next build",
     "start": "next start",
-    "test": "npm run build",
-    "lint": "eslint . --ignore-pattern .next"
+    "test": "npm run next-build",
+    "lint": "eslint . --ignore-pattern .next",
+    "deploy": "npx --yes @opennextjs/cloudflare@1.19.9 deploy",
+    "preview": "npx --yes @opennextjs/cloudflare@1.19.9 preview"
   },
   "dependencies": {
     "next": "16.2.6",
