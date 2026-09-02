@@ -1,0 +1,151 @@
+/* Final premium cosmetic layer. Intentionally visual-only: no routing, forms, pricing, or integration behavior. */
+:root {
+  --ccr-gold: #c89d45;
+  --ccr-gold-soft: #e6cf92;
+  --ccr-lavender: #b9a6e7;
+}
+
+/* Brand presentation */
+.site-chrome {
+  box-shadow: 0 1px 0 rgba(18,60,58,.04), 0 10px 34px rgba(4,30,29,.035);
+}
+.site-header { height: 94px; }
+.brand-logo { width: 322px; height: 82px; }
+.brand-logo img { width: 322px; filter: saturate(1.04) contrast(1.02); }
+.site-header nav a { font-weight: 680; }
+.site-header nav a::after { background: linear-gradient(90deg, var(--ccr-gold), var(--sea)); }
+
+/* Buttons: clearer hierarchy, quieter luxury */
+.button { border-radius: 16px; box-shadow: 0 10px 26px rgba(18,60,58,.13); }
+.button-spark {
+  background: linear-gradient(135deg, #c8b8ef 0%, var(--ccr-lavender) 55%, #ab98de 100%);
+  border-color: rgba(255,255,255,.18);
+}
+.button-ghost { border-color: rgba(230,207,146,.34); }
+
+/* Hero framing */
+.hero { isolation: isolate; }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,157,69,.55), transparent);
+  z-index: 4;
+}
+.hero-copy { max-width: 650px; }
+.hero h1 { text-wrap: balance; }
+.hero-support { max-width: 590px; color: #aebfbb; line-height: 1.7; }
+.hero-proof p { border-color: rgba(230,207,146,.17); }
+.hero-proof span { color: var(--ccr-gold-soft); }
+.hero-visual { border: 1px solid rgba(230,207,146,.18); }
+.hero-image-caption { border-top: 1px solid rgba(230,207,146,.16); }
+
+/* Journey bar */
+.journey-bar {
+  border-block: 1px solid rgba(18,60,58,.09);
+  box-shadow: 0 14px 36px rgba(4,30,29,.035);
+}
+.journey-bar a { transition: background .2s ease, color .2s ease, transform .2s ease; }
+.journey-bar a:hover,
+.journey-bar a:focus-visible { background: rgba(200,157,69,.06); transform: translateY(-1px); }
+.journey-bar span { color: #9a7330; }
+
+/* Section rhythm and heading detail */
+.section-heading h2,
+.partner-copy h2,
+.principles-section h2,
+.faq-section h2,
+.client-tools-section h2 { text-wrap: balance; }
+.eyebrow { color: #4d786f; }
+.eyebrow-light { color: #a7d0c7; }
+.eyebrow::after {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  margin: 0 0 3px 12px;
+  background: linear-gradient(90deg, var(--ccr-gold), transparent);
+}
+
+/* Cards */
+.service-card,
+.principle-grid article,
+.client-tool-grid > a,
+.partner-card {
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s ease;
+}
+.service-card:hover,
+.principle-grid article:hover,
+.client-tool-grid > a:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200,157,69,.28);
+  box-shadow: 0 22px 50px rgba(4,30,29,.09);
+}
+.service-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 55%, rgba(4,30,29,.16));
+}
+.service-image > span { z-index: 2; border: 1px solid rgba(255,255,255,.38); backdrop-filter: blur(9px); }
+.service-tags span { border-color: rgba(18,60,58,.12); background: rgba(247,244,238,.72); }
+
+/* Portfolio + trust sections */
+.partner-card { border-color: rgba(200,157,69,.3); }
+.partner-benefits span { border-color: rgba(230,207,146,.24); }
+.principle-label { color: #936d2d !important; }
+
+/* Client tools */
+.client-tool-grid > a { position: relative; overflow: hidden; }
+.client-tool-grid > a::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--ccr-gold), var(--ccr-lavender));
+  opacity: .72;
+}
+
+/* FAQ */
+.faq-list details { border-color: rgba(18,60,58,.11); }
+.faq-list details[open] { border-color: rgba(200,157,69,.28); box-shadow: 0 12px 32px rgba(4,30,29,.045); }
+
+/* Footer logo deserves more breathing room */
+.footer-logo { width: min(390px, 100%); height: auto; overflow: visible; }
+.footer-logo img { width: 100%; }
+.final-cta-logo { width: min(520px, 82vw); }
+
+/* Stronger keyboard accessibility while preserving visual restraint */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid rgba(185,166,231,.72);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1100px) {
+  .brand-logo { width: 280px; }
+  .brand-logo img { width: 280px; }
+  .site-header { gap: 22px; }
+  .site-header nav { gap: 20px; }
+}
+
+@media (max-width: 850px) {
+  .site-header { height: 78px; width: min(100% - 28px, 1320px); }
+  .brand-logo { width: 240px; height: 68px; }
+  .brand-logo img { width: 240px; }
+  .hero { padding-top: 72px; }
+  .hero-copy { width: 100%; }
+  .service-card:hover,
+  .principle-grid article:hover,
+  .client-tool-grid > a:hover { transform: none; }
+  .eyebrow::after { width: 22px; }
+}
+
+@media (max-width: 520px) {
+  .brand-logo { width: 210px; }
+  .brand-logo img { width: 210px; }
+  .button { min-height: 50px; border-radius: 14px; }
+  .hero-actions .button { width: 100%; }
+  .final-cta-logo { width: 92vw; }
+}
