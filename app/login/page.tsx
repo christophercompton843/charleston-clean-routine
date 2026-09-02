@@ -19,36 +19,46 @@ export default function LoginPage() {
     <CustomerPageShell
       eyebrow="Secure account access"
       title="One doorway. The right dashboard."
-      intro="Customers, accepted providers, and authorized administrators use different account tools. Choose the access path connected to your role."
+      intro="Choose the access path connected to your role."
     >
       <section className="login-grid">
         <article>
           <span>Customer</span>
           <h2>Manage my home.</h2>
-          <p>Open your private Client Portal to view the appointment and account tools enabled for your Charleston Clean Routine service.</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+          <p>View the appointment and account tools enabled for your Charleston Clean Routine service.</p>
+          <div className="login-actions">
             <a className="button" href={customerLogin} target="_blank" rel="noreferrer">Open Client Portal ↗</a>
-            <a className="button button-ghost" href={clientPortalGuide}>Download Client Portal Guide ↓</a>
+            <div className="login-links">
+              <a className="login-secondary" href={clientPortalGuide}>Download Client Portal Guide ↓</a>
+              <a className="login-secondary" href="/client-portal-guide">View online guide →</a>
+              <a className="login-secondary" href={portfolioCareGuide}>Portfolio Care guide ↓</a>
+              <a className="login-secondary" href="/portfolio-care-guide">Portfolio Care online guide →</a>
+            </div>
           </div>
-          <a className="login-secondary" href="/client-portal-guide">View the online portal guide →</a>
-          <a className="login-secondary" href={portfolioCareGuide}>Portfolio Care client? Download your guide ↓</a>
-          <a className="login-secondary" href="/portfolio-care-guide">View the Portfolio Care online guide →</a>
         </article>
 
         <article>
           <span>Accepted provider</span>
           <h2>Manage my work.</h2>
-          <p>Accepted cleaning professionals use the TidyWise Staff Portal for the work tools connected to their Charleston Clean Routine provider account.</p>
-          <a className="button" href={staffLogin} target="_blank" rel="noreferrer">Staff Portal ↗</a>
-          <a className="login-secondary" href={providerApplication}>Interested in becoming a provider? Apply here →</a>
+          <p>Accepted cleaning professionals use the TidyWise Staff Portal for work connected to their Charleston Clean Routine provider account.</p>
+          <div className="login-actions">
+            <a className="button" href={staffLogin} target="_blank" rel="noreferrer">Staff Portal ↗</a>
+            <div className="login-links">
+              <a className="login-secondary" href={providerApplication}>Interested in becoming a provider? Apply here →</a>
+            </div>
+          </div>
         </article>
 
         <article className="admin-login">
           <span>Authorized administration</span>
           <h2>Manage the operation.</h2>
-          <p>Open the protected website dashboard for website activity. TidyWise staff access is available separately for authorized Charleston Clean Routine operations.</p>
-          <a className="button button-light" href="/admin">Website admin login →</a>
-          <a className="login-secondary login-secondary-light" href={staffLogin} target="_blank" rel="noreferrer">Staff Portal ↗</a>
+          <p>Open the protected website dashboard or authorized TidyWise staff access.</p>
+          <div className="login-actions">
+            <a className="button button-light" href="/admin">Website admin login →</a>
+            <div className="login-links">
+              <a className="login-secondary login-secondary-light" href={staffLogin} target="_blank" rel="noreferrer">TidyWise Staff Portal ↗</a>
+            </div>
+          </div>
         </article>
       </section>
     </CustomerPageShell>
