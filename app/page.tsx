@@ -37,8 +37,8 @@ export default function Home() {
           <div className="hero-actions"><a className="button button-spark" href="#pricing-tool">Build My Routine</a><a className="button button-ghost" href="#your-choice">Explore Services</a></div>
           <div className="hero-proof" aria-label="Charleston Clean Routine experience"><p><span>01</span><strong>Clear scope</strong></p><p><span>02</span><strong>Reliable care</strong></p><p><span>03</span><strong>Documented finish</strong></p></div>
         </div>
-        <div className="hero-visual" aria-label="Charleston residential cleaning and property care">
-          <img src="/charleston-home-warm.jpg" alt="Bright, professionally maintained Charleston home interior" />
+        <div className="hero-visual" aria-label="Charleston residence, coastal vacation home, and multifamily property">
+          <img src="/ccr-hero-final.jpg" alt="Charleston residence, coastal vacation home, and multifamily property representing Charleston Clean Routine services" />
           <div className="hero-image-caption"><span>The Charleston Finish</span><strong>Clean. Documented. Secured. Cared for.</strong></div>
         </div>
       </section>
