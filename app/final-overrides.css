@@ -1,18 +1,52 @@
 /* Last-mile visual safeguards for approved brand art and account access. */
-.footer-logo {
-  width: min(300px, 100%);
-  height: auto;
-  padding: 10px 14px;
-  border-radius: 14px;
-  background: #fff;
-  overflow: hidden;
+
+/* Match the lower site to the Charleston Clean Routine brand green sampled from the approved reverse logo asset. */
+.final-cta,
+footer {
+  background: #01322b !important;
 }
-.footer-logo img { width: 100%; height: auto; object-fit: contain; }
-.footer-top { align-items: center; }
+
+/* Let the approved logo sit directly on the footer instead of inside a card or patch. */
+.footer-logo {
+  width: min(340px, 100%);
+  height: auto;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+.footer-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+.footer-top {
+  align-items: center;
+}
+.footer-top > p {
+  margin-top: 0;
+}
+
+/* Keep the final CTA and footer visually continuous without a mismatched green seam. */
+.final-cta {
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+footer {
+  border-top: 0;
+}
+
 .policy-header > a:first-child { overflow: visible; }
 .policy-header > a:first-child img { width: 290px; height: auto; object-fit: contain; }
+
 @media (max-width: 700px) {
-  .footer-logo { width: 250px; }
+  .footer-logo { width: 270px; }
   .footer-top > p { margin-top: 8px; }
   .policy-header > a:first-child img { width: 220px; }
 }
