@@ -1,13 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">Charleston Clean Routine favicon</title>
-  <desc id="desc">Charleston Clean Routine C and check emblem in forest green, sea glass, and gold.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f3d35"/><stop offset="1" stop-color="#005b4f"/></linearGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1d88b"/><stop offset="1" stop-color="#b8872f"/></linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
-  <path d="M45 18C41 13.5 35.5 11.5 29.5 11.5 17.5 11.5 9.5 20.1 9.5 32.1s8 20.4 20.1 20.4c6.9 0 12.7-2.4 16.9-7" fill="none" stroke="url(#gold)" stroke-width="9.5" stroke-linecap="round"/>
-  <path d="M45 18C41 13.5 35.5 11.5 29.5 11.5 17.5 11.5 9.5 20.1 9.5 32.1s8 20.4 20.1 20.4c6.9 0 12.7-2.4 16.9-7" fill="none" stroke="#f7f4ee" stroke-width="6.8" stroke-linecap="round"/>
-  <path d="M22.5 33l7.8 8.2L51 19.8" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M22.5 33l7.8 8.2L51 19.8" fill="none" stroke="#9fc9bd" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <desc id="desc">A white C and check mark on a deep coastal green tile.</desc>
+  <rect width="64" height="64" rx="14" fill="#123C3A"/>
+  <path d="M43 18C39 14 34 12 29 12C18 12 11 20 11 32C11 44 19 52 30 52C36 52 41 50 45 46" fill="none" stroke="#F7F4EE" stroke-width="8" stroke-linecap="round"/>
+  <path d="M24 33L31 40L49 21" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
