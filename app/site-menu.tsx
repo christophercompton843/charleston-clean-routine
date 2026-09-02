@@ -1,3 +1,7 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 const menuItems = [
   ["Services", "/services"],
   ["The Details", "/#whats-included"],
@@ -11,6 +15,12 @@ const menuItems = [
 ];
 
 export default function SiteMenu() {
+  const pathname = usePathname();
+
+  // The homepage has its own complete navigation bar. Keeping the floating
+  // global menu there creates a duplicate control and visual clutter.
+  if (pathname === "/") return null;
+
   return (
     <details className="site-menu">
       <summary aria-label="Open site navigation">
