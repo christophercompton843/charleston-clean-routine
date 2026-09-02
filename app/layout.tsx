@@ -5,6 +5,7 @@ import "./layout-fixes.css";
 import "./pricing-tool.css";
 import "./hero-fix.css";
 import "./mobile-home-fix.css";
+import "./premium-polish.css";
 import SiteMenu from "./site-menu";
 import LaunchNotice from "./launch-notice";
 
@@ -13,47 +14,103 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://charlestoncleanroutine.com"),
-  title: "Charleston Clean Routine | Your Home, Handled",
-  description: "Get an instant residential cleaning price and explore thoughtfully designed home, vacation-rental, Airbnb, and portfolio cleaning throughout the Charleston area.",
+  title: "House Cleaning Charleston SC | Charleston Clean Routine",
+  description:
+    "Professional house cleaning in Charleston, SC, including recurring cleaning, deep cleaning, move-in and move-out service, vacation-rental cleaning, Airbnb care, and multi-property portfolio cleaning. See the scope, build your estimate, and book online.",
+  keywords: [
+    "house cleaning Charleston SC",
+    "home cleaning Charleston SC",
+    "recurring house cleaning Charleston",
+    "deep cleaning Charleston SC",
+    "move out cleaning Charleston SC",
+    "vacation rental cleaning Charleston SC",
+    "Airbnb cleaning Charleston SC",
+    "property cleaning Charleston SC",
+  ],
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg", apple: "/favicon.svg" },
   alternates: { canonical: "/" },
   openGraph: {
-    type: "website", locale: "en_US", title: "Charleston Clean Routine | Your Home, Handled",
-    description: "Clear residential pricing, defined service standards, screened cleaning professionals, and thoughtfully designed care for Charleston-area homes and short-term rentals.",
+    type: "website",
+    locale: "en_US",
+    url: "https://charlestoncleanroutine.com",
+    title: "Professional House Cleaning in Charleston, SC | Charleston Clean Routine",
+    description:
+      "Home cleaning, vacation-rental care, Airbnb cleaning, and coordinated portfolio service throughout the Charleston area. Clear scope, online pricing, and accountable completion.",
     siteName: "Charleston Clean Routine",
-    images: [{ url: "/charleston-home-warm.jpg", width: 1600, height: 1067, alt: "A warm Charleston home after professional cleaning" }],
+    images: [
+      {
+        url: "/charleston-home-warm.jpg",
+        width: 1600,
+        height: 1067,
+        alt: "Charleston home cared for by Charleston Clean Routine",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title: "Charleston Clean Routine | Your Home, Handled", description: "Home, vacation-rental, Airbnb, and portfolio cleaning shaped around Charleston life.", images: ["/charleston-home-warm.jpg"] },
+  twitter: {
+    card: "summary_large_image",
+    title: "House Cleaning Charleston SC | Charleston Clean Routine",
+    description:
+      "Professional home cleaning, vacation-rental care, Airbnb cleaning, and portfolio service throughout Charleston, South Carolina.",
+    images: ["/charleston-home-warm.jpg"],
+  },
   robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const localBusinessSchema = {
-    "@context": "https://schema.org", "@type": "HouseCleaning",
+    "@context": "https://schema.org",
+    "@type": "HouseCleaning",
     "@id": "https://charlestoncleanroutine.com/#business",
-    name: "Charleston Clean Routine", url: "https://charlestoncleanroutine.com",
+    name: "Charleston Clean Routine",
+    url: "https://charlestoncleanroutine.com",
     logo: "https://charlestoncleanroutine.com/charleston-clean-routine-logo.svg",
     image: "https://charlestoncleanroutine.com/charleston-home-warm.jpg",
     email: "hello@charlestoncleanroutine.com",
     telephone: "+1-843-633-8648",
-    description: "Charleston-area cleaning service offering recurring home cleaning, deep cleaning, move-in and move-out cleaning, vacation-rental and Airbnb turnover care, and coordinated portfolio cleaning.",
+    description:
+      "Charleston-area cleaning company providing recurring house cleaning, deep cleaning, move-in and move-out cleaning, vacation-rental and Airbnb care, and coordinated multi-property portfolio cleaning.",
     priceRange: "$$",
+    knowsAbout: [
+      "Recurring house cleaning",
+      "Deep cleaning",
+      "Move-in cleaning",
+      "Move-out cleaning",
+      "Vacation rental cleaning",
+      "Airbnb turnover cleaning",
+      "Multi-property cleaning",
+    ],
     areaServed: [
-      "Charleston, SC", "Mount Pleasant, SC", "Daniel Island, SC", "Sullivan's Island, SC", "Isle of Palms, SC",
-      "West Ashley, SC", "James Island, SC", "Folly Beach, SC", "North Charleston, SC", "Hanahan, SC",
-      "Johns Island, SC", "Kiawah Island, SC", "Seabrook Island, SC", "Summerville, SC", "Goose Creek, SC", "Ladson, SC"
+      "Charleston, SC",
+      "Mount Pleasant, SC",
+      "Daniel Island, SC",
+      "Sullivan's Island, SC",
+      "Isle of Palms, SC",
+      "West Ashley, SC",
+      "James Island, SC",
+      "Folly Beach, SC",
+      "North Charleston, SC",
+      "Hanahan, SC",
+      "Johns Island, SC",
+      "Kiawah Island, SC",
+      "Seabrook Island, SC",
+      "Summerville, SC",
+      "Goose Creek, SC",
+      "Ladson, SC",
     ].map((name) => ({ "@type": "Place", name })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Cleaning services",
+      name: "Charleston cleaning services",
       itemListElement: [
-        "Recurring home cleaning",
+        "Recurring house cleaning",
         "Deep cleaning",
         "Move-in and move-out cleaning",
         "Vacation rental cleaning",
         "Airbnb turnover cleaning",
-        "Portfolio cleaning services"
-      ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } }))
+        "Portfolio cleaning services",
+      ].map((name) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name, areaServed: "Charleston, South Carolina" },
+      })),
     },
   };
 
