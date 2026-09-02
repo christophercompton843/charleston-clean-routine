@@ -5,6 +5,9 @@
   --ccr-lavender: #b9a6e7;
 }
 
+/* Homepage already has its own full navigation. Suppress the separate global flyout trigger there so we do not show two competing navigation controls. */
+body:has(main#top) > .site-menu { display: none !important; }
+
 /* Brand presentation */
 .site-chrome {
   box-shadow: 0 1px 0 rgba(18,60,58,.04), 0 10px 34px rgba(4,30,29,.035);
@@ -14,6 +17,43 @@
 .brand-logo img { width: 322px; filter: saturate(1.04) contrast(1.02); }
 .site-header nav a { font-weight: 680; }
 .site-header nav a::after { background: linear-gradient(90deg, var(--ccr-gold), var(--sea)); }
+
+/* Keep desktop header elements in one deliberate row instead of allowing isolated floating controls. */
+@media (min-width: 851px) {
+  .site-header {
+    display: grid !important;
+    grid-template-columns: minmax(250px, 322px) minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    column-gap: 34px !important;
+  }
+  .site-header .brand-logo {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    justify-self: start !important;
+  }
+  .site-header nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    justify-self: stretch !important;
+    gap: clamp(18px, 2vw, 32px) !important;
+  }
+  .site-header .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-self: end !important;
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+  .site-header .header-actions .button {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    white-space: nowrap;
+  }
+}
 
 /* Buttons: clearer hierarchy, quieter luxury */
 .button { border-radius: 16px; box-shadow: 0 10px 26px rgba(18,60,58,.13); }
