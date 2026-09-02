@@ -2,7 +2,7 @@ const menuItems = [
   ["Services", "/services"],
   ["The Details", "/#whats-included"],
   ["Build Your Routine", "/#pricing-tool"],
-  ["What to Expect", "/#how-it-works"],
+  ["What to Expect", "/#client-tools"],
   ["Service Area", "/service-area"],
   ["Portfolio Care", "/portfolio"],
   ["Client Portal", "/login"],
