@@ -114,7 +114,76 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       })),
     },
   };
-
+ const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is included in my cleaning?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Use the room-by-room service guide to compare Routine, Deep, and Move-In / Move-Out cleaning. Your confirmed service scope is the standard your cleaning professional follows.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What information do you need for my instant price?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You can configure the published residential price first. Charleston Clean Routine asks for your first name and email only when you choose to save the estimate, request a review, or request a pending appointment; a mobile number remains optional.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why does Charleston Clean Routine cost more than some cleaning services?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Charleston Clean Routine does not depend on artificially low introductory pricing, rushed appointments, or compensation that makes quality harder to sustain. Cleaning professionals who are paid fairly are better positioned to do careful, consistent work.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you clean Airbnbs and vacation rentals?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Charleston Clean Routine provides guest turnover and property-readiness services for Airbnbs, vacation homes, and coastal rentals, with options such as linen setup, restocking coordination, reporting, and deeper resets based on the property plan.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is Portfolio Care?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Portfolio Care organizes multiple properties under one relationship while preserving the service requirements of each address, with a clear property-by-property plan and proposal.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who will clean my home?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Approved providers are screened for professional cleaning experience, background requirements, insurance, reliability, and the ability to follow Charleston Clean Routine service standards and property instructions.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What happens if something is missed?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Clients can report the concern and Charleston Clean Routine acknowledges it, reviews what happened, corrects what needs correcting, and closes the loop.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I call Charleston Clean Routine?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. For pricing, booking, service-area checks, and account management, the website and Client Portal are usually the fastest route. Phone support is available at (843) 633-8648.",
+        },
+      },
+    ],
+  };
   return (
     <html lang="en">
       <head>
@@ -139,6 +208,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <noscript>
