@@ -42,8 +42,60 @@ footer {
   border-top: 0;
 }
 
+/* Approved hero: preserve all three properties, especially the Charleston home on the left. */
+.hero-visual > img {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Localized contrast for the copy; fade quickly enough that the Charleston architecture remains visible. */
+.hero-visual::after {
+  background:
+    linear-gradient(90deg,
+      rgba(4,30,29,.86) 0%,
+      rgba(4,30,29,.72) 16%,
+      rgba(4,30,29,.50) 28%,
+      rgba(4,30,29,.24) 40%,
+      rgba(4,30,29,.06) 52%,
+      rgba(4,30,29,0) 62%),
+    linear-gradient(0deg, rgba(4,30,29,.30) 0%, rgba(4,30,29,0) 42%) !important;
+}
+
+.hero-copy {
+  width: min(590px, 46%) !important;
+  max-width: 590px !important;
+}
+.hero-copy h1,
+.hero-copy .hero-lede,
+.hero-copy .hero-support,
+.hero-copy .eyebrow,
+.hero-proof {
+  text-shadow: 0 2px 16px rgba(0,0,0,.34);
+}
+.hero-lede,
+.hero-support {
+  color: rgba(255,255,255,.94) !important;
+}
+
 .policy-header > a:first-child { overflow: visible; }
 .policy-header > a:first-child img { width: 290px; height: auto; object-fit: contain; }
+
+@media (max-width: 1100px) {
+  .hero-copy { width: min(560px, 52%) !important; }
+}
+
+@media (max-width: 850px) {
+  .hero-copy { width: 100% !important; max-width: 620px !important; }
+  .hero-visual > img { object-position: center center !important; }
+  .hero-visual::after {
+    background:
+      linear-gradient(0deg,
+        rgba(4,30,29,.94) 0%,
+        rgba(4,30,29,.78) 34%,
+        rgba(4,30,29,.30) 62%,
+        rgba(4,30,29,.04) 100%) !important;
+  }
+}
 
 @media (max-width: 700px) {
   .footer-logo { width: 270px; }
