@@ -17,7 +17,7 @@ export default function CustomerPageShell({
     <main className="customer-page">
       <header className="policy-header">
         <Link href="/" aria-label="Charleston Clean Routine home">
-          <img src="/charleston-clean-routine-logo.svg" alt="Charleston Clean Routine" />
+          <img src="/ccr-logo-primary.webp" alt="Charleston Clean Routine — Your Home, Handled." />
         </Link>
         <Link className="button button-small" href="/#pricing-tool">Build my clean</Link>
       </header>

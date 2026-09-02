@@ -6,6 +6,7 @@ import "./pricing-tool.css";
 import "./hero-fix.css";
 import "./mobile-home-fix.css";
 import "./premium-polish.css";
+import "./final-overrides.css";
 import SiteMenu from "./site-menu";
 import LaunchNotice from "./launch-notice";
 
@@ -63,7 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@id": "https://charlestoncleanroutine.com/#business",
     name: "Charleston Clean Routine",
     url: "https://charlestoncleanroutine.com",
-    logo: "https://charlestoncleanroutine.com/charleston-clean-routine-logo.svg",
+    logo: "https://charlestoncleanroutine.com/ccr-logo-primary.webp",
     image: "https://charlestoncleanroutine.com/charleston-home-warm.jpg",
     email: "hello@charlestoncleanroutine.com",
     telephone: "+1-843-633-8648",

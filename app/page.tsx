@@ -14,10 +14,10 @@ const phoneUrl = "tel:+18436338648";
 const clientPortalUrl = "/login";
 const providerApplicationUrl = "/provider-application";
 
-function BrandLogo({ footer = false, reversed = false }: { footer?: boolean; reversed?: boolean }) {
+function BrandLogo({ footer = false }: { footer?: boolean }) {
   return (
     <a className={footer ? "brand-logo footer-logo" : "brand-logo"} href="#top" aria-label="Charleston Clean Routine home">
-      <img src={reversed ? "/charleston-clean-routine-logo-reversed.svg" : "/charleston-clean-routine-logo.svg"} alt="Charleston Clean Routine" />
+      <img src="/ccr-logo-primary.webp" alt="Charleston Clean Routine — Your Home, Handled." />
     </a>
   );
 }
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="hero-proof" aria-label="Charleston Clean Routine experience"><p><span>01</span><strong>Clear scope</strong></p><p><span>02</span><strong>Reliable care</strong></p><p><span>03</span><strong>Documented finish</strong></p></div>
         </div>
         <div className="hero-visual" aria-label="Charleston residential cleaning and property care">
-          <img src="/ccr-hero-final.jpg" alt="Bright, professionally maintained Charleston home interior" />
+          <img src="/charleston-home-warm.jpg" alt="Bright, professionally maintained Charleston home interior" />
           <div className="hero-image-caption"><span>The Charleston Finish</span><strong>Clean. Documented. Secured. Cared for.</strong></div>
         </div>
       </section>
@@ -71,7 +71,7 @@ export default function Home() {
 
       <section className="final-cta" id="book"><p className="eyebrow eyebrow-light">One less thing on your list</p><h2>Your home, handled.</h2><p>See what&apos;s included. Build your service. Know your price. Book when you&apos;re ready.</p><div><a className="button button-spark" href="#pricing-tool">Build My Routine</a><a className="button button-ghost" href="#your-choice">Explore Services</a></div></section>
 
-      <footer><div className="footer-top"><BrandLogo footer reversed /><p>Clear service. Thoughtful communication. Reliable follow-through.<br /><strong>Your home, handled.</strong></p></div><div className="footer-links"><div><span>Start</span><a href="#your-choice">Services</a><a href="#whats-included">What&apos;s Included</a><a href="#pricing-tool">Build My Routine</a><a href="/service-area">Service Area</a></div><div><span>Account</span><a href={clientPortalUrl}>Client Portal</a><a href="/contact">Contact</a><a href={providerApplicationUrl}>Provider Opportunities</a></div><div><span>Charleston Clean Routine</span><a href="/services/vacation-rental-cleaning-charleston-sc">Vacation Rental Care</a><a href="/services/airbnb-cleaning-charleston-sc">Airbnb Care</a><a href="/portfolio">Portfolio Care</a></div></div><div className="footer-legal"><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/cancellation-policy">Cancellation Policy</a><a href="/service-policy">Service Standards</a></div><div className="footer-bottom"><span>© 2026 Charleston Clean Routine LLC</span><span>Charleston, South Carolina</span></div></footer>
+      <footer><div className="footer-top"><BrandLogo footer /><p>Clear service. Thoughtful communication. Reliable follow-through.<br /><strong>Your home, handled.</strong></p></div><div className="footer-links"><div><span>Start</span><a href="#your-choice">Services</a><a href="#whats-included">What&apos;s Included</a><a href="#pricing-tool">Build My Routine</a><a href="/service-area">Service Area</a></div><div><span>Account</span><a href={clientPortalUrl}>Client Portal</a><a href="/contact">Contact</a><a href={providerApplicationUrl}>Provider Opportunities</a></div><div><span>Charleston Clean Routine</span><a href="/services/vacation-rental-cleaning-charleston-sc">Vacation Rental Care</a><a href="/services/airbnb-cleaning-charleston-sc">Airbnb Care</a><a href="/portfolio">Portfolio Care</a></div></div><div className="footer-legal"><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/cancellation-policy">Cancellation Policy</a><a href="/service-policy">Service Standards</a></div><div className="footer-bottom"><span>© 2026 Charleston Clean Routine LLC</span><span>Charleston, South Carolina</span></div></footer>
       <Concierge />
     </main>
   );
